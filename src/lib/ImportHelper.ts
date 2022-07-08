@@ -1,4 +1,4 @@
-import { getServiceSync } from "@aptero/axolotis-player";
+import { getService, getServiceSync } from "@aptero/axolotis-player";
 /**
  * Should only import type to stay lightweight
  */
@@ -16,26 +16,31 @@ export const PHX_AUTH_SERVICE = "@aptero/axolotis-module-phx-auth/PhoenixAuthSer
 export const NAME_SERVICE = "@aptero/axolotis-module-name/PhoenixAuthService";
 export const ROOM_SERVICE = "@aptero/axolotis-module-room/RoomService";
 
-export function propertyService(): Properties {
-  return getServiceSync<Properties>(PROPERTIES_SERVICE);
+export async function propertyService(): Promise<Properties> {
+  return getService<Properties>(PROPERTIES_SERVICE);
 }
 
-export function roomService(): RoomService {
+export async function roomService(): Promise<RoomService> {
+  return getService<RoomService>(ROOM_SERVICE);
+}
+
+/* needs preload before usage */
+export function roomServiceSync(): RoomService {
   return getServiceSync<RoomService>(ROOM_SERVICE);
 }
 
-export function nameGenerationService(): NameGenerationService {
-  return getServiceSync<NameGenerationService>(NAME_SERVICE);
+export async function nameGenerationService(): Promise<NameGenerationService> {
+  return getService<NameGenerationService>(NAME_SERVICE);
 }
 
-export function phoenixAuth(): PhoenixAuthService {
-  return getServiceSync<PhoenixAuthService>(PHX_AUTH_SERVICE);
+export async function phoenixAuth(): Promise<PhoenixAuthService> {
+  return getService<PhoenixAuthService>(PHX_AUTH_SERVICE);
 }
 
-export function cookiesStore(): CookieStore {
-  return getServiceSync<CookieStore>(COOKIE_STORE_SERVICE);
+export async function cookiesStore(): Promise<CookieStore> {
+  return getService<CookieStore>(COOKIE_STORE_SERVICE);
 }
 
-export function store(): Store {
-  return getServiceSync<Store>(STORE_SERVICE);
+export async function store(): Promise<Store> {
+  return getService<Store>(STORE_SERVICE);
 }

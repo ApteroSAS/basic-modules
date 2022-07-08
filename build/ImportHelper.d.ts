@@ -13,9 +13,10 @@ export declare const COOKIE_STORE_SERVICE = "@aptero/axolotis-module-storage/Coo
 export declare const PHX_AUTH_SERVICE = "@aptero/axolotis-module-phx-auth/PhoenixAuthService";
 export declare const NAME_SERVICE = "@aptero/axolotis-module-name/PhoenixAuthService";
 export declare const ROOM_SERVICE = "@aptero/axolotis-module-room/RoomService";
-export declare function propertyService(): Properties;
-export declare function roomService(): RoomService;
-export declare function nameGenerationService(): NameGenerationService;
-export declare function phoenixAuth(): PhoenixAuthService;
-export declare function cookiesStore(): CookieStore;
-export declare function store(): Store;
+export declare function propertyService(): Promise<Properties>;
+export declare function roomService(): Promise<RoomService>;
+export declare function roomServiceSync(): RoomService;
+export declare function nameGenerationService(): Promise<NameGenerationService>;
+export declare function phoenixAuth(): Promise<PhoenixAuthService>;
+export declare function cookiesStore(): Promise<CookieStore>;
+export declare function store(): Promise<Store>;

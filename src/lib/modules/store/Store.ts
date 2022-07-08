@@ -201,8 +201,10 @@ export default class Store extends EventTarget implements IService {
   constructor() {
     super();
 
-    if (localStorage.getItem(LOCAL_STORE_KEY) === null) {
-      localStorage.setItem(LOCAL_STORE_KEY, JSON.stringify({}));
+    if (typeof localStorage !== "undefined") {
+      if (localStorage.getItem(LOCAL_STORE_KEY) === null) {
+        localStorage.setItem(LOCAL_STORE_KEY, JSON.stringify({}));
+      }
     }
 
     // When storage is updated in another window
@@ -218,7 +220,7 @@ export default class Store extends EventTarget implements IService {
   }
 
   get state() {
-    if (!this[STORE_STATE_CACHE_KEY]) {
+    if (!this[STORE_STATE_CACHE_KEY] && typeof localStorage !== "undefined") {
       this[STORE_STATE_CACHE_KEY] = JSON.parse(localStorage.getItem(LOCAL_STORE_KEY));
     }
 
@@ -244,7 +246,9 @@ export default class Store extends EventTarget implements IService {
       //throw new Error(`Write to store failed schema validation.`);
     }
 
-    localStorage.setItem(LOCAL_STORE_KEY, JSON.stringify(finalState));
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(LOCAL_STORE_KEY, JSON.stringify(finalState));
+    }
     delete this[STORE_STATE_CACHE_KEY];
 
     this.dispatchEvent(new CustomEvent("statechanged") as any);
