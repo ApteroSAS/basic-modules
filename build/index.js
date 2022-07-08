@@ -1,5 +1,5 @@
 /*!
- * 
+ *
  *   @aptero/axolotis-module-basic v1.0.0
  *
  *   Copyright (c) Aptero  and project contributors.
@@ -8,5 +8,332 @@
  *   LICENSE file in the root directory of this source tree.
  *
  */
-!function webpackUniversalModuleDefinition(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r(require("@aptero/axolotis-player")):"function"==typeof define&&define.amd?define("axolotis-module-basic",["@aptero/axolotis-player"],r):"object"==typeof exports?exports["axolotis-module-basic"]=r(require("@aptero/axolotis-player")):e["axolotis-module-basic"]=r(e["@aptero/axolotis-player"])}(self,(e=>(()=>{"use strict";var r,_,t,i={9152:(e,r,_)=>{_.d(r,{$b:()=>i,CQ:()=>nameGenerationService,Gf:()=>roomService,Q:()=>c,eM:()=>u,eW:()=>n,h:()=>store,h$:()=>propertyService,kO:()=>cookiesStore,qh:()=>o,we:()=>a,yE:()=>phoenixAuth});var t=_(12),i="@aptero/axolotis-module-properties/Properties",o="@aptero/axolotis-module-storage/Store",a="@aptero/axolotis-module-storage/CookieStore",c="@aptero/axolotis-module-phx-auth/PhoenixAuthService",n="@aptero/axolotis-module-name/PhoenixAuthService",u="@aptero/axolotis-module-room/RoomService";function propertyService(){return(0,t.getServiceSync)(i)}function roomService(){return(0,t.getServiceSync)(u)}function nameGenerationService(){return(0,t.getServiceSync)(n)}function phoenixAuth(){return(0,t.getServiceSync)(c)}function cookiesStore(){return(0,t.getServiceSync)(a)}function store(){return(0,t.getServiceSync)(o)}},12:r=>{r.exports=e}},o={};function __webpack_require__(e){var r=o[e];if(void 0!==r)return r.exports;var _=o[e]={exports:{}};return i[e](_,_.exports,__webpack_require__),_.exports}__webpack_require__.m=i,r=[],__webpack_require__.O=(e,_,t,i)=>{if(!_){var o=1/0;for(u=0;u<r.length;u++){for(var[_,t,i]=r[u],a=!0,c=0;c<_.length;c++)(!1&i||o>=i)&&Object.keys(__webpack_require__.O).every((e=>__webpack_require__.O[e](_[c])))?_.splice(c--,1):(a=!1,i<o&&(o=i));if(a){r.splice(u--,1);var n=t();void 0!==n&&(e=n)}}return e}i=i||0;for(var u=r.length;u>0&&r[u-1][2]>i;u--)r[u]=r[u-1];r[u]=[_,t,i]},__webpack_require__.F={},__webpack_require__.E=e=>{Object.keys(__webpack_require__.F).map((r=>{__webpack_require__.F[r](e)}))},__webpack_require__.n=e=>{var r=e&&e.__esModule?()=>e.default:()=>e;return __webpack_require__.d(r,{a:r}),r},__webpack_require__.d=(e,r)=>{for(var _ in r)__webpack_require__.o(r,_)&&!__webpack_require__.o(e,_)&&Object.defineProperty(e,_,{enumerable:!0,get:r[_]})},__webpack_require__.f={},__webpack_require__.e=e=>Promise.all(Object.keys(__webpack_require__.f).reduce(((r,_)=>(__webpack_require__.f[_](e,r),r)),[])),__webpack_require__.u=e=>"library/"+{184:"axios",431:"@aptero/axolotis-module-phoenix/PhoenixAuthService",557:"jsonschema",637:"@aptero/axolotis-module-storage/Store",744:"@aptero/axolotis-module-storage/CookieStore",754:"@aptero/axolotis-module-basic"}[e]+"."+{184:"53d6ad0263a0a3509124",431:"88df7d712ad4cb01c29d",557:"e3f512d0c76e29ea1973",637:"a632010c887097d0facd",744:"e485d09c72808838243e",754:"9d511838ed67bd93589e"}[e]+".js",__webpack_require__.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),__webpack_require__.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r),_={},t="axolotis-module-basic:",__webpack_require__.l=(e,r,i,o)=>{if(_[e])_[e].push(r);else{var a,c;if(void 0!==i)for(var n=document.getElementsByTagName("script"),u=0;u<n.length;u++){var p=n[u];if(p.getAttribute("src")==e||p.getAttribute("data-webpack")==t+i){a=p;break}}a||(c=!0,(a=document.createElement("script")).charset="utf-8",a.timeout=120,__webpack_require__.nc&&a.setAttribute("nonce",__webpack_require__.nc),a.setAttribute("data-webpack",t+i),a.src=e),_[e]=[r];var onScriptComplete=(r,t)=>{a.onerror=a.onload=null,clearTimeout(l);var i=_[e];if(delete _[e],a.parentNode&&a.parentNode.removeChild(a),i&&i.forEach((e=>e(t))),r)return r(t)},l=setTimeout(onScriptComplete.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=onScriptComplete.bind(null,a.onerror),a.onload=onScriptComplete.bind(null,a.onload),c&&document.head.appendChild(a)}},__webpack_require__.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},(()=>{var e;__webpack_require__.g.importScripts&&(e=__webpack_require__.g.location+"");var r=__webpack_require__.g.document;if(!e&&r&&(r.currentScript&&(e=r.currentScript.src),!e)){var _=r.getElementsByTagName("script");_.length&&(e=_[_.length-1].src)}if(!e)throw new Error("Automatic publicPath is not supported in this browser");e=e.replace(/#.*$/,"").replace(/\?.*$/,"").replace(/\/[^\/]+$/,"/"),__webpack_require__.p=e})(),(()=>{var e={826:0};__webpack_require__.f.j=(r,_)=>{var t=__webpack_require__.o(e,r)?e[r]:void 0;if(0!==t)if(t)_.push(t[2]);else{var i=new Promise(((_,i)=>t=e[r]=[_,i]));_.push(t[2]=i);var o=__webpack_require__.p+__webpack_require__.u(r),a=new Error;__webpack_require__.l(o,(_=>{if(__webpack_require__.o(e,r)&&(0!==(t=e[r])&&(e[r]=void 0),t)){var i=_&&("load"===_.type?"missing":_.type),o=_&&_.target&&_.target.src;a.message="Loading chunk "+r+" failed.\n("+i+": "+o+")",a.name="ChunkLoadError",a.type=i,a.request=o,t[1](a)}}),"chunk-"+r,r)}},__webpack_require__.F.j=r=>{if(!__webpack_require__.o(e,r)||void 0===e[r]){e[r]=null;var _=document.createElement("link");__webpack_require__.nc&&_.setAttribute("nonce",__webpack_require__.nc),_.rel="prefetch",_.as="script",_.href=__webpack_require__.p+__webpack_require__.u(r),document.head.appendChild(_)}},__webpack_require__.O.j=r=>0===e[r];var webpackJsonpCallback=(r,_)=>{var t,i,[o,a,c]=_,n=0;if(o.some((r=>0!==e[r]))){for(t in a)__webpack_require__.o(a,t)&&(__webpack_require__.m[t]=a[t]);if(c)var u=c(__webpack_require__)}for(r&&r(_);n<o.length;n++)i=o[n],__webpack_require__.o(e,i)&&e[i]&&e[i][0](),e[i]=0;return __webpack_require__.O(u)},r=self.webpackChunkaxolotis_module_basic=self.webpackChunkaxolotis_module_basic||[];r.forEach(webpackJsonpCallback.bind(null,0)),r.push=webpackJsonpCallback.bind(null,r.push.bind(r))})(),__webpack_require__.O(0,[826],(()=>{[754,557,637,431,744,184].map(__webpack_require__.E)}),5);var a={};return(()=>{__webpack_require__.r(a),__webpack_require__.d(a,{COOKIE_STORE_SERVICE:()=>r.we,NAME_SERVICE:()=>r.eW,PHX_AUTH_SERVICE:()=>r.Q,PROPERTIES_SERVICE:()=>r.$b,ROOM_SERVICE:()=>r.eM,STORE_SERVICE:()=>r.qh,cookiesStore:()=>r.kO,nameGenerationService:()=>r.CQ,phoenixAuth:()=>r.yE,propertyService:()=>r.h$,register:()=>t,roomService:()=>r.Gf,store:()=>r.h});var e=__webpack_require__(12),r=__webpack_require__(9152);function _defineProperties(e,r){for(var _=0;_<r.length;_++){var t=r[_];t.enumerable=t.enumerable||!1,t.configurable=!0,"value"in t&&(t.writable=!0),Object.defineProperty(e,t.key,t)}}var _=function(){function AxItem(){!function _classCallCheck(e,r){if(!(e instanceof r))throw new TypeError("Cannot call a class as a function")}(this,AxItem),console.log("@aptero/axolotis-module-basic installed")}return function _createClass(e,r,_){return r&&_defineProperties(e.prototype,r),_&&_defineProperties(e,_),Object.defineProperty(e,"prototype",{writable:!1}),e}(AxItem,[{key:"modules",value:function modules(){var e={};return e[r.$b]=function(){return __webpack_require__.e(754).then(__webpack_require__.bind(__webpack_require__,3225))},e[r.qh]=function(){return Promise.all([__webpack_require__.e(754),__webpack_require__.e(557),__webpack_require__.e(637)]).then(__webpack_require__.bind(__webpack_require__,5819))},e[r.Q]=function(){return Promise.all([__webpack_require__.e(754),__webpack_require__.e(431)]).then(__webpack_require__.bind(__webpack_require__,566))},e[r.eW]=function(){return __webpack_require__.e(754).then(__webpack_require__.bind(__webpack_require__,9993))},e[r.we]=function(){return Promise.all([__webpack_require__.e(754),__webpack_require__.e(744)]).then(__webpack_require__.bind(__webpack_require__,2064))},e[r.eM]=function(){return Promise.all([__webpack_require__.e(754),__webpack_require__.e(184)]).then(__webpack_require__.bind(__webpack_require__,6325))},e}}]),AxItem}(),t=function register(){var r=(0,e.getGlobalStorageValue)(e.GLOBAL_WORLDS_ENTITY,!1);if(!(r&&r.length>0))throw new Error("Axolotis World Needs to be initialized");(0,e.registerItem)(new _)}})(),a=__webpack_require__.O(a)})()));
+!(function webpackUniversalModuleDefinition(e, r) {
+  "object" == typeof exports && "object" == typeof module
+    ? (module.exports = r(require("@aptero/axolotis-player")))
+    : "function" == typeof define && define.amd
+    ? define("axolotis-module-basic", ["@aptero/axolotis-player"], r)
+    : "object" == typeof exports
+    ? (exports["axolotis-module-basic"] = r(require("@aptero/axolotis-player")))
+    : (e["axolotis-module-basic"] = r(e["@aptero/axolotis-player"]));
+})(self, (e) =>
+  (() => {
+    "use strict";
+    var r,
+      _,
+      t,
+      i = {
+        9152: (e, r, _) => {
+          _.d(r, {
+            $b: () => i,
+            CQ: () => nameGenerationService,
+            Gf: () => roomService,
+            Q: () => c,
+            eM: () => u,
+            eW: () => n,
+            h: () => store,
+            h$: () => propertyService,
+            kO: () => cookiesStore,
+            qh: () => o,
+            we: () => a,
+            yE: () => phoenixAuth,
+          });
+          var t = _(12),
+            i = "@aptero/axolotis-module-properties/Properties",
+            o = "@aptero/axolotis-module-storage/Store",
+            a = "@aptero/axolotis-module-storage/CookieStore",
+            c = "@aptero/axolotis-module-phx-auth/PhoenixAuthService",
+            n = "@aptero/axolotis-module-name/PhoenixAuthService",
+            u = "@aptero/axolotis-module-room/RoomService";
+          function propertyService() {
+            return (0, t.getServiceSync)(i);
+          }
+          function roomService() {
+            return (0, t.getServiceSync)(u);
+          }
+          function nameGenerationService() {
+            return (0, t.getServiceSync)(n);
+          }
+          function phoenixAuth() {
+            return (0, t.getServiceSync)(c);
+          }
+          function cookiesStore() {
+            return (0, t.getServiceSync)(a);
+          }
+          function store() {
+            return (0, t.getServiceSync)(o);
+          }
+        },
+        12: (r) => {
+          r.exports = e;
+        },
+      },
+      o = {};
+    function __webpack_require__(e) {
+      var r = o[e];
+      if (void 0 !== r) return r.exports;
+      var _ = (o[e] = { exports: {} });
+      return i[e](_, _.exports, __webpack_require__), _.exports;
+    }
+    (__webpack_require__.m = i),
+      (r = []),
+      (__webpack_require__.O = (e, _, t, i) => {
+        if (!_) {
+          var o = 1 / 0;
+          for (u = 0; u < r.length; u++) {
+            for (var [_, t, i] = r[u], a = !0, c = 0; c < _.length; c++)
+              (!1 & i || o >= i) && Object.keys(__webpack_require__.O).every((e) => __webpack_require__.O[e](_[c]))
+                ? _.splice(c--, 1)
+                : ((a = !1), i < o && (o = i));
+            if (a) {
+              r.splice(u--, 1);
+              var n = t();
+              void 0 !== n && (e = n);
+            }
+          }
+          return e;
+        }
+        i = i || 0;
+        for (var u = r.length; u > 0 && r[u - 1][2] > i; u--) r[u] = r[u - 1];
+        r[u] = [_, t, i];
+      }),
+      (__webpack_require__.F = {}),
+      (__webpack_require__.E = (e) => {
+        Object.keys(__webpack_require__.F).map((r) => {
+          __webpack_require__.F[r](e);
+        });
+      }),
+      (__webpack_require__.n = (e) => {
+        var r = e && e.__esModule ? () => e.default : () => e;
+        return __webpack_require__.d(r, { a: r }), r;
+      }),
+      (__webpack_require__.d = (e, r) => {
+        for (var _ in r) __webpack_require__.o(r, _) && !__webpack_require__.o(e, _) && Object.defineProperty(e, _, { enumerable: !0, get: r[_] });
+      }),
+      (__webpack_require__.f = {}),
+      (__webpack_require__.e = (e) => Promise.all(Object.keys(__webpack_require__.f).reduce((r, _) => (__webpack_require__.f[_](e, r), r), []))),
+      (__webpack_require__.u = (e) =>
+        "library/" +
+        {
+          184: "axios",
+          431: "@aptero/axolotis-module-phoenix/PhoenixAuthService",
+          557: "jsonschema",
+          637: "@aptero/axolotis-module-storage/Store",
+          744: "@aptero/axolotis-module-storage/CookieStore",
+          754: "@aptero/axolotis-module-basic",
+        }[e] +
+        "." +
+        {
+          184: "53d6ad0263a0a3509124",
+          431: "88df7d712ad4cb01c29d",
+          557: "e3f512d0c76e29ea1973",
+          637: "a632010c887097d0facd",
+          744: "e485d09c72808838243e",
+          754: "c21b2671d8f337056b71",
+        }[e] +
+        ".js"),
+      (__webpack_require__.g = (function () {
+        if ("object" == typeof globalThis) return globalThis;
+        try {
+          return this || new Function("return this")();
+        } catch (e) {
+          if ("object" == typeof window) return window;
+        }
+      })()),
+      (__webpack_require__.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
+      (_ = {}),
+      (t = "axolotis-module-basic:"),
+      (__webpack_require__.l = (e, r, i, o) => {
+        if (_[e]) _[e].push(r);
+        else {
+          var a, c;
+          if (void 0 !== i)
+            for (var n = document.getElementsByTagName("script"), u = 0; u < n.length; u++) {
+              var p = n[u];
+              if (p.getAttribute("src") == e || p.getAttribute("data-webpack") == t + i) {
+                a = p;
+                break;
+              }
+            }
+          a ||
+            ((c = !0),
+            ((a = document.createElement("script")).charset = "utf-8"),
+            (a.timeout = 120),
+            __webpack_require__.nc && a.setAttribute("nonce", __webpack_require__.nc),
+            a.setAttribute("data-webpack", t + i),
+            (a.src = e)),
+            (_[e] = [r]);
+          var onScriptComplete = (r, t) => {
+              (a.onerror = a.onload = null), clearTimeout(l);
+              var i = _[e];
+              if ((delete _[e], a.parentNode && a.parentNode.removeChild(a), i && i.forEach((e) => e(t)), r)) return r(t);
+            },
+            l = setTimeout(onScriptComplete.bind(null, void 0, { type: "timeout", target: a }), 12e4);
+          (a.onerror = onScriptComplete.bind(null, a.onerror)), (a.onload = onScriptComplete.bind(null, a.onload)), c && document.head.appendChild(a);
+        }
+      }),
+      (__webpack_require__.r = (e) => {
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+          Object.defineProperty(e, "__esModule", { value: !0 });
+      }),
+      (() => {
+        var e;
+        __webpack_require__.g.importScripts && (e = __webpack_require__.g.location + "");
+        var r = __webpack_require__.g.document;
+        if (!e && r && (r.currentScript && (e = r.currentScript.src), !e)) {
+          var _ = r.getElementsByTagName("script");
+          _.length && (e = _[_.length - 1].src);
+        }
+        if (!e) throw new Error("Automatic publicPath is not supported in this browser");
+        (e = e
+          .replace(/#.*$/, "")
+          .replace(/\?.*$/, "")
+          .replace(/\/[^\/]+$/, "/")),
+          (__webpack_require__.p = e);
+      })(),
+      (() => {
+        var e = { 826: 0 };
+        (__webpack_require__.f.j = (r, _) => {
+          var t = __webpack_require__.o(e, r) ? e[r] : void 0;
+          if (0 !== t)
+            if (t) _.push(t[2]);
+            else {
+              var i = new Promise((_, i) => (t = e[r] = [_, i]));
+              _.push((t[2] = i));
+              var o = __webpack_require__.p + __webpack_require__.u(r),
+                a = new Error();
+              __webpack_require__.l(
+                o,
+                (_) => {
+                  if (__webpack_require__.o(e, r) && (0 !== (t = e[r]) && (e[r] = void 0), t)) {
+                    var i = _ && ("load" === _.type ? "missing" : _.type),
+                      o = _ && _.target && _.target.src;
+                    (a.message = "Loading chunk " + r + " failed.\n(" + i + ": " + o + ")"),
+                      (a.name = "ChunkLoadError"),
+                      (a.type = i),
+                      (a.request = o),
+                      t[1](a);
+                  }
+                },
+                "chunk-" + r,
+                r
+              );
+            }
+        }),
+          (__webpack_require__.F.j = (r) => {
+            if (!__webpack_require__.o(e, r) || void 0 === e[r]) {
+              e[r] = null;
+              var _ = document.createElement("link");
+              __webpack_require__.nc && _.setAttribute("nonce", __webpack_require__.nc),
+                (_.rel = "prefetch"),
+                (_.as = "script"),
+                (_.href = __webpack_require__.p + __webpack_require__.u(r)),
+                document.head.appendChild(_);
+            }
+          }),
+          (__webpack_require__.O.j = (r) => 0 === e[r]);
+        var webpackJsonpCallback = (r, _) => {
+            var t,
+              i,
+              [o, a, c] = _,
+              n = 0;
+            if (o.some((r) => 0 !== e[r])) {
+              for (t in a) __webpack_require__.o(a, t) && (__webpack_require__.m[t] = a[t]);
+              if (c) var u = c(__webpack_require__);
+            }
+            for (r && r(_); n < o.length; n++) (i = o[n]), __webpack_require__.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
+            return __webpack_require__.O(u);
+          },
+          r = (self.webpackChunkaxolotis_module_basic = self.webpackChunkaxolotis_module_basic || []);
+        r.forEach(webpackJsonpCallback.bind(null, 0)), (r.push = webpackJsonpCallback.bind(null, r.push.bind(r)));
+      })(),
+      __webpack_require__.O(
+        0,
+        [826],
+        () => {
+          [754, 557, 637, 431, 744, 184].map(__webpack_require__.E);
+        },
+        5
+      );
+    var a = {};
+    return (
+      (() => {
+        __webpack_require__.r(a),
+          __webpack_require__.d(a, {
+            COOKIE_STORE_SERVICE: () => r.we,
+            NAME_SERVICE: () => r.eW,
+            PHX_AUTH_SERVICE: () => r.Q,
+            PROPERTIES_SERVICE: () => r.$b,
+            ROOM_SERVICE: () => r.eM,
+            STORE_SERVICE: () => r.qh,
+            cookiesStore: () => r.kO,
+            nameGenerationService: () => r.CQ,
+            phoenixAuth: () => r.yE,
+            propertyService: () => r.h$,
+            register: () => t,
+            roomService: () => r.Gf,
+            store: () => r.h,
+          });
+        var e = __webpack_require__(12),
+          r = __webpack_require__(9152);
+        function _defineProperties(e, r) {
+          for (var _ = 0; _ < r.length; _++) {
+            var t = r[_];
+            (t.enumerable = t.enumerable || !1), (t.configurable = !0), "value" in t && (t.writable = !0), Object.defineProperty(e, t.key, t);
+          }
+        }
+        var _ = (function () {
+            function AxItem() {
+              !(function _classCallCheck(e, r) {
+                if (!(e instanceof r)) throw new TypeError("Cannot call a class as a function");
+              })(this, AxItem),
+                console.log("@aptero/axolotis-module-basic installed");
+            }
+            return (
+              (function _createClass(e, r, _) {
+                return r && _defineProperties(e.prototype, r), _ && _defineProperties(e, _), Object.defineProperty(e, "prototype", { writable: !1 }), e;
+              })(AxItem, [
+                {
+                  key: "modules",
+                  value: function modules() {
+                    var e = {};
+                    return (
+                      (e[r.$b] = function () {
+                        return __webpack_require__.e(754).then(__webpack_require__.bind(__webpack_require__, 3225));
+                      }),
+                      (e[r.qh] = function () {
+                        return Promise.all([__webpack_require__.e(754), __webpack_require__.e(557), __webpack_require__.e(637)]).then(
+                          __webpack_require__.bind(__webpack_require__, 5819)
+                        );
+                      }),
+                      (e[r.Q] = function () {
+                        return Promise.all([__webpack_require__.e(754), __webpack_require__.e(431)]).then(__webpack_require__.bind(__webpack_require__, 2106));
+                      }),
+                      (e[r.eW] = function () {
+                        return __webpack_require__.e(754).then(__webpack_require__.bind(__webpack_require__, 9993));
+                      }),
+                      (e[r.we] = function () {
+                        return Promise.all([__webpack_require__.e(754), __webpack_require__.e(744)]).then(__webpack_require__.bind(__webpack_require__, 2064));
+                      }),
+                      (e[r.eM] = function () {
+                        return Promise.all([__webpack_require__.e(754), __webpack_require__.e(184)]).then(__webpack_require__.bind(__webpack_require__, 6325));
+                      }),
+                      e
+                    );
+                  },
+                },
+              ]),
+              AxItem
+            );
+          })(),
+          t = function register() {
+            var r = (0, e.getGlobalStorageValue)(e.GLOBAL_WORLDS_ENTITY, !1);
+            if (!(r && r.length > 0)) throw new Error("Axolotis World Needs to be initialized");
+            (0, e.registerItem)(new _());
+          };
+      })(),
+      (a = __webpack_require__.O(a))
+    );
+  })()
+);
 //# sourceMappingURL=index.js.map

@@ -2,9 +2,12 @@ import { AdminRole } from "./AdminRole";
 import AuthChannel from "./auth-channel";
 import { IService } from "@aptero/axolotis-player";
 import { AuthInterface } from "../../common/AuthInterface";
+import { MsToNativeLoginBridge } from "./MsToNativeLoginBridge";
 export default class PhoenixAuthService implements IService {
     adminRole: AdminRole;
+    nativeBridge: MsToNativeLoginBridge;
     private ret;
+    getNativeInterface(): MsToNativeLoginBridge;
     setGlobalReticulumChannel(ret: any): void;
     getGlobalReticulumChannel(ret: any): any;
     registerAuth(auth: AuthInterface): void;

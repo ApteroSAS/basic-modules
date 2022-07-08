@@ -6,6 +6,7 @@ import type RoomServiceDefault from "./modules/roomAPI/RoomService";
 export declare type RoomService = RoomServiceDefault;
 import type PhoenixAuthServiceDefault from "./modules/phoenixAuth/PhoenixAuthService";
 export declare type PhoenixAuthService = PhoenixAuthServiceDefault;
+export type { MsToNativeLoginBridge } from "./modules/phoenixAuth/MsToNativeLoginBridge";
 export * from "./modules/properties/Properties";
 export * from "./ImportHelper";
 export * from "./common/AuthInterface";
