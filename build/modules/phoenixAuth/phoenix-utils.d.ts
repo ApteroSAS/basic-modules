@@ -1,3 +1,5 @@
+import { PropertiesFormat } from "./PropertiesFormat";
+export declare function config(): PropertiesFormat;
 export declare function hasReticulumServer(): boolean;
 export declare function isLocalClient(): boolean;
 export declare function hubUrl(hubId: any, extraParams: any, slug: any): any;

@@ -49,8 +49,7 @@ export default class RoomService implements IService {
   }
 
   async getLinkFromCode(code: string) {
-
-    const url = "https://"+ config().RETICULUM_SERVER + "/link/" + code;
+    const url = "https://" + config().RETICULUM_SERVER + "/link/" + code;
     const res = await fetch(url);
     console.log(res);
     console.log(res.headers.get("location"));

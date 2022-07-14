@@ -18,6 +18,7 @@ export default class RoomService implements IService {
         roomSID: string;
     };
     createAndRedirectToNewHub(a: any, b: any, c: any): Promise<void>;
+    getLinkFromCode(code: string): Promise<string>;
     getEmbedToken(roomSID: any, origin: any): Promise<any>;
     fetchSpokeProject(userId: any): (cursor: any) => Promise<any>;
     fetchFavoriteRoom(userId: any): (cursor: any) => Promise<any>;
