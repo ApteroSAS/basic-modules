@@ -8,7 +8,7 @@ import { getService, getServiceSync } from "@aptero/axolotis-player";
 import Store from "@root/modules/store/Store";
 import Properties from "@root/modules/properties/Properties";
 
-function config() {
+export function config() {
   return getServiceSync<Properties>(PROPERTIES_SERVICE).getGlobalProperties<PropertiesFormat>();
 }
 

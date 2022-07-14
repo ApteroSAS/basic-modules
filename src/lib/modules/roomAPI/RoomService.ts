@@ -9,6 +9,7 @@ import NameGenerationService from "@root/modules/nameGeneration/NameGenerationSe
 import Store from "@root/modules/store/Store";
 import PhoenixAuthService from "@root/modules/phoenixAuth/PhoenixAuthService";
 import CookieStore from "@root/modules/store/CookieStore";
+import { config } from "@root/modules/phoenixAuth/phoenix-utils";
 
 declare const window;
 
@@ -45,6 +46,20 @@ export default class RoomService implements IService {
 
   createAndRedirectToNewHub(a, b, c) {
     return this.phoenixAuthService.createAndRedirectToNewHub(a, b, c);
+  }
+
+  async getLinkFromCode(code: string) {
+
+    const url = "https://"+ config().RETICULUM_SERVER + "/link/" + code;
+    const res = await fetch(url);
+    console.log(res);
+    console.log(res.headers.get("location"));
+    if (res.status >= 400) {
+      console.error(res);
+      throw new Error("wrong status");
+    } else {
+      return res.headers.get("location");
+    }
   }
 
   async getEmbedToken(roomSID, origin) {
