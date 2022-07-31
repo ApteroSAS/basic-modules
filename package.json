@@ -27,7 +27,7 @@
     "es6"
   ],
   "devDependencies": {
-    "@aptero/axolotis-player": "git+https://github.com/ApteroSAS/axolotis-player.git#3f8fff8508fa9dcb18c40214685ab28027e104a1",
+    "@aptero/axolotis-player": "github:ApteroSAS/axolotis-player.git#semver:^1.1.2",
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
@@ -82,6 +82,6 @@
     "uuid": "^3.2.1"
   },
   "peerDependencies": {
-    "@aptero/axolotis-player": "git+https://github.com/ApteroSAS/axolotis-player.git#semver:^1.0.0"
+    "@aptero/axolotis-player": "github:ApteroSAS/axolotis-player.git#semver:^1.1.2"
   }
 }
