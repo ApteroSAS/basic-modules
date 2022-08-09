@@ -31,7 +31,7 @@ export default class RoomService implements IService {
     //https://alphahub.aptero.co/fTj63Hg/room?msteams=true&embed_token=846d38e7d0bc3c49716f5f5cb2577ff8
     let urlObj = new URL(url);
 
-    if (window.location.origin.startsWith("https://localhost")) {
+    if (urlObj.origin.startsWith("https://localhost")) {
       return {
         origin: urlObj.origin,
         roomSID: urlObj.searchParams.get("hub_id"),
