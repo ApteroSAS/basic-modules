@@ -1,5 +1,4 @@
 import { IService } from "@aptero/axolotis-player";
-import Cookies from "js-cookie";
 
 export default class CookieStore implements IService {
   getType(): string {
@@ -7,14 +6,14 @@ export default class CookieStore implements IService {
   }
 
   get(key: string) {
-    return Cookies.get(key);
+    return localStorage.getItem(key);
   }
 
-  set(key: string, value: any) {
-    return Cookies.set(key, value);
+  set(key: string, value: string) {
+    localStorage.setItem(key, value);
   }
 
   remove(key: string) {
-    return Cookies.remove(key);
+    return localStorage.removeItem(key);
   }
 }
