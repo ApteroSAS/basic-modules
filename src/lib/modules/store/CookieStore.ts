@@ -6,11 +6,15 @@ export default class CookieStore implements IService {
     return CookieStore.name;
   }
 
-  get(key) {
+  get(key: string) {
     return Cookies.get(key);
   }
 
-  remove(key) {
+  set(key: string, value: any) {
+    return Cookies.set(key, value);
+  }
+
+  remove(key: string) {
     return Cookies.remove(key);
   }
 }
