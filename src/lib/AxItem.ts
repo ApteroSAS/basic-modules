@@ -9,36 +9,48 @@ export class AxItem implements Item {
 
   modules(): { [id: string]: ModulePromise } {
     let ret: { [id: string]: ModulePromise } = {};
-    ret[PROPERTIES_SERVICE] = () =>
-      import(
-        /*  webpackPrefetch: 0,  webpackMode: 'lazy',  webpackChunkName: "@aptero/axolotis-module-properties/Properties"  */
-        "@root/modules/properties/Properties"
-      );
-    ret[STORE_SERVICE] = () =>
-      import(
-        /*  webpackPrefetch: 0,  webpackMode: 'lazy',  webpackChunkName: "@aptero/axolotis-module-storage/Store"  */
-        "@root/modules/store/Store"
-      );
-    ret[PHX_AUTH_SERVICE] = () =>
-      import(
-        /*  webpackPrefetch: 0,  webpackMode: 'lazy',  webpackChunkName: "@aptero/axolotis-module-phoenix/PhoenixAuthService"  */
-        "@root/modules/phoenixAuth/PhoenixAuthService"
-      );
-    ret[NAME_SERVICE] = () =>
-      import(
-        /*  webpackPrefetch: 0,  webpackMode: 'lazy',  webpackChunkName: "@aptero/axolotis-module-name/NameGenerationService"  */
-        "@root/modules/nameGeneration/NameGenerationService"
-      );
-    ret[COOKIE_STORE_SERVICE] = () =>
-      import(
-        /*  webpackPrefetch: 0,  webpackMode: 'lazy',  webpackChunkName: "@aptero/axolotis-module-storage/CookieStore"  */
-        "@root/modules/store/CookieStore"
-      );
-    ret[ROOM_SERVICE] = () =>
-      import(
-        /*  webpackPrefetch: 0,  webpackMode: 'lazy',  webpackChunkName: "@aptero/axolotis-module-room/RoomService"  */
-        "@root/modules/roomAPI/RoomService"
-      );
+    ret[PROPERTIES_SERVICE] = async () => {
+      let module = await import("@aptero/axolotis-module-basic-async");
+      return {
+        module,
+        classname: module.Properties.name,
+      };
+    };
+    ret[STORE_SERVICE] = async () => {
+      let module = await import("@aptero/axolotis-module-basic-async");
+      return {
+        module,
+        classname: module.Store.name,
+      };
+    };
+    ret[PHX_AUTH_SERVICE] = async () => {
+      let module = await import("@aptero/axolotis-module-basic-async");
+      return {
+        module,
+        classname: module.PhoenixAuthService.name,
+      };
+    };
+    ret[NAME_SERVICE] = async () => {
+      let module = await import("@aptero/axolotis-module-basic-async");
+      return {
+        module,
+        classname: module.NameGenerationService.name,
+      };
+    };
+    ret[COOKIE_STORE_SERVICE] = async () => {
+      let module = await import("@aptero/axolotis-module-basic-async");
+      return {
+        module,
+        classname: module.CookieStore.name,
+      };
+    };
+    ret[ROOM_SERVICE] = async () => {
+      let module = await import("@aptero/axolotis-module-basic-async");
+      return {
+        module,
+        classname: module.RoomService.name,
+      };
+    };
     return ret;
   }
 }

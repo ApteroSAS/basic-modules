@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const PrettierPlugin = require("prettier-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const getPackageJson = require('./scripts/getPackageJson');
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 
 const {
@@ -47,23 +46,6 @@ module.exports = {
     },
     optimization: {
         minimize: true,
-        splitChunks: {
-            //https://webpack.js.org/plugins/split-chunks-plugin/
-            chunks: 'async',
-            //filename: 'library/[name].[fullhash].js',
-            cacheGroups: {
-                vendor: {
-                    //each vendor has one async bundle
-                    name : (module, chunks, cacheGroupKey) => {
-                        try {
-                            return module.resourceResolveData.descriptionFileData.name
-                        }catch (e){
-                            return "default";
-                        }
-                    },
-                }
-            }
-        },
         minimizer: [
             new TerserPlugin({
                 extractComments: false, terserOptions: {

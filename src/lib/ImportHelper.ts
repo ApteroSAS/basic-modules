@@ -2,13 +2,14 @@ import { getService, getServiceSync } from "@aptero/axolotis-player";
 /**
  * Should only import type to stay lightweight
  */
-import type Properties from "@root/modules/properties/Properties";
-import type RoomService from "@root/modules/roomAPI/RoomService";
-import type PhoenixAuthService from "@root/modules/phoenixAuth/PhoenixAuthService";
-import type NameGenerationService from "@root/modules/nameGeneration/NameGenerationService";
-import type CookieStore from "@root/modules/store/CookieStore";
-import type Store from "@root/modules/store/Store";
+import type { Properties } from "@aptero/axolotis-module-basic-async";
+import type { RoomService } from "@aptero/axolotis-module-basic-async";
+import type { PhoenixAuthService } from "@aptero/axolotis-module-basic-async";
+import type { NameGenerationService } from "@aptero/axolotis-module-basic-async";
+import type { CookieStore } from "@aptero/axolotis-module-basic-async";
+import type { Store } from "@aptero/axolotis-module-basic-async";
 
+//NOTE the ids are duplicated from the async src index.js
 export const PROPERTIES_SERVICE = "@aptero/axolotis-module-properties/Properties";
 export const STORE_SERVICE = "@aptero/axolotis-module-storage/Store";
 export const COOKIE_STORE_SERVICE = "@aptero/axolotis-module-storage/CookieStore";

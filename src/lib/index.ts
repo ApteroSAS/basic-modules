@@ -1,20 +1,15 @@
 import { getGlobalStorageValue, GLOBAL_WORLDS_ENTITY, registerItem, WorldEntity } from "@aptero/axolotis-player";
 import { AxItem } from "./AxItem";
 
-import type PropertiesDefault from "./modules/properties/Properties";
-export type Properties = PropertiesDefault;
-import type NameGenerationServiceDefault from "./modules/nameGeneration/NameGenerationService";
-export type NameGenerationService = NameGenerationServiceDefault;
-import type RoomServiceDefault from "./modules/roomAPI/RoomService";
-export type RoomService = RoomServiceDefault;
-import type PhoenixAuthServiceDefault from "./modules/phoenixAuth/PhoenixAuthService";
-export type PhoenixAuthService = PhoenixAuthServiceDefault;
+export type { Properties } from "@aptero/axolotis-module-basic-async";
+export type { NameGenerationService } from "@aptero/axolotis-module-basic-async";
+export type { RoomService } from "@aptero/axolotis-module-basic-async";
+export type { PhoenixAuthService } from "@aptero/axolotis-module-basic-async";
+export type { CookieStore } from "@aptero/axolotis-module-basic-async";
+export type { Store } from "@aptero/axolotis-module-basic-async";
 
-export type { MsToNativeLoginBridge } from "./modules/phoenixAuth/MsToNativeLoginBridge";
-
-export * from "./modules/properties/Properties";
 export * from "./ImportHelper";
-export * from "./common/AuthInterface";
+export * from "../../src-async/src/common/AuthInterface";
 
 export const register = () => {
   const worlds = getGlobalStorageValue<WorldEntity[]>(GLOBAL_WORLDS_ENTITY, false);

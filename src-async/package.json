@@ -1,0 +1,25 @@
+{
+  "name": "@aptero/axolotis-module-basic-async",
+  "version": "1.0.0",
+  "author": "Aptero <admin@aptero.co>",
+  "homepage": "https://aptero.co",
+  "description": "Axolotis - Basic module - async",
+  "main": "properties/build/index.js",
+  "exports": {
+    ".": "./build/index.js",
+    "./*": "./build/*"
+  },
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "rimraf build && ttsc && webpack"
+  },
+  "comment": "All dev dependecies are shared with the parent project",
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "event-target-shim": "^6.0.2",
+    "eventemitter3": "^4.0.7",
+    "jsonschema": "^1.4.1",
+    "tsutils": "^3.21.0",
+    "uuid": "^3.2.1"
+  }
+}
