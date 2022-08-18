@@ -1,4 +1,4 @@
-!function webpackUniversalModuleDefinition(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define("axolotis-module-basic-async-properties",[],t):"object"==typeof exports?exports["axolotis-module-basic-async-properties"]=t():e["axolotis-module-basic-async-properties"]=t()}(self,(()=>(()=>{var __webpack_modules__={834:function(module){
+!function webpackUniversalModuleDefinition(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define("axolotis-module-basic-async",[],t):"object"==typeof exports?exports["axolotis-module-basic-async"]=t():e["axolotis-module-basic-async"]=t()}(self,(()=>(()=>{var __webpack_modules__={834:function(module){
 /*!
  * 
  *   @aptero/axolotis-player v2.0.0

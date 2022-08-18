@@ -2,7 +2,10 @@ const path = require('path');
 const PrettierPlugin = require("prettier-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
-const libName = "@aptero/axolotis-module-basic-async-properties";//same as defined in package.json
+const packageJson = require("../package.json");
+
+
+const libName = packageJson.name+"-async";
 console.log(libName);
 
 module.exports = {
