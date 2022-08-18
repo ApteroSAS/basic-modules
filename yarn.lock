@@ -17,6 +17,7 @@
     event-target-shim "^6.0.2"
     eventemitter3 "^4.0.7"
     jsonschema "^1.4.1"
+    phoenix "github:gfodor/phoenix-js#f4cebf1534dd7c503fe797ef396709c4d3ea8d69"
     tsutils "^3.21.0"
     uuid "^3.2.1"
 
@@ -5690,6 +5691,10 @@ pause-stream@0.0.11:
   integrity sha512-e3FBlXLmN/D1S+zHzanP4E/4Z60oFAa3O051qt1pxa7DEJWKAyil6upYVXCWadEnuoqa4Pkc9oUx9zsxYeRv8A==
   dependencies:
     through "~2.3"
+
+"phoenix@github:gfodor/phoenix-js#f4cebf1534dd7c503fe797ef396709c4d3ea8d69":
+  version "1.4.0"
+  resolved "https://codeload.github.com/gfodor/phoenix-js/tar.gz/f4cebf1534dd7c503fe797ef396709c4d3ea8d69"
 
 picocolors@^1.0.0:
   version "1.0.0"
