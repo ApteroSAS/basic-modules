@@ -1,15 +1,16 @@
-import { AdminRole } from "@root/phoenixAuth/AdminRole";
-import {
-  connectToReticulum,
-  createAndRedirectToNewHub,
-  fetchReticulumAuthenticated,
-  getReticulumFetchUrl,
-  isLocalClient,
-} from "@root/phoenixAuth/phoenix-utils";
-import AuthChannel from "@root/phoenixAuth/auth-channel";
-import { IService } from "@aptero/axolotis-player";
+import { AdminRole } from "./AdminRole";
+import { connectToReticulum, createAndRedirectToNewHub, fetchReticulumAuthenticated, getReticulumFetchUrl, isLocalClient } from "./phoenix-utils";
+import AuthChannel from "./auth-channel";
+import { IService, IServices, Service } from "@aptero/axolotis-player";
 import { AuthInterface } from "@root/common/AuthInterface";
 import { MsToNativeLoginBridge } from "./MsToNativeLoginBridge";
+
+export class PhoenixAuthServiceFactory implements Service<PhoenixAuthService> {
+  async createService(services: IServices): Promise<PhoenixAuthService> {
+    console.log("PhoenixAuthServiceFactory");
+    return new PhoenixAuthService();
+  }
+}
 
 export class PhoenixAuthService implements IService {
   adminRole = new AdminRole();

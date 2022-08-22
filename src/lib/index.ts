@@ -1,20 +1,16 @@
-import { getGlobalStorageValue, GLOBAL_WORLDS_ENTITY, registerItem, WorldEntity } from "@aptero/axolotis-player";
-import { AxItem } from "./AxItem";
+export * from "./properties/Properties";
+export * from "./nameGeneration/NameGenerationService";
+export * from "./phoenixAuth/PhoenixAuthService";
+export * from "./phoenixAuth/MsToNativeLoginBridge";
+export * from "./common/AuthInterface";
+export * from "./roomAPI/RoomService";
+export * from "./store/CookieStore";
+export * from "./store/Store";
 
-export type { Properties } from "@aptero/axolotis-module-basic-async";
-export type { NameGenerationService } from "@aptero/axolotis-module-basic-async";
-export type { RoomService } from "@aptero/axolotis-module-basic-async";
-export type { PhoenixAuthService } from "@aptero/axolotis-module-basic-async";
-export type { CookieStore } from "@aptero/axolotis-module-basic-async";
-export type { Store } from "@aptero/axolotis-module-basic-async";
-
-export * from "./ImportHelper";
-export * from "../../src-async/src/common/AuthInterface";
-
-export const register = () => {
-  const worlds = getGlobalStorageValue<WorldEntity[]>(GLOBAL_WORLDS_ENTITY, false);
-  if (!(worlds && worlds.length > 0)) {
-    throw new Error("Axolotis World Needs to be initialized");
-  }
-  registerItem(new AxItem()); //auto registration of service
-};
+//NOTE the ids are duplicated in the src import helper
+export const PROPERTIES_SERVICE = "@aptero/axolotis-module-properties/Properties";
+export const STORE_SERVICE = "@aptero/axolotis-module-storage/Store";
+export const COOKIE_STORE_SERVICE = "@aptero/axolotis-module-storage/CookieStore";
+export const PHX_AUTH_SERVICE = "@aptero/axolotis-module-phx-auth/PhoenixAuthService";
+export const NAME_SERVICE = "@aptero/axolotis-module-name/NameService";
+export const ROOM_SERVICE = "@aptero/axolotis-module-room/RoomService";

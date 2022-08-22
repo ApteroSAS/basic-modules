@@ -1,5 +1,5 @@
 import { IService } from "@aptero/axolotis-player";
-import { generateHubName } from "@root/nameGeneration/name-generation";
+import { generateHubName } from "./name-generation";
 
 export class NameGenerationService implements IService {
   getType(): string {
