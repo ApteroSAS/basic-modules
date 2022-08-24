@@ -2,7 +2,7 @@
   "name": "@aptero/axolotis-module-basic",
   "version": "1.0.0",
   "description": "Axolotis - Basic module",
-  "main": "build/index.js",
+  "module": "src/lib/index.ts",
   "exports": {
     ".": "./build/index.js",
     "./*": "./build/*"

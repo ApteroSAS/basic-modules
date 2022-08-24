@@ -33,6 +33,12 @@ module.exports = {
     },
     entry: {
         index: path.join(__dirname, './src/lib/index.ts'),
+        Properties: path.join(__dirname, './src/lib/properties/Properties.ts'),
+        NameGenerationService: path.join(__dirname, './src/lib/nameGeneration/NameGenerationService'),
+        PhoenixAuthService: path.join(__dirname, './src/lib/phoenixAuth/PhoenixAuthService'),
+        RoomService: path.join(__dirname, './src/lib/roomAPI/RoomService'),
+        CookieStore: path.join(__dirname, './src/lib/store/CookieStore'),
+        Store: path.join(__dirname, './src/lib/store/Store'),
     },
     output: {
         chunkFilename: 'library/[name].[chunkhash].js',
