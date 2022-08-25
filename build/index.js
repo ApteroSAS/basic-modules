@@ -874,6 +874,7 @@
               Properties: () => n.Properties,
               ROOM_SERVICE: () => m,
               RoomService: () => s.RoomService,
+              RoomServiceFactory: () => s.RoomServiceFactory,
               SCHEMA: () => u.SCHEMA,
               STORE_SERVICE: () => h,
               Store: () => u.Store,
@@ -4219,7 +4220,7 @@
         },
         3641: (e, t, r) => {
           "use strict";
-          r.d(t, { RoomService: () => s });
+          r.d(t, { RoomService: () => c, RoomServiceFactory: () => s });
           var n = r(9669),
             o = r.n(n),
             i = r(6091);
@@ -4611,311 +4612,355 @@
               });
             };
           }
+          function _classCallCheck(e, t) {
+            if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
+          }
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
               (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
             }
           }
+          function _createClass(e, t, r) {
+            return t && _defineProperties(e.prototype, t), r && _defineProperties(e, r), Object.defineProperty(e, "prototype", { writable: !1 }), e;
+          }
           var s = (function () {
-            function RoomService(e, t, r, n, o) {
-              !(function _classCallCheck(e, t) {
-                if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
-              })(this, RoomService),
-                (this.phoenixAuthService = e),
-                (this.store = t),
-                (this.properties = r),
-                (this.nameService = n),
-                (this.cookie = o);
-            }
-            var e, t, r, n;
-            return (
-              (function _createClass(e, t, r) {
-                return t && _defineProperties(e.prototype, t), r && _defineProperties(e, r), Object.defineProperty(e, "prototype", { writable: !1 }), e;
-              })(RoomService, [
-                {
-                  key: "getType",
-                  value: function getType() {
-                    return RoomService.name;
-                  },
-                },
-                {
-                  key: "parseUrl",
-                  value: function parseUrl(e) {
-                    var t = new URL(e);
-                    return t.origin.startsWith("https://localhost")
-                      ? { origin: t.origin, roomSID: t.searchParams.get("hub_id") }
-                      : { origin: t.origin, roomSID: t.pathname.split("/")[1] };
-                  },
-                },
-                {
-                  key: "createAndRedirectToNewHub",
-                  value: function createAndRedirectToNewHub(e, t, r) {
-                    return this.phoenixAuthService.createAndRedirectToNewHub(e, t, r);
-                  },
-                },
-                {
-                  key: "getLinkFromCode",
-                  value:
-                    ((n = _asyncToGenerator(
-                      _regeneratorRuntime().mark(function _callee(e) {
-                        var t, r;
-                        return _regeneratorRuntime().wrap(function _callee$(n) {
-                          for (;;)
-                            switch ((n.prev = n.next)) {
-                              case 0:
-                                return (t = "https://" + (0, a.vc)().RETICULUM_SERVER + "/link/" + e), (n.next = 3), fetch(t);
-                              case 3:
-                                if (((r = n.sent), console.log(r), console.log(r.headers.get("location")), !(r.status >= 400))) {
-                                  n.next = 11;
-                                  break;
-                                }
-                                throw (console.error(r), new Error("wrong status"));
-                              case 11:
-                                return n.abrupt("return", r.headers.get("location"));
-                              case 12:
-                              case "end":
-                                return n.stop();
-                            }
-                        }, _callee);
-                      })
-                    )),
-                    function getLinkFromCode(e) {
-                      return n.apply(this, arguments);
-                    }),
-                },
-                {
-                  key: "getEmbedToken",
-                  value:
-                    ((r = _asyncToGenerator(
-                      _regeneratorRuntime().mark(function _callee2(e, t) {
-                        var r, n;
-                        return _regeneratorRuntime().wrap(
-                          function _callee2$(i) {
+              function RoomServiceFactory() {
+                _classCallCheck(this, RoomServiceFactory);
+              }
+              var e;
+              return (
+                _createClass(RoomServiceFactory, [
+                  {
+                    key: "createService",
+                    value:
+                      ((e = _asyncToGenerator(
+                        _regeneratorRuntime().mark(function _callee(e) {
+                          return _regeneratorRuntime().wrap(function _callee$(t) {
                             for (;;)
-                              switch ((i.prev = i.next)) {
+                              switch ((t.prev = t.next)) {
                                 case 0:
-                                  return (
-                                    window.location.origin.startsWith("https://localhost") &&
-                                      ((r = this.properties.get("@aptero/axolotis-module-room")), (t = r.ROOM_TOKEN_SERVICE || window.location.origin)),
-                                    (i.next = 3),
-                                    o().get(t + "/service/room/room/" + e + "/embed/token")
-                                  );
+                                  return (t.t0 = c), (t.next = 3), e.getService(i.PHX_AUTH_SERVICE);
                                 case 3:
-                                  return (n = i.sent), i.abrupt("return", n.data);
-                                case 5:
+                                  return (t.t1 = t.sent), (t.next = 6), e.getService(i.STORE_SERVICE);
+                                case 6:
+                                  return (t.t2 = t.sent), (t.next = 9), e.getService(i.PROPERTIES_SERVICE);
+                                case 9:
+                                  return (t.t3 = t.sent), (t.next = 12), e.getService(i.NAME_SERVICE);
+                                case 12:
+                                  return (t.t4 = t.sent), (t.next = 15), e.getService(i.COOKIE_STORE_SERVICE);
+                                case 15:
+                                  return (t.t5 = t.sent), t.abrupt("return", new t.t0(t.t1, t.t2, t.t3, t.t4, t.t5));
+                                case 17:
                                 case "end":
-                                  return i.stop();
+                                  return t.stop();
                               }
-                          },
-                          _callee2,
-                          this
-                        );
-                      })
-                    )),
-                    function getEmbedToken(e, t) {
-                      return r.apply(this, arguments);
-                    }),
-                },
-                {
-                  key: "fetchSpokeProject",
-                  value: function fetchSpokeProject(e) {
-                    var t = this;
-                    return function (r) {
-                      return e
-                        ? t.phoenixAuthService.fetchReticulumAuthenticated(
-                            "/api/v1/media/search?filter=my-scenes&source=scenes&user=".concat(e, "&cursor=").concat(r)
-                          )
-                        : Promise.reject(new Error("Not signed in"));
-                    };
+                          }, _callee);
+                        })
+                      )),
+                      function createService(t) {
+                        return e.apply(this, arguments);
+                      }),
                   },
-                },
-                {
-                  key: "fetchFavoriteRoom",
-                  value: function fetchFavoriteRoom(e) {
-                    var t = this;
-                    return function (r) {
-                      return e
-                        ? t.phoenixAuthService.fetchReticulumAuthenticated(
-                            "/api/v1/media/search?source=favorites&type=rooms&user=".concat(e, "&cursor=").concat(r)
-                          )
-                        : Promise.reject(new Error("Not signed in"));
-                    };
+                ]),
+                RoomServiceFactory
+              );
+            })(),
+            c = (function () {
+              function RoomService(e, t, r, n, o) {
+                _classCallCheck(this, RoomService),
+                  (this.phoenixAuthService = e),
+                  (this.store = t),
+                  (this.properties = r),
+                  (this.nameService = n),
+                  (this.cookie = o);
+              }
+              var e, t, r, n;
+              return (
+                _createClass(RoomService, [
+                  {
+                    key: "getType",
+                    value: function getType() {
+                      return RoomService.name;
+                    },
                   },
-                },
-                {
-                  key: "setFavorite",
-                  value:
-                    ((t = _asyncToGenerator(
-                      _regeneratorRuntime().mark(function _callee4(e) {
-                        var t,
-                          r = this;
-                        return _regeneratorRuntime().wrap(
-                          function _callee4$(n) {
+                  {
+                    key: "parseUrl",
+                    value: function parseUrl(e) {
+                      var t = new URL(e);
+                      return t.origin.startsWith("https://localhost")
+                        ? { origin: t.origin, roomSID: t.searchParams.get("hub_id") }
+                        : { origin: t.origin, roomSID: t.pathname.split("/")[1] };
+                    },
+                  },
+                  {
+                    key: "createAndRedirectToNewHub",
+                    value: function createAndRedirectToNewHub(e, t, r) {
+                      return this.phoenixAuthService.createAndRedirectToNewHub(e, t, r);
+                    },
+                  },
+                  {
+                    key: "getLinkFromCode",
+                    value:
+                      ((n = _asyncToGenerator(
+                        _regeneratorRuntime().mark(function _callee2(e) {
+                          var t, r;
+                          return _regeneratorRuntime().wrap(function _callee2$(n) {
                             for (;;)
                               switch ((n.prev = n.next)) {
                                 case 0:
-                                  if (this.store.state.credentials.token) {
-                                    n.next = 2;
+                                  return (t = "https://" + (0, a.vc)().RETICULUM_SERVER + "/link/" + e), (n.next = 3), fetch(t);
+                                case 3:
+                                  if (((r = n.sent), console.log(r), console.log(r.headers.get("location")), !(r.status >= 400))) {
+                                    n.next = 11;
                                     break;
                                   }
-                                  return n.abrupt("return");
-                                case 2:
-                                  return (n.next = 4), this.phoenixAuthService.connectToReticulum(!1);
-                                case 4:
-                                  (t = n.sent).onClose(function () {}),
-                                    (window.APP.retChannel = t.channel("ret", { hub_id: e })),
-                                    this.phoenixAuthService.setGlobalReticulumChannel(window.APP.retChannel),
-                                    window.APP.retChannel
-                                      .join()
-                                      .receive("ok", function () {
-                                        var n = "ret-oauth-flow-perms-token",
-                                          o = r.cookie.get(n);
-                                        o && r.cookie.remove(n);
-                                        var i = t.channel(
-                                          "hub:".concat(e),
-                                          (function hubChannelParamsForPermsToken(e) {
-                                            return createHubChannelParams({
-                                              profile: r.store.state.profile,
-                                              pushSubscriptionEndpoint: null,
-                                              permsToken: e,
-                                              isMobile: !1,
-                                              isMobileVR: !1,
-                                              isEmbed: !1,
-                                              hubInviteId: null,
-                                              authToken: r.store.state.credentials && r.store.state.credentials.token,
-                                            });
-                                          })(o)
-                                        );
-                                        i.join()
-                                          .receive(
-                                            "ok",
-                                            _asyncToGenerator(
-                                              _regeneratorRuntime().mark(function _callee3() {
-                                                return _regeneratorRuntime().wrap(function _callee3$(e) {
-                                                  for (;;)
-                                                    switch ((e.prev = e.next)) {
-                                                      case 0:
-                                                        i.push("favorite", {});
-                                                      case 1:
-                                                      case "end":
-                                                        return e.stop();
-                                                    }
-                                                }, _callee3);
-                                              })
-                                            )
-                                          )
-                                          .receive("error", function (e) {
-                                            console.error(e);
-                                          });
-                                      })
-                                      .receive("error", function (e) {
-                                        console.error(e);
-                                      });
-                                case 9:
+                                  throw (console.error(r), new Error("wrong status"));
+                                case 11:
+                                  return n.abrupt("return", r.headers.get("location"));
+                                case 12:
                                 case "end":
                                   return n.stop();
                               }
-                          },
-                          _callee4,
-                          this
-                        );
-                      })
-                    )),
-                    function setFavorite(e) {
-                      return t.apply(this, arguments);
-                    }),
-                },
-                {
-                  key: "createAndSelect",
-                  value:
-                    ((e = _asyncToGenerator(
-                      _regeneratorRuntime().mark(function _callee5(e) {
-                        var t,
-                          r,
-                          n,
-                          o,
-                          i,
-                          a,
-                          s,
-                          c,
-                          u = arguments;
-                        return _regeneratorRuntime().wrap(
-                          function _callee5$(l) {
-                            for (;;)
-                              switch ((l.prev = l.next)) {
-                                case 0:
-                                  return (
-                                    (t = u.length > 1 && void 0 !== u[1] ? u[1] : void 0),
-                                    (r = this.phoenixAuthService.getReticulumFetchUrl("/api/v1/hubs")),
-                                    (n = { hub: { name: t || this.nameService.generateHubName() } }),
-                                    e && (n.hub.scene_id = e),
-                                    (o = { "content-type": "application/json" }),
-                                    (i = this.store).state && i.state.credentials.token && (o.authorization = "bearer ".concat(i.state.credentials.token)),
-                                    (l.next = 9),
-                                    fetch(r, { body: JSON.stringify(n), headers: o, method: "POST" }).then(function (e) {
-                                      return e.json();
-                                    })
-                                  );
-                                case 9:
-                                  if ("invalid_token" !== (a = l.sent).error) {
-                                    l.next = 16;
-                                    break;
-                                  }
-                                  return (
-                                    i.update({ credentials: { token: null, email: null } }),
-                                    delete o.authorization,
-                                    (l.next = 15),
-                                    fetch(r, { body: JSON.stringify(n), headers: o, method: "POST" }).then(function (e) {
-                                      return e.json();
-                                    })
-                                  );
-                                case 15:
-                                  a = l.sent;
-                                case 16:
-                                  return (
-                                    (c = (s = a).url),
-                                    this.phoenixAuthService.isLocalClient() && (c = window.location.origin + "/hub.html?hub_id=".concat(s.hub_id)),
-                                    this.setFavorite(s.hub_id),
-                                    l.abrupt("return", c)
-                                  );
-                                case 21:
-                                case "end":
-                                  return l.stop();
-                              }
-                          },
-                          _callee5,
-                          this
-                        );
-                      })
-                    )),
-                    function createAndSelect(t) {
-                      return e.apply(this, arguments);
-                    }),
-                },
-                {
-                  key: "createRoomEntry",
-                  value: function createRoomEntry(e, t, r) {
-                    return {
-                      allow_remixing: !1,
-                      attributions: { content: [{ title: "Salle" }, { title: "Image" }, { title: "Image 1" }, { title: "Video" }], creator: "" },
-                      description: null,
-                      id: t,
-                      images: { preview: { url: r } },
-                      name: e,
-                      project_id: "XXXXX",
-                      type: "scene",
-                      url: window.location.origin + "/" + t,
-                    };
+                          }, _callee2);
+                        })
+                      )),
+                      function getLinkFromCode(e) {
+                        return n.apply(this, arguments);
+                      }),
                   },
-                },
-              ]),
-              RoomService
-            );
-          })();
+                  {
+                    key: "getEmbedToken",
+                    value:
+                      ((r = _asyncToGenerator(
+                        _regeneratorRuntime().mark(function _callee3(e, t) {
+                          var r, n;
+                          return _regeneratorRuntime().wrap(
+                            function _callee3$(i) {
+                              for (;;)
+                                switch ((i.prev = i.next)) {
+                                  case 0:
+                                    return (
+                                      window.location.origin.startsWith("https://localhost") &&
+                                        ((r = this.properties.get("@aptero/axolotis-module-room")), (t = r.ROOM_TOKEN_SERVICE || window.location.origin)),
+                                      (i.next = 3),
+                                      o().get(t + "/service/room/room/" + e + "/embed/token")
+                                    );
+                                  case 3:
+                                    return (n = i.sent), i.abrupt("return", n.data);
+                                  case 5:
+                                  case "end":
+                                    return i.stop();
+                                }
+                            },
+                            _callee3,
+                            this
+                          );
+                        })
+                      )),
+                      function getEmbedToken(e, t) {
+                        return r.apply(this, arguments);
+                      }),
+                  },
+                  {
+                    key: "fetchSpokeProject",
+                    value: function fetchSpokeProject(e) {
+                      var t = this;
+                      return function (r) {
+                        return e
+                          ? t.phoenixAuthService.fetchReticulumAuthenticated(
+                              "/api/v1/media/search?filter=my-scenes&source=scenes&user=".concat(e, "&cursor=").concat(r)
+                            )
+                          : Promise.reject(new Error("Not signed in"));
+                      };
+                    },
+                  },
+                  {
+                    key: "fetchFavoriteRoom",
+                    value: function fetchFavoriteRoom(e) {
+                      var t = this;
+                      return function (r) {
+                        return e
+                          ? t.phoenixAuthService.fetchReticulumAuthenticated(
+                              "/api/v1/media/search?source=favorites&type=rooms&user=".concat(e, "&cursor=").concat(r)
+                            )
+                          : Promise.reject(new Error("Not signed in"));
+                      };
+                    },
+                  },
+                  {
+                    key: "setFavorite",
+                    value:
+                      ((t = _asyncToGenerator(
+                        _regeneratorRuntime().mark(function _callee5(e) {
+                          var t,
+                            r = this;
+                          return _regeneratorRuntime().wrap(
+                            function _callee5$(n) {
+                              for (;;)
+                                switch ((n.prev = n.next)) {
+                                  case 0:
+                                    if (this.store.state.credentials.token) {
+                                      n.next = 2;
+                                      break;
+                                    }
+                                    return n.abrupt("return");
+                                  case 2:
+                                    return (n.next = 4), this.phoenixAuthService.connectToReticulum(!1);
+                                  case 4:
+                                    (t = n.sent).onClose(function () {}),
+                                      (window.APP.retChannel = t.channel("ret", { hub_id: e })),
+                                      this.phoenixAuthService.setGlobalReticulumChannel(window.APP.retChannel),
+                                      window.APP.retChannel
+                                        .join()
+                                        .receive("ok", function () {
+                                          var n = "ret-oauth-flow-perms-token",
+                                            o = r.cookie.get(n);
+                                          o && r.cookie.remove(n);
+                                          var i = t.channel(
+                                            "hub:".concat(e),
+                                            (function hubChannelParamsForPermsToken(e) {
+                                              return createHubChannelParams({
+                                                profile: r.store.state.profile,
+                                                pushSubscriptionEndpoint: null,
+                                                permsToken: e,
+                                                isMobile: !1,
+                                                isMobileVR: !1,
+                                                isEmbed: !1,
+                                                hubInviteId: null,
+                                                authToken: r.store.state.credentials && r.store.state.credentials.token,
+                                              });
+                                            })(o)
+                                          );
+                                          i.join()
+                                            .receive(
+                                              "ok",
+                                              _asyncToGenerator(
+                                                _regeneratorRuntime().mark(function _callee4() {
+                                                  return _regeneratorRuntime().wrap(function _callee4$(e) {
+                                                    for (;;)
+                                                      switch ((e.prev = e.next)) {
+                                                        case 0:
+                                                          i.push("favorite", {});
+                                                        case 1:
+                                                        case "end":
+                                                          return e.stop();
+                                                      }
+                                                  }, _callee4);
+                                                })
+                                              )
+                                            )
+                                            .receive("error", function (e) {
+                                              console.error(e);
+                                            });
+                                        })
+                                        .receive("error", function (e) {
+                                          console.error(e);
+                                        });
+                                  case 9:
+                                  case "end":
+                                    return n.stop();
+                                }
+                            },
+                            _callee5,
+                            this
+                          );
+                        })
+                      )),
+                      function setFavorite(e) {
+                        return t.apply(this, arguments);
+                      }),
+                  },
+                  {
+                    key: "createAndSelect",
+                    value:
+                      ((e = _asyncToGenerator(
+                        _regeneratorRuntime().mark(function _callee6(e) {
+                          var t,
+                            r,
+                            n,
+                            o,
+                            i,
+                            a,
+                            s,
+                            c,
+                            u = arguments;
+                          return _regeneratorRuntime().wrap(
+                            function _callee6$(l) {
+                              for (;;)
+                                switch ((l.prev = l.next)) {
+                                  case 0:
+                                    return (
+                                      (t = u.length > 1 && void 0 !== u[1] ? u[1] : void 0),
+                                      (r = this.phoenixAuthService.getReticulumFetchUrl("/api/v1/hubs")),
+                                      (n = { hub: { name: t || this.nameService.generateHubName() } }),
+                                      e && (n.hub.scene_id = e),
+                                      (o = { "content-type": "application/json" }),
+                                      (i = this.store).state && i.state.credentials.token && (o.authorization = "bearer ".concat(i.state.credentials.token)),
+                                      (l.next = 9),
+                                      fetch(r, { body: JSON.stringify(n), headers: o, method: "POST" }).then(function (e) {
+                                        return e.json();
+                                      })
+                                    );
+                                  case 9:
+                                    if ("invalid_token" !== (a = l.sent).error) {
+                                      l.next = 16;
+                                      break;
+                                    }
+                                    return (
+                                      i.update({ credentials: { token: null, email: null } }),
+                                      delete o.authorization,
+                                      (l.next = 15),
+                                      fetch(r, { body: JSON.stringify(n), headers: o, method: "POST" }).then(function (e) {
+                                        return e.json();
+                                      })
+                                    );
+                                  case 15:
+                                    a = l.sent;
+                                  case 16:
+                                    return (
+                                      (c = (s = a).url),
+                                      this.phoenixAuthService.isLocalClient() && (c = window.location.origin + "/hub.html?hub_id=".concat(s.hub_id)),
+                                      this.setFavorite(s.hub_id),
+                                      l.abrupt("return", c)
+                                    );
+                                  case 21:
+                                  case "end":
+                                    return l.stop();
+                                }
+                            },
+                            _callee6,
+                            this
+                          );
+                        })
+                      )),
+                      function createAndSelect(t) {
+                        return e.apply(this, arguments);
+                      }),
+                  },
+                  {
+                    key: "createRoomEntry",
+                    value: function createRoomEntry(e, t, r) {
+                      return {
+                        allow_remixing: !1,
+                        attributions: { content: [{ title: "Salle" }, { title: "Image" }, { title: "Image 1" }, { title: "Video" }], creator: "" },
+                        description: null,
+                        id: t,
+                        images: { preview: { url: r } },
+                        name: e,
+                        project_id: "XXXXX",
+                        type: "scene",
+                        url: window.location.origin + "/" + t,
+                      };
+                    },
+                  },
+                ]),
+                RoomService
+              );
+            })();
           !(function _defineProperty(e, t, r) {
             return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
-          })(s, "dependencies", [i.PHX_AUTH_SERVICE, i.STORE_SERVICE, i.PROPERTIES_SERVICE, i.NAME_SERVICE, i.COOKIE_STORE_SERVICE]);
+          })(c, "dependencies", [i.PHX_AUTH_SERVICE, i.STORE_SERVICE, i.PROPERTIES_SERVICE, i.NAME_SERVICE, i.COOKIE_STORE_SERVICE]);
         },
         3926: (e, t, r) => {
           "use strict";
@@ -7143,27 +7188,27 @@
               !E || (_ && m[_]) || ((b = b.substr(2)), (this.slashes = !0));
             }
             if (!m[_] && (E || (_ && !y[_]))) {
-              for (var A, P, k = -1, S = 0; S < h.length; S++) {
-                -1 !== (R = b.indexOf(h[S])) && (-1 === k || R < k) && (k = R);
+              for (var A, S, P = -1, k = 0; k < h.length; k++) {
+                -1 !== (R = b.indexOf(h[k])) && (-1 === P || R < P) && (P = R);
               }
-              -1 !== (P = -1 === k ? b.lastIndexOf("@") : b.lastIndexOf("@", k)) &&
-                ((A = b.slice(0, P)), (b = b.slice(P + 1)), (this.auth = decodeURIComponent(A))),
-                (k = -1);
-              for (S = 0; S < l.length; S++) {
+              -1 !== (S = -1 === P ? b.lastIndexOf("@") : b.lastIndexOf("@", P)) &&
+                ((A = b.slice(0, S)), (b = b.slice(S + 1)), (this.auth = decodeURIComponent(A))),
+                (P = -1);
+              for (k = 0; k < l.length; k++) {
                 var R;
-                -1 !== (R = b.indexOf(l[S])) && (-1 === k || R < k) && (k = R);
+                -1 !== (R = b.indexOf(l[k])) && (-1 === P || R < P) && (P = R);
               }
-              -1 === k && (k = b.length), (this.host = b.slice(0, k)), (b = b.slice(k)), this.parseHost(), (this.hostname = this.hostname || "");
+              -1 === P && (P = b.length), (this.host = b.slice(0, P)), (b = b.slice(P)), this.parseHost(), (this.hostname = this.hostname || "");
               var O = "[" === this.hostname[0] && "]" === this.hostname[this.hostname.length - 1];
               if (!O)
-                for (var j = this.hostname.split(/\./), F = ((S = 0), j.length); S < F; S++) {
-                  var C = j[S];
-                  if (C && !C.match(f)) {
-                    for (var T = "", I = 0, L = C.length; I < L; I++) C.charCodeAt(I) > 127 ? (T += "x") : (T += C[I]);
+                for (var j = this.hostname.split(/\./), C = ((k = 0), j.length); k < C; k++) {
+                  var F = j[k];
+                  if (F && !F.match(f)) {
+                    for (var T = "", I = 0, L = F.length; I < L; I++) F.charCodeAt(I) > 127 ? (T += "x") : (T += F[I]);
                     if (!T.match(f)) {
-                      var N = j.slice(0, S),
-                        M = j.slice(S + 1),
-                        G = C.match(p);
+                      var N = j.slice(0, k),
+                        M = j.slice(k + 1),
+                        G = F.match(p);
                       G && (N.push(G[1]), M.unshift(G[2])), M.length && (b = "/" + M.join(".") + b), (this.hostname = N.join("."));
                       break;
                     }
@@ -7178,19 +7223,19 @@
                 O && ((this.hostname = this.hostname.substr(1, this.hostname.length - 2)), "/" !== b[0] && (b = "/" + b));
             }
             if (!d[x])
-              for (S = 0, F = u.length; S < F; S++) {
-                var D = u[S];
+              for (k = 0, C = u.length; k < C; k++) {
+                var D = u[k];
                 if (-1 !== b.indexOf(D)) {
                   var q = encodeURIComponent(D);
                   q === D && (q = escape(D)), (b = b.split(D).join(q));
                 }
               }
-            var Z = b.indexOf("#");
-            -1 !== Z && ((this.hash = b.substr(Z)), (b = b.slice(0, Z)));
-            var V = b.indexOf("?");
+            var V = b.indexOf("#");
+            -1 !== V && ((this.hash = b.substr(V)), (b = b.slice(0, V)));
+            var Z = b.indexOf("?");
             if (
-              (-1 !== V
-                ? ((this.search = b.substr(V)), (this.query = b.substr(V + 1)), t && (this.query = v.parse(this.query)), (b = b.slice(0, V)))
+              (-1 !== Z
+                ? ((this.search = b.substr(Z)), (this.query = b.substr(Z + 1)), t && (this.query = v.parse(this.query)), (b = b.slice(0, Z)))
                 : t && ((this.search = ""), (this.query = {})),
               b && (this.pathname = b),
               y[x] && this.hostname && !this.pathname && (this.pathname = "/"),
@@ -7317,10 +7362,10 @@
                 );
               }
               if (!x.length) return (r.pathname = null), r.search ? (r.path = "/" + r.search) : (r.path = null), (r.href = r.format()), r;
-              for (var A = x.slice(-1)[0], P = ((r.host || e.host || x.length > 1) && ("." === A || ".." === A)) || "" === A, k = 0, S = x.length; S >= 0; S--)
-                "." === (A = x[S]) ? x.splice(S, 1) : ".." === A ? (x.splice(S, 1), k++) : k && (x.splice(S, 1), k--);
-              if (!w && !_) for (; k--; k) x.unshift("..");
-              !w || "" === x[0] || (x[0] && "/" === x[0].charAt(0)) || x.unshift(""), P && "/" !== x.join("/").substr(-1) && x.push("");
+              for (var A = x.slice(-1)[0], S = ((r.host || e.host || x.length > 1) && ("." === A || ".." === A)) || "" === A, P = 0, k = x.length; k >= 0; k--)
+                "." === (A = x[k]) ? x.splice(k, 1) : ".." === A ? (x.splice(k, 1), P++) : P && (x.splice(k, 1), P--);
+              if (!w && !_) for (; P--; P) x.unshift("..");
+              !w || "" === x[0] || (x[0] && "/" === x[0].charAt(0)) || x.unshift(""), S && "/" !== x.join("/").substr(-1) && x.push("");
               var R,
                 O = "" === x[0] || (x[0] && "/" === x[0].charAt(0));
               E &&
@@ -7851,8 +7896,8 @@
               p.warn(e);
             }
           }
-          const P = Object.getOwnPropertyNames(EventTarget.prototype);
-          for (let e = 0; e < P.length; ++e) "constructor" !== P[e] && Object.defineProperty(EventTarget.prototype, P[e], { enumerable: !0 });
+          const S = Object.getOwnPropertyNames(EventTarget.prototype);
+          for (let e = 0; e < S.length; ++e) "constructor" !== S[e] && Object.defineProperty(EventTarget.prototype, S[e], { enumerable: !0 });
           void 0 !== o && void 0 !== o.EventTarget && Object.setPrototypeOf(EventTarget.prototype, o.EventTarget.prototype);
         },
         8593: (e) => {

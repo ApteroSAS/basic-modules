@@ -1,7 +1,7 @@
 import axios from "axios";
 import { COOKIE_STORE_SERVICE, NAME_SERVICE, PHX_AUTH_SERVICE, PROPERTIES_SERVICE, STORE_SERVICE } from "@root/index";
 import { PropertiesFormat, PROPERTY_KEY } from "@root/roomAPI/PropertiesFormat";
-import { IService } from "@aptero/axolotis-player";
+import { IService, IServices, Service } from "@aptero/axolotis-player";
 import { createHubChannelParams } from "./hub-utils";
 
 import { Properties } from "@root/properties/Properties";
@@ -12,6 +12,18 @@ import { CookieStore } from "@root/store/CookieStore";
 import { config } from "@root/phoenixAuth/phoenix-utils";
 
 declare const window;
+
+export class RoomServiceFactory implements Service<RoomService> {
+  async createService(services: IServices): Promise<RoomService> {
+    return new RoomService(
+      await services.getService<PhoenixAuthService>(PHX_AUTH_SERVICE),
+      await services.getService<Store>(STORE_SERVICE),
+      await services.getService<Properties>(PROPERTIES_SERVICE),
+      await services.getService<NameGenerationService>(NAME_SERVICE),
+      await services.getService<CookieStore>(COOKIE_STORE_SERVICE)
+    );
+  }
+}
 
 export class RoomService implements IService {
   public static dependencies: string[] = [PHX_AUTH_SERVICE, STORE_SERVICE, PROPERTIES_SERVICE, NAME_SERVICE, COOKIE_STORE_SERVICE];
@@ -174,17 +186,17 @@ export class RoomService implements IService {
     let url = hub.url;
 
     /*const creatorAssignmentToken = hub.creator_assignment_token;
-    if (creatorAssignmentToken) {
-      store.update({ creatorAssignmentTokens: [{ hubId: hub.hub_id, creatorAssignmentToken: creatorAssignmentToken }] });
+        if (creatorAssignmentToken) {
+          store.update({ creatorAssignmentTokens: [{ hubId: hub.hub_id, creatorAssignmentToken: creatorAssignmentToken }] });
 
-      // Don't need to store the embed token if there's no creator assignment token, since that means
-      // we are the owner and will get the embed token on page load.
-      const embedToken = hub.embed_token;
+          // Don't need to store the embed token if there's no creator assignment token, since that means
+          // we are the owner and will get the embed token on page load.
+          const embedToken = hub.embed_token;
 
-      if (embedToken) {
-        store.update({ embedTokens: [{ hubId: hub.hub_id, embedToken: embedToken }] });
-      }
-    }*/
+          if (embedToken) {
+            store.update({ embedTokens: [{ hubId: hub.hub_id, embedToken: embedToken }] });
+          }
+        }*/
 
     if (this.phoenixAuthService.isLocalClient()) {
       url = window.location.origin + `/hub.html?hub_id=${hub.hub_id}`;
