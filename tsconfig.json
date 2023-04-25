@@ -25,6 +25,9 @@
         }
       ]
     },
-    "include": ["src/lib"],
+    "include": [
+      "src/lib",
+      "../../src/app.ts"
+    ],
     "exclude": ["src/lib/**/tests","src-async/**","node_modules/**"]
 }

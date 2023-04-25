@@ -1,7 +1,7 @@
 import { AdminRole } from "./AdminRole";
 import AuthChannel from "./auth-channel";
 import { IService, IServices, Service } from "@aptero/axolotis-player";
-import { AuthInterface } from "../common/AuthInterface";
+import { AuthInterface } from "@root/common/AuthInterface";
 import { MsToNativeLoginBridge } from "./MsToNativeLoginBridge";
 export declare class PhoenixAuthServiceFactory implements Service<PhoenixAuthService> {
     createService(services: IServices): Promise<PhoenixAuthService>;
@@ -15,7 +15,7 @@ export declare class PhoenixAuthService implements IService {
     getGlobalReticulumChannel(ret: any): any;
     registerAuth(auth: AuthInterface): void;
     getAdmin(): AdminRole;
-    connectToReticulum(debug?: boolean, params?: any, socketClass?: any): Promise<any>;
+    connectToReticulum(debug?: boolean, params?: any, socketClass?: any): Promise<import("phoenix").Socket>;
     createAuthChannel(store: any): AuthChannel;
     getType(): string;
     createAndRedirectToNewHub(name: any, sceneId: any, replace: any): Promise<void>;

@@ -11,8 +11,6 @@ import { PhoenixAuthService } from "@root/phoenixAuth/PhoenixAuthService";
 import { CookieStore } from "@root/store/CookieStore";
 import { config } from "@root/phoenixAuth/phoenix-utils";
 
-declare const window;
-
 export class RoomServiceFactory implements Service<RoomService> {
   async createService(services: IServices): Promise<RoomService> {
     return new RoomService(

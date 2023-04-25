@@ -1,0 +1,37 @@
+export class WaypointSystem {
+    constructor(scene: any, characterController: any);
+    helperMat4: import("three").Matrix4;
+    scene: any;
+    loading: any[];
+    ready: any[];
+    previousWaypointHash: any;
+    initialSpawnHappened: boolean;
+    waypointForTemplateEl: {};
+    elementsFromTemplatesFor: {};
+    eventHandlers: any[];
+    lostOwnershipOfWaypoint(e: any): void;
+    waypointPreviewAvatar: any;
+    characterController: any;
+    releaseAnyOccupiedWaypoints(): void;
+    teleportToWaypoint(iconEl: any, waypointComponent: any): any;
+    tryTeleportToOccupiableWaypoint(iconEl: any, waypointComponent: any): any;
+    setupEventHandlersFor(component: any): any;
+    registerComponent(component: any): void;
+    unregisterComponent(component: any): void;
+    getUnoccupiableSpawnPoint(): any;
+    mightNeedRespawn: boolean;
+    ownershipLostTime: number;
+    tryToOccupy(waypointComponent: any): Promise<any>;
+    currentWaypoint: any;
+    tryToOccupyAnyOf(waypoints: any): any;
+    moveToSpawnPoint(): Promise<any>;
+    waitOneTick: boolean;
+    nextMoveToSpawn: Promise<any>;
+    nextMoveToSpawnResolve: (value: any) => void;
+    moveToWaypoint(waypointComponent: any, instant: any): void;
+    moveToUnoccupiableSpawnPoint(): any;
+    tick(): void;
+    currentMoveToSpawn: Promise<any>;
+    currentMoveToSpawnResolve: (value: any) => void;
+    viewingCamera: any;
+}
