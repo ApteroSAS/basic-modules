@@ -19,19 +19,19 @@
 })(self, (e) =>
   (() => {
     var t = {
-        9669: (e, t, r) => {
-          e.exports = r(1609);
+        9644: (e, t, r) => {
+          e.exports = r(5644);
         },
-        5448: (e, t, r) => {
+        353: (e, t, r) => {
           "use strict";
-          var n = r(4867),
-            o = r(6026),
-            i = r(4372),
-            a = r(1246),
-            s = r(4097),
-            c = r(4109),
-            u = r(7985),
-            l = r(5061);
+          var n = r(3044),
+            o = r(6955),
+            i = r(2233),
+            a = r(8030),
+            s = r(7948),
+            c = r(1875),
+            u = r(842),
+            l = r(8618);
           e.exports = function xhrAdapter(e) {
             return new Promise(function dispatchXhrRequest(t, r) {
               var h = e.data,
@@ -101,34 +101,34 @@
             });
           };
         },
-        1609: (e, t, r) => {
+        5644: (e, t, r) => {
           "use strict";
-          var n = r(4867),
-            o = r(1849),
-            i = r(321),
-            a = r(7185);
+          var n = r(3044),
+            o = r(3644),
+            i = r(2215),
+            a = r(2937);
           function createInstance(e) {
             var t = new i(e),
               r = o(i.prototype.request, t);
             return n.extend(r, i.prototype, t), n.extend(r, t), r;
           }
-          var s = createInstance(r(5655));
+          var s = createInstance(r(1439));
           (s.Axios = i),
             (s.create = function create(e) {
               return createInstance(a(s.defaults, e));
             }),
-            (s.Cancel = r(5263)),
-            (s.CancelToken = r(4972)),
-            (s.isCancel = r(6502)),
+            (s.Cancel = r(6714)),
+            (s.CancelToken = r(4089)),
+            (s.isCancel = r(8041)),
             (s.all = function all(e) {
               return Promise.all(e);
             }),
-            (s.spread = r(8713)),
-            (s.isAxiosError = r(6268)),
+            (s.spread = r(783)),
+            (s.isAxiosError = r(5587)),
             (e.exports = s),
             (e.exports.default = s);
         },
-        5263: (e) => {
+        6714: (e) => {
           "use strict";
           function Cancel(e) {
             this.message = e;
@@ -139,9 +139,9 @@
             (Cancel.prototype.__CANCEL__ = !0),
             (e.exports = Cancel);
         },
-        4972: (e, t, r) => {
+        4089: (e, t, r) => {
           "use strict";
-          var n = r(5263);
+          var n = r(6714);
           function CancelToken(e) {
             if ("function" != typeof e) throw new TypeError("executor must be a function.");
             var t;
@@ -167,20 +167,20 @@
             }),
             (e.exports = CancelToken);
         },
-        6502: (e) => {
+        8041: (e) => {
           "use strict";
           e.exports = function isCancel(e) {
             return !(!e || !e.__CANCEL__);
           };
         },
-        321: (e, t, r) => {
+        2215: (e, t, r) => {
           "use strict";
-          var n = r(4867),
-            o = r(1246),
-            i = r(782),
-            a = r(3572),
-            s = r(7185),
-            c = r(4875),
+          var n = r(3044),
+            o = r(8030),
+            i = r(946),
+            a = r(6895),
+            s = r(2937),
+            c = r(7525),
             u = c.validators;
           function Axios(e) {
             (this.defaults = e), (this.interceptors = { request: new i(), response: new i() });
@@ -253,9 +253,9 @@
             }),
             (e.exports = Axios);
         },
-        782: (e, t, r) => {
+        946: (e, t, r) => {
           "use strict";
-          var n = r(4867);
+          var n = r(3044);
           function InterceptorManager() {
             this.handlers = [];
           }
@@ -274,28 +274,28 @@
             }),
             (e.exports = InterceptorManager);
         },
-        4097: (e, t, r) => {
+        7948: (e, t, r) => {
           "use strict";
-          var n = r(1793),
-            o = r(7303);
+          var n = r(9192),
+            o = r(8762);
           e.exports = function buildFullPath(e, t) {
             return e && !n(t) ? o(e, t) : t;
           };
         },
-        5061: (e, t, r) => {
+        8618: (e, t, r) => {
           "use strict";
-          var n = r(481);
+          var n = r(1935);
           e.exports = function createError(e, t, r, o, i) {
             var a = new Error(e);
             return n(a, t, r, o, i);
           };
         },
-        3572: (e, t, r) => {
+        6895: (e, t, r) => {
           "use strict";
-          var n = r(4867),
-            o = r(8527),
-            i = r(6502),
-            a = r(5655);
+          var n = r(3044),
+            o = r(8556),
+            i = r(8041),
+            a = r(1439);
           function throwIfCancellationRequested(e) {
             e.cancelToken && e.cancelToken.throwIfRequested();
           }
@@ -324,7 +324,7 @@
             );
           };
         },
-        481: (e) => {
+        1935: (e) => {
           "use strict";
           e.exports = function enhanceError(e, t, r, n, o) {
             return (
@@ -351,9 +351,9 @@
             );
           };
         },
-        7185: (e, t, r) => {
+        2937: (e, t, r) => {
           "use strict";
-          var n = r(4867);
+          var n = r(3044);
           e.exports = function mergeConfig(e, t) {
             t = t || {};
             var r = {},
@@ -410,18 +410,18 @@
             return n.forEach(u, mergeDeepProperties), r;
           };
         },
-        6026: (e, t, r) => {
+        6955: (e, t, r) => {
           "use strict";
-          var n = r(5061);
+          var n = r(8618);
           e.exports = function settle(e, t, r) {
             var o = r.config.validateStatus;
             r.status && o && !o(r.status) ? t(n("Request failed with status code " + r.status, r.config, null, r.request, r)) : e(r);
           };
         },
-        8527: (e, t, r) => {
+        8556: (e, t, r) => {
           "use strict";
-          var n = r(4867),
-            o = r(5655);
+          var n = r(3044),
+            o = r(1439);
           e.exports = function transformData(e, t, r) {
             var i = this || o;
             return (
@@ -432,11 +432,11 @@
             );
           };
         },
-        5655: (e, t, r) => {
+        1439: (e, t, r) => {
           "use strict";
-          var n = r(4867),
-            o = r(6016),
-            i = r(481),
+          var n = r(3044),
+            o = r(8868),
+            i = r(1935),
             a = { "Content-Type": "application/x-www-form-urlencoded" };
           function setContentTypeIfUnset(e, t) {
             !n.isUndefined(e) && n.isUndefined(e["Content-Type"]) && (e["Content-Type"] = t);
@@ -447,7 +447,7 @@
               var e;
               return (
                 ("undefined" != typeof XMLHttpRequest || ("undefined" != typeof process && "[object process]" === Object.prototype.toString.call(process))) &&
-                  (e = r(5448)),
+                  (e = r(353)),
                 e
               );
             })(),
@@ -513,7 +513,7 @@
             }),
             (e.exports = s);
         },
-        1849: (e) => {
+        3644: (e) => {
           "use strict";
           e.exports = function bind(e, t) {
             return function wrap() {
@@ -522,9 +522,9 @@
             };
           };
         },
-        1246: (e, t, r) => {
+        8030: (e, t, r) => {
           "use strict";
-          var n = r(4867);
+          var n = r(3044);
           function encode(e) {
             return encodeURIComponent(e)
               .replace(/%3A/gi, ":")
@@ -557,15 +557,15 @@
             return e;
           };
         },
-        7303: (e) => {
+        8762: (e) => {
           "use strict";
           e.exports = function combineURLs(e, t) {
             return t ? e.replace(/\/+$/, "") + "/" + t.replace(/^\/+/, "") : e;
           };
         },
-        4372: (e, t, r) => {
+        2233: (e, t, r) => {
           "use strict";
-          var n = r(4867);
+          var n = r(3044);
           e.exports = n.isStandardBrowserEnv()
             ? (function standardBrowserEnv() {
                 return {
@@ -595,21 +595,21 @@
                 remove: function remove() {},
               };
         },
-        1793: (e) => {
+        9192: (e) => {
           "use strict";
           e.exports = function isAbsoluteURL(e) {
             return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(e);
           };
         },
-        6268: (e) => {
+        5587: (e) => {
           "use strict";
           e.exports = function isAxiosError(e) {
             return "object" == typeof e && !0 === e.isAxiosError;
           };
         },
-        7985: (e, t, r) => {
+        842: (e, t, r) => {
           "use strict";
-          var n = r(4867);
+          var n = r(3044);
           e.exports = n.isStandardBrowserEnv()
             ? (function standardBrowserEnv() {
                 var e,
@@ -644,18 +644,18 @@
                 return !0;
               };
         },
-        6016: (e, t, r) => {
+        8868: (e, t, r) => {
           "use strict";
-          var n = r(4867);
+          var n = r(3044);
           e.exports = function normalizeHeaderName(e, t) {
             n.forEach(e, function processHeader(r, n) {
               n !== t && n.toUpperCase() === t.toUpperCase() && ((e[t] = r), delete e[n]);
             });
           };
         },
-        4109: (e, t, r) => {
+        1875: (e, t, r) => {
           "use strict";
-          var n = r(4867),
+          var n = r(3044),
             o = [
               "age",
               "authorization",
@@ -691,7 +691,7 @@
               : a;
           };
         },
-        8713: (e) => {
+        783: (e) => {
           "use strict";
           e.exports = function spread(e) {
             return function wrap(t) {
@@ -699,9 +699,9 @@
             };
           };
         },
-        4875: (e, t, r) => {
+        7525: (e, t, r) => {
           "use strict";
-          var n = r(8593),
+          var n = r(9521),
             o = {};
           ["object", "boolean", "number", "function", "string", "symbol"].forEach(function (e, t) {
             o[e] = function validator(r) {
@@ -747,9 +747,9 @@
               validators: o,
             });
         },
-        4867: (e, t, r) => {
+        3044: (e, t, r) => {
           "use strict";
-          var n = r(1849),
+          var n = r(3644),
             o = Object.prototype.toString;
           function isArray(e) {
             return "[object Array]" === o.call(e);
@@ -858,7 +858,7 @@
             },
           };
         },
-        6091: (e, t, r) => {
+        5421: (e, t, r) => {
           "use strict";
           r.r(t),
             r.d(t, {
@@ -879,13 +879,13 @@
               STORE_SERVICE: () => h,
               Store: () => u.Store,
             });
-          var n = r(1655),
-            o = r(7566),
-            i = r(8145),
-            a = r(6199),
-            s = r(3641),
-            c = r(3926),
-            u = r(8084),
+          var n = r(5777),
+            o = r(1011),
+            i = r(5248),
+            a = r(567),
+            s = r(4995),
+            c = r(8628),
+            u = r(2910),
             l = "@aptero/axolotis-module-properties/Properties",
             h = "@aptero/axolotis-module-storage/Store",
             f = "@aptero/axolotis-module-storage/CookieStore",
@@ -893,15 +893,48 @@
             d = "@aptero/axolotis-module-name/NameService",
             m = "@aptero/axolotis-module-room/RoomService";
         },
-        7566: (e, t, r) => {
+        1011: (e, t, r) => {
           "use strict";
           r.d(t, { NameGenerationService: () => o });
-          var n = r(9920);
+          var n = r(7636);
+          function _typeof(e) {
+            return (
+              (_typeof =
+                "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                  ? function (e) {
+                      return typeof e;
+                    }
+                  : function (e) {
+                      return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+                    }),
+              _typeof(e)
+            );
+          }
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1),
+                (n.configurable = !0),
+                "value" in n && (n.writable = !0),
+                Object.defineProperty(
+                  e,
+                  ((o = n.key),
+                  (i = void 0),
+                  (i = (function _toPrimitive(e, t) {
+                    if ("object" !== _typeof(e) || null === e) return e;
+                    var r = e[Symbol.toPrimitive];
+                    if (void 0 !== r) {
+                      var n = r.call(e, t || "default");
+                      if ("object" !== _typeof(n)) return n;
+                      throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return ("string" === t ? String : Number)(e);
+                  })(o, "string")),
+                  "symbol" === _typeof(i) ? i : String(i)),
+                  n
+                );
             }
+            var o, i;
           }
           var o = (function () {
             function NameGenerationService() {
@@ -930,7 +963,7 @@
             );
           })();
         },
-        9920: (e, t, r) => {
+        7636: (e, t, r) => {
           "use strict";
           r.d(t, { A: () => generateHubName });
           var n = [
@@ -1598,13 +1631,39 @@
             return "".concat(e(n), " ").concat(e(n), " ").concat(e(o));
           }
         },
-        9980: (e, t, r) => {
+        6165: (e, t, r) => {
           "use strict";
+          function _typeof(e) {
+            return (
+              (_typeof =
+                "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                  ? function (e) {
+                      return typeof e;
+                    }
+                  : function (e) {
+                      return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+                    }),
+              _typeof(e)
+            );
+          }
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, _toPropertyKey(n.key), n);
             }
+          }
+          function _toPropertyKey(e) {
+            var t = (function _toPrimitive(e, t) {
+              if ("object" !== _typeof(e) || null === e) return e;
+              var r = e[Symbol.toPrimitive];
+              if (void 0 !== r) {
+                var n = r.call(e, t || "default");
+                if ("object" !== _typeof(n)) return n;
+                throw new TypeError("@@toPrimitive must return a primitive value.");
+              }
+              return ("string" === t ? String : Number)(e);
+            })(e, "string");
+            return "symbol" === _typeof(t) ? t : String(t);
           }
           r.d(t, { t: () => n });
           var n = (function () {
@@ -1613,7 +1672,9 @@
                 if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
               })(this, AdminRole),
                 (function _defineProperty(e, t, r) {
-                  return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
+                  return (
+                    (t = _toPropertyKey(t)) in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e
+                  );
                 })(this, "admin", void 0);
             }
             return (
@@ -1637,13 +1698,13 @@
             );
           })();
         },
-        6199: (e, t, r) => {
+        567: (e, t, r) => {
           "use strict";
           r.d(t, { _: () => s });
           var n = r(1171),
             o = r.n(n),
-            i = r(5532),
-            a = r(4976);
+            i = r(1375),
+            a = r(6770);
           function _typeof(e) {
             return (
               (_typeof =
@@ -1665,10 +1726,15 @@
             var e = {},
               t = Object.prototype,
               r = t.hasOwnProperty,
-              n = "function" == typeof Symbol ? Symbol : {},
-              o = n.iterator || "@@iterator",
-              i = n.asyncIterator || "@@asyncIterator",
-              a = n.toStringTag || "@@toStringTag";
+              n =
+                Object.defineProperty ||
+                function (e, t, r) {
+                  e[t] = r.value;
+                },
+              o = "function" == typeof Symbol ? Symbol : {},
+              i = o.iterator || "@@iterator",
+              a = o.asyncIterator || "@@asyncIterator",
+              s = o.toStringTag || "@@toStringTag";
             function define(e, t, r) {
               return Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }), e[t];
             }
@@ -1679,45 +1745,11 @@
                 return (e[t] = r);
               };
             }
-            function wrap(e, t, r, n) {
-              var o = t && t.prototype instanceof Generator ? t : Generator,
-                i = Object.create(o.prototype),
-                a = new Context(n || []);
-              return (
-                (i._invoke = (function (e, t, r) {
-                  var n = "suspendedStart";
-                  return function (o, i) {
-                    if ("executing" === n) throw new Error("Generator is already running");
-                    if ("completed" === n) {
-                      if ("throw" === o) throw i;
-                      return doneResult();
-                    }
-                    for (r.method = o, r.arg = i; ; ) {
-                      var a = r.delegate;
-                      if (a) {
-                        var c = maybeInvokeDelegate(a, r);
-                        if (c) {
-                          if (c === s) continue;
-                          return c;
-                        }
-                      }
-                      if ("next" === r.method) r.sent = r._sent = r.arg;
-                      else if ("throw" === r.method) {
-                        if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
-                        r.dispatchException(r.arg);
-                      } else "return" === r.method && r.abrupt("return", r.arg);
-                      n = "executing";
-                      var u = tryCatch(e, t, r);
-                      if ("normal" === u.type) {
-                        if (((n = r.done ? "completed" : "suspendedYield"), u.arg === s)) continue;
-                        return { value: u.arg, done: r.done };
-                      }
-                      "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
-                    }
-                  };
-                })(e, r, a)),
-                i
-              );
+            function wrap(e, t, r, o) {
+              var i = t && t.prototype instanceof Generator ? t : Generator,
+                a = Object.create(i.prototype),
+                s = new Context(o || []);
+              return n(a, "_invoke", { value: makeInvokeMethod(e, r, s) }), a;
             }
             function tryCatch(e, t, r) {
               try {
@@ -1727,18 +1759,18 @@
               }
             }
             e.wrap = wrap;
-            var s = {};
+            var c = {};
             function Generator() {}
             function GeneratorFunction() {}
             function GeneratorFunctionPrototype() {}
-            var c = {};
-            define(c, o, function () {
+            var u = {};
+            define(u, i, function () {
               return this;
             });
-            var u = Object.getPrototypeOf,
-              l = u && u(u(values([])));
-            l && l !== t && r.call(l, o) && (c = l);
-            var h = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c));
+            var l = Object.getPrototypeOf,
+              h = l && l(l(values([])));
+            h && h !== t && r.call(h, i) && (u = h);
+            var f = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(u));
             function defineIteratorMethods(e) {
               ["next", "throw", "return"].forEach(function (t) {
                 define(e, t, function (e) {
@@ -1772,37 +1804,72 @@
                 }
                 a(s.arg);
               }
-              var n;
-              this._invoke = function (e, r) {
-                function callInvokeWithMethodAndArg() {
-                  return new t(function (t, n) {
-                    invoke(e, r, t, n);
-                  });
+              var o;
+              n(this, "_invoke", {
+                value: function value(e, r) {
+                  function callInvokeWithMethodAndArg() {
+                    return new t(function (t, n) {
+                      invoke(e, r, t, n);
+                    });
+                  }
+                  return (o = o ? o.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                },
+              });
+            }
+            function makeInvokeMethod(e, t, r) {
+              var n = "suspendedStart";
+              return function (o, i) {
+                if ("executing" === n) throw new Error("Generator is already running");
+                if ("completed" === n) {
+                  if ("throw" === o) throw i;
+                  return doneResult();
                 }
-                return (n = n ? n.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                for (r.method = o, r.arg = i; ; ) {
+                  var a = r.delegate;
+                  if (a) {
+                    var s = maybeInvokeDelegate(a, r);
+                    if (s) {
+                      if (s === c) continue;
+                      return s;
+                    }
+                  }
+                  if ("next" === r.method) r.sent = r._sent = r.arg;
+                  else if ("throw" === r.method) {
+                    if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
+                    r.dispatchException(r.arg);
+                  } else "return" === r.method && r.abrupt("return", r.arg);
+                  n = "executing";
+                  var u = tryCatch(e, t, r);
+                  if ("normal" === u.type) {
+                    if (((n = r.done ? "completed" : "suspendedYield"), u.arg === c)) continue;
+                    return { value: u.arg, done: r.done };
+                  }
+                  "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
+                }
               };
             }
             function maybeInvokeDelegate(e, t) {
-              var r = e.iterator[t.method];
-              if (void 0 === r) {
-                if (((t.delegate = null), "throw" === t.method)) {
-                  if (e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) return s;
-                  (t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a 'throw' method"));
-                }
-                return s;
-              }
-              var n = tryCatch(r, e.iterator, t.arg);
-              if ("throw" === n.type) return (t.method = "throw"), (t.arg = n.arg), (t.delegate = null), s;
-              var o = n.arg;
-              return o
-                ? o.done
-                  ? ((t[e.resultName] = o.value),
+              var r = t.method,
+                n = e.iterator[r];
+              if (void 0 === n)
+                return (
+                  (t.delegate = null),
+                  ("throw" === r && e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) ||
+                    ("return" !== r && ((t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a '" + r + "' method")))),
+                  c
+                );
+              var o = tryCatch(n, e.iterator, t.arg);
+              if ("throw" === o.type) return (t.method = "throw"), (t.arg = o.arg), (t.delegate = null), c;
+              var i = o.arg;
+              return i
+                ? i.done
+                  ? ((t[e.resultName] = i.value),
                     (t.next = e.nextLoc),
                     "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
                     (t.delegate = null),
-                    s)
-                  : o
-                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), s);
+                    c)
+                  : i
+                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), c);
             }
             function pushTryEntry(e) {
               var t = { tryLoc: e[0] };
@@ -1817,16 +1884,16 @@
             }
             function values(e) {
               if (e) {
-                var t = e[o];
+                var t = e[i];
                 if (t) return t.call(e);
                 if ("function" == typeof e.next) return e;
                 if (!isNaN(e.length)) {
                   var n = -1,
-                    i = function next() {
+                    o = function next() {
                       for (; ++n < e.length; ) if (r.call(e, n)) return (next.value = e[n]), (next.done = !1), next;
                       return (next.value = void 0), (next.done = !0), next;
                     };
-                  return (i.next = i);
+                  return (o.next = o);
                 }
               }
               return { next: doneResult };
@@ -1836,9 +1903,9 @@
             }
             return (
               (GeneratorFunction.prototype = GeneratorFunctionPrototype),
-              define(h, "constructor", GeneratorFunctionPrototype),
-              define(GeneratorFunctionPrototype, "constructor", GeneratorFunction),
-              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, a, "GeneratorFunction")),
+              n(f, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }),
+              n(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }),
+              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, s, "GeneratorFunction")),
               (e.isGeneratorFunction = function (e) {
                 var t = "function" == typeof e && e.constructor;
                 return !!t && (t === GeneratorFunction || "GeneratorFunction" === (t.displayName || t.name));
@@ -1847,8 +1914,8 @@
                 return (
                   Object.setPrototypeOf
                     ? Object.setPrototypeOf(e, GeneratorFunctionPrototype)
-                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, a, "GeneratorFunction")),
-                  (e.prototype = Object.create(h)),
+                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, s, "GeneratorFunction")),
+                  (e.prototype = Object.create(f)),
                   e
                 );
               }),
@@ -1856,7 +1923,7 @@
                 return { __await: e };
               }),
               defineIteratorMethods(AsyncIterator.prototype),
-              define(AsyncIterator.prototype, i, function () {
+              define(AsyncIterator.prototype, a, function () {
                 return this;
               }),
               (e.AsyncIterator = AsyncIterator),
@@ -1869,23 +1936,24 @@
                       return e.done ? e.value : a.next();
                     });
               }),
-              defineIteratorMethods(h),
-              define(h, a, "Generator"),
-              define(h, o, function () {
+              defineIteratorMethods(f),
+              define(f, s, "Generator"),
+              define(f, i, function () {
                 return this;
               }),
-              define(h, "toString", function () {
+              define(f, "toString", function () {
                 return "[object Generator]";
               }),
               (e.keys = function (e) {
-                var t = [];
-                for (var r in e) t.push(r);
+                var t = Object(e),
+                  r = [];
+                for (var n in t) r.push(n);
                 return (
-                  t.reverse(),
+                  r.reverse(),
                   function next() {
-                    for (; t.length; ) {
-                      var r = t.pop();
-                      if (r in e) return (next.value = r), (next.done = !1), next;
+                    for (; r.length; ) {
+                      var e = r.pop();
+                      if (e in t) return (next.value = e), (next.done = !1), next;
                     }
                     return (next.done = !0), next;
                   }
@@ -1949,7 +2017,7 @@
                   }
                   i && ("break" === e || "continue" === e) && i.tryLoc <= t && t <= i.finallyLoc && (i = null);
                   var a = i ? i.completion : {};
-                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), s) : this.complete(a);
+                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), c) : this.complete(a);
                 },
                 complete: function complete(e, t) {
                   if ("throw" === e.type) throw e.arg;
@@ -1959,13 +2027,13 @@
                       : "return" === e.type
                       ? ((this.rval = this.arg = e.arg), (this.method = "return"), (this.next = "end"))
                       : "normal" === e.type && t && (this.next = t),
-                    s
+                    c
                   );
                 },
                 finish: function finish(e) {
                   for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                     var r = this.tryEntries[t];
-                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), s;
+                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), c;
                   }
                 },
                 catch: function _catch(e) {
@@ -1983,7 +2051,7 @@
                   throw new Error("illegal catch attempt");
                 },
                 delegateYield: function delegateYield(e, t, r) {
-                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), s;
+                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), c;
                 },
               }),
               e
@@ -2017,8 +2085,28 @@
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1),
+                (n.configurable = !0),
+                "value" in n && (n.writable = !0),
+                Object.defineProperty(
+                  e,
+                  ((o = n.key),
+                  (i = void 0),
+                  (i = (function _toPrimitive(e, t) {
+                    if ("object" !== _typeof(e) || null === e) return e;
+                    var r = e[Symbol.toPrimitive];
+                    if (void 0 !== r) {
+                      var n = r.call(e, t || "default");
+                      if ("object" !== _typeof(n)) return n;
+                      throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return ("string" === t ? String : Number)(e);
+                  })(o, "string")),
+                  "symbol" === _typeof(i) ? i : String(i)),
+                  n
+                );
             }
+            var o, i;
           }
           var s = (function () {
             function MsToNativeLoginBridge() {
@@ -2283,13 +2371,13 @@
             );
           })();
         },
-        8145: (e, t, r) => {
+        5248: (e, t, r) => {
           "use strict";
           r.d(t, { PhoenixAuthService: () => c, PhoenixAuthServiceFactory: () => s });
-          var n = r(9980),
-            o = r(4976),
-            i = r(5532),
-            a = r(6199);
+          var n = r(6165),
+            o = r(6770),
+            i = r(1375),
+            a = r(567);
           function _typeof(e) {
             return (
               (_typeof =
@@ -2304,7 +2392,7 @@
             );
           }
           function _defineProperty(e, t, r) {
-            return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
+            return (t = _toPropertyKey(t)) in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
           }
           function _regeneratorRuntime() {
             /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime =
@@ -2314,10 +2402,15 @@
             var e = {},
               t = Object.prototype,
               r = t.hasOwnProperty,
-              n = "function" == typeof Symbol ? Symbol : {},
-              o = n.iterator || "@@iterator",
-              i = n.asyncIterator || "@@asyncIterator",
-              a = n.toStringTag || "@@toStringTag";
+              n =
+                Object.defineProperty ||
+                function (e, t, r) {
+                  e[t] = r.value;
+                },
+              o = "function" == typeof Symbol ? Symbol : {},
+              i = o.iterator || "@@iterator",
+              a = o.asyncIterator || "@@asyncIterator",
+              s = o.toStringTag || "@@toStringTag";
             function define(e, t, r) {
               return Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }), e[t];
             }
@@ -2328,45 +2421,11 @@
                 return (e[t] = r);
               };
             }
-            function wrap(e, t, r, n) {
-              var o = t && t.prototype instanceof Generator ? t : Generator,
-                i = Object.create(o.prototype),
-                a = new Context(n || []);
-              return (
-                (i._invoke = (function (e, t, r) {
-                  var n = "suspendedStart";
-                  return function (o, i) {
-                    if ("executing" === n) throw new Error("Generator is already running");
-                    if ("completed" === n) {
-                      if ("throw" === o) throw i;
-                      return doneResult();
-                    }
-                    for (r.method = o, r.arg = i; ; ) {
-                      var a = r.delegate;
-                      if (a) {
-                        var c = maybeInvokeDelegate(a, r);
-                        if (c) {
-                          if (c === s) continue;
-                          return c;
-                        }
-                      }
-                      if ("next" === r.method) r.sent = r._sent = r.arg;
-                      else if ("throw" === r.method) {
-                        if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
-                        r.dispatchException(r.arg);
-                      } else "return" === r.method && r.abrupt("return", r.arg);
-                      n = "executing";
-                      var u = tryCatch(e, t, r);
-                      if ("normal" === u.type) {
-                        if (((n = r.done ? "completed" : "suspendedYield"), u.arg === s)) continue;
-                        return { value: u.arg, done: r.done };
-                      }
-                      "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
-                    }
-                  };
-                })(e, r, a)),
-                i
-              );
+            function wrap(e, t, r, o) {
+              var i = t && t.prototype instanceof Generator ? t : Generator,
+                a = Object.create(i.prototype),
+                s = new Context(o || []);
+              return n(a, "_invoke", { value: makeInvokeMethod(e, r, s) }), a;
             }
             function tryCatch(e, t, r) {
               try {
@@ -2376,18 +2435,18 @@
               }
             }
             e.wrap = wrap;
-            var s = {};
+            var c = {};
             function Generator() {}
             function GeneratorFunction() {}
             function GeneratorFunctionPrototype() {}
-            var c = {};
-            define(c, o, function () {
+            var u = {};
+            define(u, i, function () {
               return this;
             });
-            var u = Object.getPrototypeOf,
-              l = u && u(u(values([])));
-            l && l !== t && r.call(l, o) && (c = l);
-            var h = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c));
+            var l = Object.getPrototypeOf,
+              h = l && l(l(values([])));
+            h && h !== t && r.call(h, i) && (u = h);
+            var f = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(u));
             function defineIteratorMethods(e) {
               ["next", "throw", "return"].forEach(function (t) {
                 define(e, t, function (e) {
@@ -2421,37 +2480,72 @@
                 }
                 a(s.arg);
               }
-              var n;
-              this._invoke = function (e, r) {
-                function callInvokeWithMethodAndArg() {
-                  return new t(function (t, n) {
-                    invoke(e, r, t, n);
-                  });
+              var o;
+              n(this, "_invoke", {
+                value: function value(e, r) {
+                  function callInvokeWithMethodAndArg() {
+                    return new t(function (t, n) {
+                      invoke(e, r, t, n);
+                    });
+                  }
+                  return (o = o ? o.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                },
+              });
+            }
+            function makeInvokeMethod(e, t, r) {
+              var n = "suspendedStart";
+              return function (o, i) {
+                if ("executing" === n) throw new Error("Generator is already running");
+                if ("completed" === n) {
+                  if ("throw" === o) throw i;
+                  return doneResult();
                 }
-                return (n = n ? n.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                for (r.method = o, r.arg = i; ; ) {
+                  var a = r.delegate;
+                  if (a) {
+                    var s = maybeInvokeDelegate(a, r);
+                    if (s) {
+                      if (s === c) continue;
+                      return s;
+                    }
+                  }
+                  if ("next" === r.method) r.sent = r._sent = r.arg;
+                  else if ("throw" === r.method) {
+                    if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
+                    r.dispatchException(r.arg);
+                  } else "return" === r.method && r.abrupt("return", r.arg);
+                  n = "executing";
+                  var u = tryCatch(e, t, r);
+                  if ("normal" === u.type) {
+                    if (((n = r.done ? "completed" : "suspendedYield"), u.arg === c)) continue;
+                    return { value: u.arg, done: r.done };
+                  }
+                  "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
+                }
               };
             }
             function maybeInvokeDelegate(e, t) {
-              var r = e.iterator[t.method];
-              if (void 0 === r) {
-                if (((t.delegate = null), "throw" === t.method)) {
-                  if (e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) return s;
-                  (t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a 'throw' method"));
-                }
-                return s;
-              }
-              var n = tryCatch(r, e.iterator, t.arg);
-              if ("throw" === n.type) return (t.method = "throw"), (t.arg = n.arg), (t.delegate = null), s;
-              var o = n.arg;
-              return o
-                ? o.done
-                  ? ((t[e.resultName] = o.value),
+              var r = t.method,
+                n = e.iterator[r];
+              if (void 0 === n)
+                return (
+                  (t.delegate = null),
+                  ("throw" === r && e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) ||
+                    ("return" !== r && ((t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a '" + r + "' method")))),
+                  c
+                );
+              var o = tryCatch(n, e.iterator, t.arg);
+              if ("throw" === o.type) return (t.method = "throw"), (t.arg = o.arg), (t.delegate = null), c;
+              var i = o.arg;
+              return i
+                ? i.done
+                  ? ((t[e.resultName] = i.value),
                     (t.next = e.nextLoc),
                     "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
                     (t.delegate = null),
-                    s)
-                  : o
-                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), s);
+                    c)
+                  : i
+                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), c);
             }
             function pushTryEntry(e) {
               var t = { tryLoc: e[0] };
@@ -2466,16 +2560,16 @@
             }
             function values(e) {
               if (e) {
-                var t = e[o];
+                var t = e[i];
                 if (t) return t.call(e);
                 if ("function" == typeof e.next) return e;
                 if (!isNaN(e.length)) {
                   var n = -1,
-                    i = function next() {
+                    o = function next() {
                       for (; ++n < e.length; ) if (r.call(e, n)) return (next.value = e[n]), (next.done = !1), next;
                       return (next.value = void 0), (next.done = !0), next;
                     };
-                  return (i.next = i);
+                  return (o.next = o);
                 }
               }
               return { next: doneResult };
@@ -2485,9 +2579,9 @@
             }
             return (
               (GeneratorFunction.prototype = GeneratorFunctionPrototype),
-              define(h, "constructor", GeneratorFunctionPrototype),
-              define(GeneratorFunctionPrototype, "constructor", GeneratorFunction),
-              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, a, "GeneratorFunction")),
+              n(f, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }),
+              n(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }),
+              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, s, "GeneratorFunction")),
               (e.isGeneratorFunction = function (e) {
                 var t = "function" == typeof e && e.constructor;
                 return !!t && (t === GeneratorFunction || "GeneratorFunction" === (t.displayName || t.name));
@@ -2496,8 +2590,8 @@
                 return (
                   Object.setPrototypeOf
                     ? Object.setPrototypeOf(e, GeneratorFunctionPrototype)
-                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, a, "GeneratorFunction")),
-                  (e.prototype = Object.create(h)),
+                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, s, "GeneratorFunction")),
+                  (e.prototype = Object.create(f)),
                   e
                 );
               }),
@@ -2505,7 +2599,7 @@
                 return { __await: e };
               }),
               defineIteratorMethods(AsyncIterator.prototype),
-              define(AsyncIterator.prototype, i, function () {
+              define(AsyncIterator.prototype, a, function () {
                 return this;
               }),
               (e.AsyncIterator = AsyncIterator),
@@ -2518,23 +2612,24 @@
                       return e.done ? e.value : a.next();
                     });
               }),
-              defineIteratorMethods(h),
-              define(h, a, "Generator"),
-              define(h, o, function () {
+              defineIteratorMethods(f),
+              define(f, s, "Generator"),
+              define(f, i, function () {
                 return this;
               }),
-              define(h, "toString", function () {
+              define(f, "toString", function () {
                 return "[object Generator]";
               }),
               (e.keys = function (e) {
-                var t = [];
-                for (var r in e) t.push(r);
+                var t = Object(e),
+                  r = [];
+                for (var n in t) r.push(n);
                 return (
-                  t.reverse(),
+                  r.reverse(),
                   function next() {
-                    for (; t.length; ) {
-                      var r = t.pop();
-                      if (r in e) return (next.value = r), (next.done = !1), next;
+                    for (; r.length; ) {
+                      var e = r.pop();
+                      if (e in t) return (next.value = e), (next.done = !1), next;
                     }
                     return (next.done = !0), next;
                   }
@@ -2598,7 +2693,7 @@
                   }
                   i && ("break" === e || "continue" === e) && i.tryLoc <= t && t <= i.finallyLoc && (i = null);
                   var a = i ? i.completion : {};
-                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), s) : this.complete(a);
+                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), c) : this.complete(a);
                 },
                 complete: function complete(e, t) {
                   if ("throw" === e.type) throw e.arg;
@@ -2608,13 +2703,13 @@
                       : "return" === e.type
                       ? ((this.rval = this.arg = e.arg), (this.method = "return"), (this.next = "end"))
                       : "normal" === e.type && t && (this.next = t),
-                    s
+                    c
                   );
                 },
                 finish: function finish(e) {
                   for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                     var r = this.tryEntries[t];
-                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), s;
+                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), c;
                   }
                 },
                 catch: function _catch(e) {
@@ -2632,7 +2727,7 @@
                   throw new Error("illegal catch attempt");
                 },
                 delegateYield: function delegateYield(e, t, r) {
-                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), s;
+                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), c;
                 },
               }),
               e
@@ -2669,11 +2764,24 @@
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, _toPropertyKey(n.key), n);
             }
           }
           function _createClass(e, t, r) {
             return t && _defineProperties(e.prototype, t), r && _defineProperties(e, r), Object.defineProperty(e, "prototype", { writable: !1 }), e;
+          }
+          function _toPropertyKey(e) {
+            var t = (function _toPrimitive(e, t) {
+              if ("object" !== _typeof(e) || null === e) return e;
+              var r = e[Symbol.toPrimitive];
+              if (void 0 !== r) {
+                var n = r.call(e, t || "default");
+                if ("object" !== _typeof(n)) return n;
+                throw new TypeError("@@toPrimitive must return a primitive value.");
+              }
+              return ("string" === t ? String : Number)(e);
+            })(e, "string");
+            return "symbol" === _typeof(t) ? t : String(t);
           }
           var s = (function () {
               function PhoenixAuthServiceFactory() {
@@ -2838,7 +2946,7 @@
               );
             })();
         },
-        5532: (e, t, r) => {
+        1375: (e, t, r) => {
           "use strict";
           r.d(t, { Z: () => i });
           var n = r(1171),
@@ -2864,10 +2972,15 @@
             var e = {},
               t = Object.prototype,
               r = t.hasOwnProperty,
-              n = "function" == typeof Symbol ? Symbol : {},
-              o = n.iterator || "@@iterator",
-              i = n.asyncIterator || "@@asyncIterator",
-              a = n.toStringTag || "@@toStringTag";
+              n =
+                Object.defineProperty ||
+                function (e, t, r) {
+                  e[t] = r.value;
+                },
+              o = "function" == typeof Symbol ? Symbol : {},
+              i = o.iterator || "@@iterator",
+              a = o.asyncIterator || "@@asyncIterator",
+              s = o.toStringTag || "@@toStringTag";
             function define(e, t, r) {
               return Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }), e[t];
             }
@@ -2878,45 +2991,11 @@
                 return (e[t] = r);
               };
             }
-            function wrap(e, t, r, n) {
-              var o = t && t.prototype instanceof Generator ? t : Generator,
-                i = Object.create(o.prototype),
-                a = new Context(n || []);
-              return (
-                (i._invoke = (function (e, t, r) {
-                  var n = "suspendedStart";
-                  return function (o, i) {
-                    if ("executing" === n) throw new Error("Generator is already running");
-                    if ("completed" === n) {
-                      if ("throw" === o) throw i;
-                      return doneResult();
-                    }
-                    for (r.method = o, r.arg = i; ; ) {
-                      var a = r.delegate;
-                      if (a) {
-                        var c = maybeInvokeDelegate(a, r);
-                        if (c) {
-                          if (c === s) continue;
-                          return c;
-                        }
-                      }
-                      if ("next" === r.method) r.sent = r._sent = r.arg;
-                      else if ("throw" === r.method) {
-                        if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
-                        r.dispatchException(r.arg);
-                      } else "return" === r.method && r.abrupt("return", r.arg);
-                      n = "executing";
-                      var u = tryCatch(e, t, r);
-                      if ("normal" === u.type) {
-                        if (((n = r.done ? "completed" : "suspendedYield"), u.arg === s)) continue;
-                        return { value: u.arg, done: r.done };
-                      }
-                      "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
-                    }
-                  };
-                })(e, r, a)),
-                i
-              );
+            function wrap(e, t, r, o) {
+              var i = t && t.prototype instanceof Generator ? t : Generator,
+                a = Object.create(i.prototype),
+                s = new Context(o || []);
+              return n(a, "_invoke", { value: makeInvokeMethod(e, r, s) }), a;
             }
             function tryCatch(e, t, r) {
               try {
@@ -2926,18 +3005,18 @@
               }
             }
             e.wrap = wrap;
-            var s = {};
+            var c = {};
             function Generator() {}
             function GeneratorFunction() {}
             function GeneratorFunctionPrototype() {}
-            var c = {};
-            define(c, o, function () {
+            var u = {};
+            define(u, i, function () {
               return this;
             });
-            var u = Object.getPrototypeOf,
-              l = u && u(u(values([])));
-            l && l !== t && r.call(l, o) && (c = l);
-            var h = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c));
+            var l = Object.getPrototypeOf,
+              h = l && l(l(values([])));
+            h && h !== t && r.call(h, i) && (u = h);
+            var f = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(u));
             function defineIteratorMethods(e) {
               ["next", "throw", "return"].forEach(function (t) {
                 define(e, t, function (e) {
@@ -2971,37 +3050,72 @@
                 }
                 a(s.arg);
               }
-              var n;
-              this._invoke = function (e, r) {
-                function callInvokeWithMethodAndArg() {
-                  return new t(function (t, n) {
-                    invoke(e, r, t, n);
-                  });
+              var o;
+              n(this, "_invoke", {
+                value: function value(e, r) {
+                  function callInvokeWithMethodAndArg() {
+                    return new t(function (t, n) {
+                      invoke(e, r, t, n);
+                    });
+                  }
+                  return (o = o ? o.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                },
+              });
+            }
+            function makeInvokeMethod(e, t, r) {
+              var n = "suspendedStart";
+              return function (o, i) {
+                if ("executing" === n) throw new Error("Generator is already running");
+                if ("completed" === n) {
+                  if ("throw" === o) throw i;
+                  return doneResult();
                 }
-                return (n = n ? n.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                for (r.method = o, r.arg = i; ; ) {
+                  var a = r.delegate;
+                  if (a) {
+                    var s = maybeInvokeDelegate(a, r);
+                    if (s) {
+                      if (s === c) continue;
+                      return s;
+                    }
+                  }
+                  if ("next" === r.method) r.sent = r._sent = r.arg;
+                  else if ("throw" === r.method) {
+                    if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
+                    r.dispatchException(r.arg);
+                  } else "return" === r.method && r.abrupt("return", r.arg);
+                  n = "executing";
+                  var u = tryCatch(e, t, r);
+                  if ("normal" === u.type) {
+                    if (((n = r.done ? "completed" : "suspendedYield"), u.arg === c)) continue;
+                    return { value: u.arg, done: r.done };
+                  }
+                  "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
+                }
               };
             }
             function maybeInvokeDelegate(e, t) {
-              var r = e.iterator[t.method];
-              if (void 0 === r) {
-                if (((t.delegate = null), "throw" === t.method)) {
-                  if (e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) return s;
-                  (t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a 'throw' method"));
-                }
-                return s;
-              }
-              var n = tryCatch(r, e.iterator, t.arg);
-              if ("throw" === n.type) return (t.method = "throw"), (t.arg = n.arg), (t.delegate = null), s;
-              var o = n.arg;
-              return o
-                ? o.done
-                  ? ((t[e.resultName] = o.value),
+              var r = t.method,
+                n = e.iterator[r];
+              if (void 0 === n)
+                return (
+                  (t.delegate = null),
+                  ("throw" === r && e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) ||
+                    ("return" !== r && ((t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a '" + r + "' method")))),
+                  c
+                );
+              var o = tryCatch(n, e.iterator, t.arg);
+              if ("throw" === o.type) return (t.method = "throw"), (t.arg = o.arg), (t.delegate = null), c;
+              var i = o.arg;
+              return i
+                ? i.done
+                  ? ((t[e.resultName] = i.value),
                     (t.next = e.nextLoc),
                     "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
                     (t.delegate = null),
-                    s)
-                  : o
-                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), s);
+                    c)
+                  : i
+                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), c);
             }
             function pushTryEntry(e) {
               var t = { tryLoc: e[0] };
@@ -3016,16 +3130,16 @@
             }
             function values(e) {
               if (e) {
-                var t = e[o];
+                var t = e[i];
                 if (t) return t.call(e);
                 if ("function" == typeof e.next) return e;
                 if (!isNaN(e.length)) {
                   var n = -1,
-                    i = function next() {
+                    o = function next() {
                       for (; ++n < e.length; ) if (r.call(e, n)) return (next.value = e[n]), (next.done = !1), next;
                       return (next.value = void 0), (next.done = !0), next;
                     };
-                  return (i.next = i);
+                  return (o.next = o);
                 }
               }
               return { next: doneResult };
@@ -3035,9 +3149,9 @@
             }
             return (
               (GeneratorFunction.prototype = GeneratorFunctionPrototype),
-              define(h, "constructor", GeneratorFunctionPrototype),
-              define(GeneratorFunctionPrototype, "constructor", GeneratorFunction),
-              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, a, "GeneratorFunction")),
+              n(f, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }),
+              n(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }),
+              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, s, "GeneratorFunction")),
               (e.isGeneratorFunction = function (e) {
                 var t = "function" == typeof e && e.constructor;
                 return !!t && (t === GeneratorFunction || "GeneratorFunction" === (t.displayName || t.name));
@@ -3046,8 +3160,8 @@
                 return (
                   Object.setPrototypeOf
                     ? Object.setPrototypeOf(e, GeneratorFunctionPrototype)
-                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, a, "GeneratorFunction")),
-                  (e.prototype = Object.create(h)),
+                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, s, "GeneratorFunction")),
+                  (e.prototype = Object.create(f)),
                   e
                 );
               }),
@@ -3055,7 +3169,7 @@
                 return { __await: e };
               }),
               defineIteratorMethods(AsyncIterator.prototype),
-              define(AsyncIterator.prototype, i, function () {
+              define(AsyncIterator.prototype, a, function () {
                 return this;
               }),
               (e.AsyncIterator = AsyncIterator),
@@ -3068,23 +3182,24 @@
                       return e.done ? e.value : a.next();
                     });
               }),
-              defineIteratorMethods(h),
-              define(h, a, "Generator"),
-              define(h, o, function () {
+              defineIteratorMethods(f),
+              define(f, s, "Generator"),
+              define(f, i, function () {
                 return this;
               }),
-              define(h, "toString", function () {
+              define(f, "toString", function () {
                 return "[object Generator]";
               }),
               (e.keys = function (e) {
-                var t = [];
-                for (var r in e) t.push(r);
+                var t = Object(e),
+                  r = [];
+                for (var n in t) r.push(n);
                 return (
-                  t.reverse(),
+                  r.reverse(),
                   function next() {
-                    for (; t.length; ) {
-                      var r = t.pop();
-                      if (r in e) return (next.value = r), (next.done = !1), next;
+                    for (; r.length; ) {
+                      var e = r.pop();
+                      if (e in t) return (next.value = e), (next.done = !1), next;
                     }
                     return (next.done = !0), next;
                   }
@@ -3148,7 +3263,7 @@
                   }
                   i && ("break" === e || "continue" === e) && i.tryLoc <= t && t <= i.finallyLoc && (i = null);
                   var a = i ? i.completion : {};
-                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), s) : this.complete(a);
+                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), c) : this.complete(a);
                 },
                 complete: function complete(e, t) {
                   if ("throw" === e.type) throw e.arg;
@@ -3158,13 +3273,13 @@
                       : "return" === e.type
                       ? ((this.rval = this.arg = e.arg), (this.method = "return"), (this.next = "end"))
                       : "normal" === e.type && t && (this.next = t),
-                    s
+                    c
                   );
                 },
                 finish: function finish(e) {
                   for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                     var r = this.tryEntries[t];
-                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), s;
+                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), c;
                   }
                 },
                 catch: function _catch(e) {
@@ -3182,7 +3297,7 @@
                   throw new Error("illegal catch attempt");
                 },
                 delegateYield: function delegateYield(e, t, r) {
-                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), s;
+                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), c;
                 },
               }),
               e
@@ -3216,11 +3331,24 @@
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, _toPropertyKey(n.key), n);
             }
           }
           function _defineProperty(e, t, r) {
-            return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
+            return (t = _toPropertyKey(t)) in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
+          }
+          function _toPropertyKey(e) {
+            var t = (function _toPrimitive(e, t) {
+              if ("object" !== _typeof(e) || null === e) return e;
+              var r = e[Symbol.toPrimitive];
+              if (void 0 !== r) {
+                var n = r.call(e, t || "default");
+                if ("object" !== _typeof(n)) return n;
+                throw new TypeError("@@toPrimitive must return a primitive value.");
+              }
+              return ("string" === t ? String : Number)(e);
+            })(e, "string");
+            return "symbol" === _typeof(t) ? t : String(t);
           }
           var i = (function () {
             function AuthChannel(e) {
@@ -3431,7 +3559,7 @@
             );
           })();
         },
-        4976: (e, t, r) => {
+        6770: (e, t, r) => {
           "use strict";
           r.d(t, {
             F4: () => getReticulumFetchUrl,
@@ -3441,9 +3569,9 @@
             iC: () => connectToReticulum,
             vc: () => config,
           });
-          var n = r(3887),
-            o = r(9920),
-            i = r(6091),
+          var n = r(562),
+            o = r(7636),
+            i = r(5421),
             a = r(12);
           function _typeof(e) {
             return (
@@ -3466,10 +3594,15 @@
             var e = {},
               t = Object.prototype,
               r = t.hasOwnProperty,
-              n = "function" == typeof Symbol ? Symbol : {},
-              o = n.iterator || "@@iterator",
-              i = n.asyncIterator || "@@asyncIterator",
-              a = n.toStringTag || "@@toStringTag";
+              n =
+                Object.defineProperty ||
+                function (e, t, r) {
+                  e[t] = r.value;
+                },
+              o = "function" == typeof Symbol ? Symbol : {},
+              i = o.iterator || "@@iterator",
+              a = o.asyncIterator || "@@asyncIterator",
+              s = o.toStringTag || "@@toStringTag";
             function define(e, t, r) {
               return Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }), e[t];
             }
@@ -3480,45 +3613,11 @@
                 return (e[t] = r);
               };
             }
-            function wrap(e, t, r, n) {
-              var o = t && t.prototype instanceof Generator ? t : Generator,
-                i = Object.create(o.prototype),
-                a = new Context(n || []);
-              return (
-                (i._invoke = (function (e, t, r) {
-                  var n = "suspendedStart";
-                  return function (o, i) {
-                    if ("executing" === n) throw new Error("Generator is already running");
-                    if ("completed" === n) {
-                      if ("throw" === o) throw i;
-                      return doneResult();
-                    }
-                    for (r.method = o, r.arg = i; ; ) {
-                      var a = r.delegate;
-                      if (a) {
-                        var c = maybeInvokeDelegate(a, r);
-                        if (c) {
-                          if (c === s) continue;
-                          return c;
-                        }
-                      }
-                      if ("next" === r.method) r.sent = r._sent = r.arg;
-                      else if ("throw" === r.method) {
-                        if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
-                        r.dispatchException(r.arg);
-                      } else "return" === r.method && r.abrupt("return", r.arg);
-                      n = "executing";
-                      var u = tryCatch(e, t, r);
-                      if ("normal" === u.type) {
-                        if (((n = r.done ? "completed" : "suspendedYield"), u.arg === s)) continue;
-                        return { value: u.arg, done: r.done };
-                      }
-                      "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
-                    }
-                  };
-                })(e, r, a)),
-                i
-              );
+            function wrap(e, t, r, o) {
+              var i = t && t.prototype instanceof Generator ? t : Generator,
+                a = Object.create(i.prototype),
+                s = new Context(o || []);
+              return n(a, "_invoke", { value: makeInvokeMethod(e, r, s) }), a;
             }
             function tryCatch(e, t, r) {
               try {
@@ -3528,18 +3627,18 @@
               }
             }
             e.wrap = wrap;
-            var s = {};
+            var c = {};
             function Generator() {}
             function GeneratorFunction() {}
             function GeneratorFunctionPrototype() {}
-            var c = {};
-            define(c, o, function () {
+            var u = {};
+            define(u, i, function () {
               return this;
             });
-            var u = Object.getPrototypeOf,
-              l = u && u(u(values([])));
-            l && l !== t && r.call(l, o) && (c = l);
-            var h = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c));
+            var l = Object.getPrototypeOf,
+              h = l && l(l(values([])));
+            h && h !== t && r.call(h, i) && (u = h);
+            var f = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(u));
             function defineIteratorMethods(e) {
               ["next", "throw", "return"].forEach(function (t) {
                 define(e, t, function (e) {
@@ -3573,37 +3672,72 @@
                 }
                 a(s.arg);
               }
-              var n;
-              this._invoke = function (e, r) {
-                function callInvokeWithMethodAndArg() {
-                  return new t(function (t, n) {
-                    invoke(e, r, t, n);
-                  });
+              var o;
+              n(this, "_invoke", {
+                value: function value(e, r) {
+                  function callInvokeWithMethodAndArg() {
+                    return new t(function (t, n) {
+                      invoke(e, r, t, n);
+                    });
+                  }
+                  return (o = o ? o.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                },
+              });
+            }
+            function makeInvokeMethod(e, t, r) {
+              var n = "suspendedStart";
+              return function (o, i) {
+                if ("executing" === n) throw new Error("Generator is already running");
+                if ("completed" === n) {
+                  if ("throw" === o) throw i;
+                  return doneResult();
                 }
-                return (n = n ? n.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                for (r.method = o, r.arg = i; ; ) {
+                  var a = r.delegate;
+                  if (a) {
+                    var s = maybeInvokeDelegate(a, r);
+                    if (s) {
+                      if (s === c) continue;
+                      return s;
+                    }
+                  }
+                  if ("next" === r.method) r.sent = r._sent = r.arg;
+                  else if ("throw" === r.method) {
+                    if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
+                    r.dispatchException(r.arg);
+                  } else "return" === r.method && r.abrupt("return", r.arg);
+                  n = "executing";
+                  var u = tryCatch(e, t, r);
+                  if ("normal" === u.type) {
+                    if (((n = r.done ? "completed" : "suspendedYield"), u.arg === c)) continue;
+                    return { value: u.arg, done: r.done };
+                  }
+                  "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
+                }
               };
             }
             function maybeInvokeDelegate(e, t) {
-              var r = e.iterator[t.method];
-              if (void 0 === r) {
-                if (((t.delegate = null), "throw" === t.method)) {
-                  if (e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) return s;
-                  (t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a 'throw' method"));
-                }
-                return s;
-              }
-              var n = tryCatch(r, e.iterator, t.arg);
-              if ("throw" === n.type) return (t.method = "throw"), (t.arg = n.arg), (t.delegate = null), s;
-              var o = n.arg;
-              return o
-                ? o.done
-                  ? ((t[e.resultName] = o.value),
+              var r = t.method,
+                n = e.iterator[r];
+              if (void 0 === n)
+                return (
+                  (t.delegate = null),
+                  ("throw" === r && e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) ||
+                    ("return" !== r && ((t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a '" + r + "' method")))),
+                  c
+                );
+              var o = tryCatch(n, e.iterator, t.arg);
+              if ("throw" === o.type) return (t.method = "throw"), (t.arg = o.arg), (t.delegate = null), c;
+              var i = o.arg;
+              return i
+                ? i.done
+                  ? ((t[e.resultName] = i.value),
                     (t.next = e.nextLoc),
                     "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
                     (t.delegate = null),
-                    s)
-                  : o
-                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), s);
+                    c)
+                  : i
+                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), c);
             }
             function pushTryEntry(e) {
               var t = { tryLoc: e[0] };
@@ -3618,16 +3752,16 @@
             }
             function values(e) {
               if (e) {
-                var t = e[o];
+                var t = e[i];
                 if (t) return t.call(e);
                 if ("function" == typeof e.next) return e;
                 if (!isNaN(e.length)) {
                   var n = -1,
-                    i = function next() {
+                    o = function next() {
                       for (; ++n < e.length; ) if (r.call(e, n)) return (next.value = e[n]), (next.done = !1), next;
                       return (next.value = void 0), (next.done = !0), next;
                     };
-                  return (i.next = i);
+                  return (o.next = o);
                 }
               }
               return { next: doneResult };
@@ -3637,9 +3771,9 @@
             }
             return (
               (GeneratorFunction.prototype = GeneratorFunctionPrototype),
-              define(h, "constructor", GeneratorFunctionPrototype),
-              define(GeneratorFunctionPrototype, "constructor", GeneratorFunction),
-              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, a, "GeneratorFunction")),
+              n(f, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }),
+              n(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }),
+              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, s, "GeneratorFunction")),
               (e.isGeneratorFunction = function (e) {
                 var t = "function" == typeof e && e.constructor;
                 return !!t && (t === GeneratorFunction || "GeneratorFunction" === (t.displayName || t.name));
@@ -3648,8 +3782,8 @@
                 return (
                   Object.setPrototypeOf
                     ? Object.setPrototypeOf(e, GeneratorFunctionPrototype)
-                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, a, "GeneratorFunction")),
-                  (e.prototype = Object.create(h)),
+                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, s, "GeneratorFunction")),
+                  (e.prototype = Object.create(f)),
                   e
                 );
               }),
@@ -3657,7 +3791,7 @@
                 return { __await: e };
               }),
               defineIteratorMethods(AsyncIterator.prototype),
-              define(AsyncIterator.prototype, i, function () {
+              define(AsyncIterator.prototype, a, function () {
                 return this;
               }),
               (e.AsyncIterator = AsyncIterator),
@@ -3670,23 +3804,24 @@
                       return e.done ? e.value : a.next();
                     });
               }),
-              defineIteratorMethods(h),
-              define(h, a, "Generator"),
-              define(h, o, function () {
+              defineIteratorMethods(f),
+              define(f, s, "Generator"),
+              define(f, i, function () {
                 return this;
               }),
-              define(h, "toString", function () {
+              define(f, "toString", function () {
                 return "[object Generator]";
               }),
               (e.keys = function (e) {
-                var t = [];
-                for (var r in e) t.push(r);
+                var t = Object(e),
+                  r = [];
+                for (var n in t) r.push(n);
                 return (
-                  t.reverse(),
+                  r.reverse(),
                   function next() {
-                    for (; t.length; ) {
-                      var r = t.pop();
-                      if (r in e) return (next.value = r), (next.done = !1), next;
+                    for (; r.length; ) {
+                      var e = r.pop();
+                      if (e in t) return (next.value = e), (next.done = !1), next;
                     }
                     return (next.done = !0), next;
                   }
@@ -3750,7 +3885,7 @@
                   }
                   i && ("break" === e || "continue" === e) && i.tryLoc <= t && t <= i.finallyLoc && (i = null);
                   var a = i ? i.completion : {};
-                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), s) : this.complete(a);
+                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), c) : this.complete(a);
                 },
                 complete: function complete(e, t) {
                   if ("throw" === e.type) throw e.arg;
@@ -3760,13 +3895,13 @@
                       : "return" === e.type
                       ? ((this.rval = this.arg = e.arg), (this.method = "return"), (this.next = "end"))
                       : "normal" === e.type && t && (this.next = t),
-                    s
+                    c
                   );
                 },
                 finish: function finish(e) {
                   for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                     var r = this.tryEntries[t];
-                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), s;
+                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), c;
                   }
                 },
                 catch: function _catch(e) {
@@ -3784,7 +3919,7 @@
                   throw new Error("illegal catch attempt");
                 },
                 delegateYield: function delegateYield(e, t, r) {
-                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), s;
+                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), c;
                 },
               }),
               e
@@ -4176,13 +4311,46 @@
             )).apply(this, arguments);
           }
         },
-        1655: (e, t, r) => {
+        5777: (e, t, r) => {
           "use strict";
+          function _typeof(e) {
+            return (
+              (_typeof =
+                "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                  ? function (e) {
+                      return typeof e;
+                    }
+                  : function (e) {
+                      return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+                    }),
+              _typeof(e)
+            );
+          }
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1),
+                (n.configurable = !0),
+                "value" in n && (n.writable = !0),
+                Object.defineProperty(
+                  e,
+                  ((o = n.key),
+                  (i = void 0),
+                  (i = (function _toPrimitive(e, t) {
+                    if ("object" !== _typeof(e) || null === e) return e;
+                    var r = e[Symbol.toPrimitive];
+                    if (void 0 !== r) {
+                      var n = r.call(e, t || "default");
+                      if ("object" !== _typeof(n)) return n;
+                      throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return ("string" === t ? String : Number)(e);
+                  })(o, "string")),
+                  "symbol" === _typeof(i) ? i : String(i)),
+                  n
+                );
             }
+            var o, i;
           }
           r.d(t, { Properties: () => n });
           var n = (function () {
@@ -4218,12 +4386,12 @@
             );
           })();
         },
-        3641: (e, t, r) => {
+        4995: (e, t, r) => {
           "use strict";
           r.d(t, { RoomService: () => c, RoomServiceFactory: () => s });
-          var n = r(9669),
+          var n = r(9644),
             o = r.n(n),
-            i = r(6091);
+            i = r(5421);
           function createHubChannelParams(e) {
             var t = e.permsToken,
               r = e.profile,
@@ -4241,7 +4409,7 @@
               hub_invite_id: s,
             };
           }
-          var a = r(4976);
+          var a = r(6770);
           function _typeof(e) {
             return (
               (_typeof =
@@ -4263,10 +4431,15 @@
             var e = {},
               t = Object.prototype,
               r = t.hasOwnProperty,
-              n = "function" == typeof Symbol ? Symbol : {},
-              o = n.iterator || "@@iterator",
-              i = n.asyncIterator || "@@asyncIterator",
-              a = n.toStringTag || "@@toStringTag";
+              n =
+                Object.defineProperty ||
+                function (e, t, r) {
+                  e[t] = r.value;
+                },
+              o = "function" == typeof Symbol ? Symbol : {},
+              i = o.iterator || "@@iterator",
+              a = o.asyncIterator || "@@asyncIterator",
+              s = o.toStringTag || "@@toStringTag";
             function define(e, t, r) {
               return Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }), e[t];
             }
@@ -4277,45 +4450,11 @@
                 return (e[t] = r);
               };
             }
-            function wrap(e, t, r, n) {
-              var o = t && t.prototype instanceof Generator ? t : Generator,
-                i = Object.create(o.prototype),
-                a = new Context(n || []);
-              return (
-                (i._invoke = (function (e, t, r) {
-                  var n = "suspendedStart";
-                  return function (o, i) {
-                    if ("executing" === n) throw new Error("Generator is already running");
-                    if ("completed" === n) {
-                      if ("throw" === o) throw i;
-                      return doneResult();
-                    }
-                    for (r.method = o, r.arg = i; ; ) {
-                      var a = r.delegate;
-                      if (a) {
-                        var c = maybeInvokeDelegate(a, r);
-                        if (c) {
-                          if (c === s) continue;
-                          return c;
-                        }
-                      }
-                      if ("next" === r.method) r.sent = r._sent = r.arg;
-                      else if ("throw" === r.method) {
-                        if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
-                        r.dispatchException(r.arg);
-                      } else "return" === r.method && r.abrupt("return", r.arg);
-                      n = "executing";
-                      var u = tryCatch(e, t, r);
-                      if ("normal" === u.type) {
-                        if (((n = r.done ? "completed" : "suspendedYield"), u.arg === s)) continue;
-                        return { value: u.arg, done: r.done };
-                      }
-                      "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
-                    }
-                  };
-                })(e, r, a)),
-                i
-              );
+            function wrap(e, t, r, o) {
+              var i = t && t.prototype instanceof Generator ? t : Generator,
+                a = Object.create(i.prototype),
+                s = new Context(o || []);
+              return n(a, "_invoke", { value: makeInvokeMethod(e, r, s) }), a;
             }
             function tryCatch(e, t, r) {
               try {
@@ -4325,18 +4464,18 @@
               }
             }
             e.wrap = wrap;
-            var s = {};
+            var c = {};
             function Generator() {}
             function GeneratorFunction() {}
             function GeneratorFunctionPrototype() {}
-            var c = {};
-            define(c, o, function () {
+            var u = {};
+            define(u, i, function () {
               return this;
             });
-            var u = Object.getPrototypeOf,
-              l = u && u(u(values([])));
-            l && l !== t && r.call(l, o) && (c = l);
-            var h = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c));
+            var l = Object.getPrototypeOf,
+              h = l && l(l(values([])));
+            h && h !== t && r.call(h, i) && (u = h);
+            var f = (GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(u));
             function defineIteratorMethods(e) {
               ["next", "throw", "return"].forEach(function (t) {
                 define(e, t, function (e) {
@@ -4370,37 +4509,72 @@
                 }
                 a(s.arg);
               }
-              var n;
-              this._invoke = function (e, r) {
-                function callInvokeWithMethodAndArg() {
-                  return new t(function (t, n) {
-                    invoke(e, r, t, n);
-                  });
+              var o;
+              n(this, "_invoke", {
+                value: function value(e, r) {
+                  function callInvokeWithMethodAndArg() {
+                    return new t(function (t, n) {
+                      invoke(e, r, t, n);
+                    });
+                  }
+                  return (o = o ? o.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                },
+              });
+            }
+            function makeInvokeMethod(e, t, r) {
+              var n = "suspendedStart";
+              return function (o, i) {
+                if ("executing" === n) throw new Error("Generator is already running");
+                if ("completed" === n) {
+                  if ("throw" === o) throw i;
+                  return doneResult();
                 }
-                return (n = n ? n.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg());
+                for (r.method = o, r.arg = i; ; ) {
+                  var a = r.delegate;
+                  if (a) {
+                    var s = maybeInvokeDelegate(a, r);
+                    if (s) {
+                      if (s === c) continue;
+                      return s;
+                    }
+                  }
+                  if ("next" === r.method) r.sent = r._sent = r.arg;
+                  else if ("throw" === r.method) {
+                    if ("suspendedStart" === n) throw ((n = "completed"), r.arg);
+                    r.dispatchException(r.arg);
+                  } else "return" === r.method && r.abrupt("return", r.arg);
+                  n = "executing";
+                  var u = tryCatch(e, t, r);
+                  if ("normal" === u.type) {
+                    if (((n = r.done ? "completed" : "suspendedYield"), u.arg === c)) continue;
+                    return { value: u.arg, done: r.done };
+                  }
+                  "throw" === u.type && ((n = "completed"), (r.method = "throw"), (r.arg = u.arg));
+                }
               };
             }
             function maybeInvokeDelegate(e, t) {
-              var r = e.iterator[t.method];
-              if (void 0 === r) {
-                if (((t.delegate = null), "throw" === t.method)) {
-                  if (e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) return s;
-                  (t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a 'throw' method"));
-                }
-                return s;
-              }
-              var n = tryCatch(r, e.iterator, t.arg);
-              if ("throw" === n.type) return (t.method = "throw"), (t.arg = n.arg), (t.delegate = null), s;
-              var o = n.arg;
-              return o
-                ? o.done
-                  ? ((t[e.resultName] = o.value),
+              var r = t.method,
+                n = e.iterator[r];
+              if (void 0 === n)
+                return (
+                  (t.delegate = null),
+                  ("throw" === r && e.iterator.return && ((t.method = "return"), (t.arg = void 0), maybeInvokeDelegate(e, t), "throw" === t.method)) ||
+                    ("return" !== r && ((t.method = "throw"), (t.arg = new TypeError("The iterator does not provide a '" + r + "' method")))),
+                  c
+                );
+              var o = tryCatch(n, e.iterator, t.arg);
+              if ("throw" === o.type) return (t.method = "throw"), (t.arg = o.arg), (t.delegate = null), c;
+              var i = o.arg;
+              return i
+                ? i.done
+                  ? ((t[e.resultName] = i.value),
                     (t.next = e.nextLoc),
                     "return" !== t.method && ((t.method = "next"), (t.arg = void 0)),
                     (t.delegate = null),
-                    s)
-                  : o
-                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), s);
+                    c)
+                  : i
+                : ((t.method = "throw"), (t.arg = new TypeError("iterator result is not an object")), (t.delegate = null), c);
             }
             function pushTryEntry(e) {
               var t = { tryLoc: e[0] };
@@ -4415,16 +4589,16 @@
             }
             function values(e) {
               if (e) {
-                var t = e[o];
+                var t = e[i];
                 if (t) return t.call(e);
                 if ("function" == typeof e.next) return e;
                 if (!isNaN(e.length)) {
                   var n = -1,
-                    i = function next() {
+                    o = function next() {
                       for (; ++n < e.length; ) if (r.call(e, n)) return (next.value = e[n]), (next.done = !1), next;
                       return (next.value = void 0), (next.done = !0), next;
                     };
-                  return (i.next = i);
+                  return (o.next = o);
                 }
               }
               return { next: doneResult };
@@ -4434,9 +4608,9 @@
             }
             return (
               (GeneratorFunction.prototype = GeneratorFunctionPrototype),
-              define(h, "constructor", GeneratorFunctionPrototype),
-              define(GeneratorFunctionPrototype, "constructor", GeneratorFunction),
-              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, a, "GeneratorFunction")),
+              n(f, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }),
+              n(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }),
+              (GeneratorFunction.displayName = define(GeneratorFunctionPrototype, s, "GeneratorFunction")),
               (e.isGeneratorFunction = function (e) {
                 var t = "function" == typeof e && e.constructor;
                 return !!t && (t === GeneratorFunction || "GeneratorFunction" === (t.displayName || t.name));
@@ -4445,8 +4619,8 @@
                 return (
                   Object.setPrototypeOf
                     ? Object.setPrototypeOf(e, GeneratorFunctionPrototype)
-                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, a, "GeneratorFunction")),
-                  (e.prototype = Object.create(h)),
+                    : ((e.__proto__ = GeneratorFunctionPrototype), define(e, s, "GeneratorFunction")),
+                  (e.prototype = Object.create(f)),
                   e
                 );
               }),
@@ -4454,7 +4628,7 @@
                 return { __await: e };
               }),
               defineIteratorMethods(AsyncIterator.prototype),
-              define(AsyncIterator.prototype, i, function () {
+              define(AsyncIterator.prototype, a, function () {
                 return this;
               }),
               (e.AsyncIterator = AsyncIterator),
@@ -4467,23 +4641,24 @@
                       return e.done ? e.value : a.next();
                     });
               }),
-              defineIteratorMethods(h),
-              define(h, a, "Generator"),
-              define(h, o, function () {
+              defineIteratorMethods(f),
+              define(f, s, "Generator"),
+              define(f, i, function () {
                 return this;
               }),
-              define(h, "toString", function () {
+              define(f, "toString", function () {
                 return "[object Generator]";
               }),
               (e.keys = function (e) {
-                var t = [];
-                for (var r in e) t.push(r);
+                var t = Object(e),
+                  r = [];
+                for (var n in t) r.push(n);
                 return (
-                  t.reverse(),
+                  r.reverse(),
                   function next() {
-                    for (; t.length; ) {
-                      var r = t.pop();
-                      if (r in e) return (next.value = r), (next.done = !1), next;
+                    for (; r.length; ) {
+                      var e = r.pop();
+                      if (e in t) return (next.value = e), (next.done = !1), next;
                     }
                     return (next.done = !0), next;
                   }
@@ -4547,7 +4722,7 @@
                   }
                   i && ("break" === e || "continue" === e) && i.tryLoc <= t && t <= i.finallyLoc && (i = null);
                   var a = i ? i.completion : {};
-                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), s) : this.complete(a);
+                  return (a.type = e), (a.arg = t), i ? ((this.method = "next"), (this.next = i.finallyLoc), c) : this.complete(a);
                 },
                 complete: function complete(e, t) {
                   if ("throw" === e.type) throw e.arg;
@@ -4557,13 +4732,13 @@
                       : "return" === e.type
                       ? ((this.rval = this.arg = e.arg), (this.method = "return"), (this.next = "end"))
                       : "normal" === e.type && t && (this.next = t),
-                    s
+                    c
                   );
                 },
                 finish: function finish(e) {
                   for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                     var r = this.tryEntries[t];
-                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), s;
+                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), c;
                   }
                 },
                 catch: function _catch(e) {
@@ -4581,7 +4756,7 @@
                   throw new Error("illegal catch attempt");
                 },
                 delegateYield: function delegateYield(e, t, r) {
-                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), s;
+                  return (this.delegate = { iterator: values(e), resultName: t, nextLoc: r }), "next" === this.method && (this.arg = void 0), c;
                 },
               }),
               e
@@ -4618,11 +4793,24 @@
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, _toPropertyKey(n.key), n);
             }
           }
           function _createClass(e, t, r) {
             return t && _defineProperties(e.prototype, t), r && _defineProperties(e, r), Object.defineProperty(e, "prototype", { writable: !1 }), e;
+          }
+          function _toPropertyKey(e) {
+            var t = (function _toPrimitive(e, t) {
+              if ("object" !== _typeof(e) || null === e) return e;
+              var r = e[Symbol.toPrimitive];
+              if (void 0 !== r) {
+                var n = r.call(e, t || "default");
+                if ("object" !== _typeof(n)) return n;
+                throw new TypeError("@@toPrimitive must return a primitive value.");
+              }
+              return ("string" === t ? String : Number)(e);
+            })(e, "string");
+            return "symbol" === _typeof(t) ? t : String(t);
           }
           var s = (function () {
               function RoomServiceFactory() {
@@ -4959,16 +5147,49 @@
               );
             })();
           !(function _defineProperty(e, t, r) {
-            return t in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
+            return (t = _toPropertyKey(t)) in e ? Object.defineProperty(e, t, { value: r, enumerable: !0, configurable: !0, writable: !0 }) : (e[t] = r), e;
           })(c, "dependencies", [i.PHX_AUTH_SERVICE, i.STORE_SERVICE, i.PROPERTIES_SERVICE, i.NAME_SERVICE, i.COOKIE_STORE_SERVICE]);
         },
-        3926: (e, t, r) => {
+        8628: (e, t, r) => {
           "use strict";
+          function _typeof(e) {
+            return (
+              (_typeof =
+                "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                  ? function (e) {
+                      return typeof e;
+                    }
+                  : function (e) {
+                      return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
+                    }),
+              _typeof(e)
+            );
+          }
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1),
+                (n.configurable = !0),
+                "value" in n && (n.writable = !0),
+                Object.defineProperty(
+                  e,
+                  ((o = n.key),
+                  (i = void 0),
+                  (i = (function _toPrimitive(e, t) {
+                    if ("object" !== _typeof(e) || null === e) return e;
+                    var r = e[Symbol.toPrimitive];
+                    if (void 0 !== r) {
+                      var n = r.call(e, t || "default");
+                      if ("object" !== _typeof(n)) return n;
+                      throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return ("string" === t ? String : Number)(e);
+                  })(o, "string")),
+                  "symbol" === _typeof(i) ? i : String(i)),
+                  n
+                );
             }
+            var o, i;
           }
           r.d(t, { CookieStore: () => n });
           var n = (function () {
@@ -5010,11 +5231,11 @@
             );
           })();
         },
-        8084: (e, t, r) => {
+        2910: (e, t, r) => {
           "use strict";
           r.d(t, { SCHEMA: () => l, Store: () => h });
-          var n = r(660),
-            o = r(9996),
+          var n = r(663),
+            o = r(9714),
             i = r.n(o),
             a = r(6535);
           function _typeof(e) {
@@ -5033,8 +5254,28 @@
           function _defineProperties(e, t) {
             for (var r = 0; r < t.length; r++) {
               var n = t[r];
-              (n.enumerable = n.enumerable || !1), (n.configurable = !0), "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n);
+              (n.enumerable = n.enumerable || !1),
+                (n.configurable = !0),
+                "value" in n && (n.writable = !0),
+                Object.defineProperty(
+                  e,
+                  ((o = n.key),
+                  (i = void 0),
+                  (i = (function _toPrimitive(e, t) {
+                    if ("object" !== _typeof(e) || null === e) return e;
+                    var r = e[Symbol.toPrimitive];
+                    if (void 0 !== r) {
+                      var n = r.call(e, t || "default");
+                      if ("object" !== _typeof(n)) return n;
+                      throw new TypeError("@@toPrimitive must return a primitive value.");
+                    }
+                    return ("string" === t ? String : Number)(e);
+                  })(o, "string")),
+                  "symbol" === _typeof(i) ? i : String(i)),
+                  n
+                );
             }
+            var o, i;
           }
           function _setPrototypeOf(e, t) {
             return (
@@ -5064,16 +5305,15 @@
                 var o = _getPrototypeOf(this).constructor;
                 r = Reflect.construct(n, arguments, o);
               } else r = n.apply(this, arguments);
-              return _possibleConstructorReturn(this, r);
+              return (function _possibleConstructorReturn(e, t) {
+                if (t && ("object" === _typeof(t) || "function" == typeof t)) return t;
+                if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
+                return (function _assertThisInitialized(e) {
+                  if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                  return e;
+                })(e);
+              })(this, r);
             };
-          }
-          function _possibleConstructorReturn(e, t) {
-            if (t && ("object" === _typeof(t) || "function" == typeof t)) return t;
-            if (void 0 !== t) throw new TypeError("Derived constructors may only return object or undefined");
-            return (function _assertThisInitialized(e) {
-              if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-              return e;
-            })(e);
           }
           function _getPrototypeOf(e) {
             return (
@@ -5268,11 +5508,9 @@
                     key: "update",
                     value: function update(e) {
                       var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null,
-                        r = i()(this.state, e, t),
-                        n = u.validate(r, l),
-                        o = n.valid;
+                        r = i()(this.state, e, t);
                       return (
-                        o || console.log("Write to store failed schema validation."),
+                        u.validate(r, l).valid || console.log("Write to store failed schema validation."),
                         "undefined" != typeof localStorage && localStorage.setItem(s, JSON.stringify(r)),
                         delete this[c],
                         this.dispatchEvent(new CustomEvent("statechanged")),
@@ -5285,7 +5523,7 @@
               );
             })(a.Rf);
         },
-        9996: (e) => {
+        9714: (e) => {
           "use strict";
           var t = function isMergeableObject(e) {
             return (
@@ -5326,7 +5564,7 @@
               (function getEnumerableOwnPropertySymbols(e) {
                 return Object.getOwnPropertySymbols
                   ? Object.getOwnPropertySymbols(e).filter(function (t) {
-                      return e.propertyIsEnumerable(t);
+                      return Object.propertyIsEnumerable.call(e, t);
                     })
                   : [];
               })(e)
@@ -5377,9 +5615,9 @@
           var n = deepmerge;
           e.exports = n;
         },
-        6481: (e, t, r) => {
+        9412: (e, t, r) => {
           "use strict";
-          var n = r(9177),
+          var n = r(5484),
             o = n.ValidatorResult,
             i = n.SchemaError,
             a = {
@@ -5842,7 +6080,7 @@
               }),
             (e.exports = a);
         },
-        9177: (e, t, r) => {
+        5484: (e, t, r) => {
           "use strict";
           var n = r(883),
             o = (t.ValidationError = function ValidationError(e, t, r, n, o, i) {
@@ -6071,15 +6309,15 @@
               return ("object" == typeof e && e) || "boolean" == typeof e;
             });
         },
-        660: (e, t, r) => {
+        663: (e, t, r) => {
           "use strict";
-          var n = (e.exports.Validator = r(3058));
-          r(9177).ValidatorResult, r(9177).ValidatorResultError, r(9177).ValidationError, r(9177).SchemaError, r(1287), r(1287).R;
+          var n = (e.exports.Validator = r(9852));
+          r(5484).ValidatorResult, r(5484).ValidatorResultError, r(5484).ValidationError, r(5484).SchemaError, r(6456), r(6456).R;
         },
-        1287: (e, t, r) => {
+        6456: (e, t, r) => {
           "use strict";
           var n = r(883),
-            o = r(9177);
+            o = r(5484);
           function SchemaScanResult(e, t) {
             (this.id = e), (this.ref = t);
           }
@@ -6125,12 +6363,12 @@
             return scanSchema(e, t), new SchemaScanResult(r, i);
           };
         },
-        3058: (e, t, r) => {
+        9852: (e, t, r) => {
           "use strict";
           var n = r(883),
-            o = r(6481),
-            i = r(9177),
-            a = r(1287).R,
+            o = r(9412),
+            i = r(5484),
+            a = r(6456).R,
             s = i.ValidatorResult,
             c = i.ValidatorResultError,
             u = i.SchemaError,
@@ -6284,7 +6522,7 @@
             }),
             (e.exports = h);
         },
-        3887: (e, t, r) => {
+        562: (e, t, r) => {
           "use strict";
           r.d(t, { sk: () => Socket });
           const n = "undefined" != typeof self ? self : null,
@@ -6841,63 +7079,6 @@
             }
           }
         },
-        5327: (e) => {
-          for (var t = [], r = 0; r < 256; ++r) t[r] = (r + 256).toString(16).substr(1);
-          e.exports = function bytesToUuid(e, r) {
-            var n = r || 0,
-              o = t;
-            return [
-              o[e[n++]],
-              o[e[n++]],
-              o[e[n++]],
-              o[e[n++]],
-              "-",
-              o[e[n++]],
-              o[e[n++]],
-              "-",
-              o[e[n++]],
-              o[e[n++]],
-              "-",
-              o[e[n++]],
-              o[e[n++]],
-              "-",
-              o[e[n++]],
-              o[e[n++]],
-              o[e[n++]],
-              o[e[n++]],
-              o[e[n++]],
-              o[e[n++]],
-            ].join("");
-          };
-        },
-        5217: (e) => {
-          var t =
-            ("undefined" != typeof crypto && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
-            ("undefined" != typeof msCrypto && "function" == typeof window.msCrypto.getRandomValues && msCrypto.getRandomValues.bind(msCrypto));
-          if (t) {
-            var r = new Uint8Array(16);
-            e.exports = function whatwgRNG() {
-              return t(r), r;
-            };
-          } else {
-            var n = new Array(16);
-            e.exports = function mathRNG() {
-              for (var e, t = 0; t < 16; t++) 0 == (3 & t) && (e = 4294967296 * Math.random()), (n[t] = (e >>> ((3 & t) << 3)) & 255);
-              return n;
-            };
-          }
-        },
-        1171: (e, t, r) => {
-          var n = r(5217),
-            o = r(5327);
-          e.exports = function v4(e, t, r) {
-            var i = (t && r) || 0;
-            "string" == typeof e && ((t = "binary" === e ? new Array(16) : null), (e = null));
-            var a = (e = e || {}).random || (e.rng || n)();
-            if (((a[6] = (15 & a[6]) | 64), (a[8] = (63 & a[8]) | 128), t)) for (var s = 0; s < 16; ++s) t[i + s] = a[s];
-            return t || o(a);
-          };
-        },
         2808: (e) => {
           "use strict";
           function hasOwnProperty(e, t) {
@@ -6980,18 +7161,26 @@
               var a,
                 s = 2147483647,
                 c = 36,
-                u = /^xn--/,
-                l = /[^\x20-\x7E]/,
-                h = /[\x2E\u3002\uFF0E\uFF61]/g,
-                f = {
+                u = 1,
+                l = 26,
+                h = 38,
+                f = 700,
+                p = 72,
+                d = 128,
+                m = "-",
+                y = /^xn--/,
+                v = /[^\x20-\x7E]/,
+                g = /[\x2E\u3002\uFF0E\uFF61]/g,
+                b = {
                   overflow: "Overflow: input needs wider integers to process",
                   "not-basic": "Illegal input >= 0x80 (not a basic code point)",
                   "invalid-input": "Invalid input",
                 },
-                p = Math.floor,
-                d = String.fromCharCode;
+                w = c - u,
+                _ = Math.floor,
+                x = String.fromCharCode;
               function error(e) {
-                throw RangeError(f[e]);
+                throw RangeError(b[e]);
               }
               function map(e, t) {
                 for (var r = e.length, n = []; r--; ) n[r] = t(e[r]);
@@ -7000,7 +7189,7 @@
               function mapDomain(e, t) {
                 var r = e.split("@"),
                   n = "";
-                return r.length > 1 && ((n = r[0] + "@"), (e = r[1])), n + map((e = e.replace(h, ".")).split("."), t).join(".");
+                return r.length > 1 && ((n = r[0] + "@"), (e = r[1])), n + map((e = e.replace(g, ".")).split("."), t).join(".");
               }
               function ucs2decode(e) {
                 for (var t, r, n = [], o = 0, i = e.length; o < i; )
@@ -7014,7 +7203,7 @@
               function ucs2encode(e) {
                 return map(e, function (e) {
                   var t = "";
-                  return e > 65535 && ((t += d((((e -= 65536) >>> 10) & 1023) | 55296)), (e = 56320 | (1023 & e))), (t += d(e));
+                  return e > 65535 && ((t += x((((e -= 65536) >>> 10) & 1023) | 55296)), (e = 56320 | (1023 & e))), (t += x(e));
                 }).join("");
               }
               function digitToBasic(e, t) {
@@ -7022,8 +7211,8 @@
               }
               function adapt(e, t, r) {
                 var n = 0;
-                for (e = r ? p(e / 700) : e >> 1, e += p(e / t); e > 455; n += c) e = p(e / 35);
-                return p(n + (36 * e) / (e + 38));
+                for (e = r ? _(e / f) : e >> 1, e += _(e / t); e > (w * l) >> 1; n += c) e = _(e / w);
+                return _(n + ((w + 1) * e) / (e + h));
               }
               function decode(e) {
                 var t,
@@ -7032,31 +7221,31 @@
                   o,
                   i,
                   a,
-                  u,
-                  l,
                   h,
                   f,
-                  d,
-                  m = [],
-                  y = e.length,
-                  v = 0,
-                  g = 128,
-                  b = 72;
-                for ((r = e.lastIndexOf("-")) < 0 && (r = 0), n = 0; n < r; ++n) e.charCodeAt(n) >= 128 && error("not-basic"), m.push(e.charCodeAt(n));
-                for (o = r > 0 ? r + 1 : 0; o < y; ) {
+                  y,
+                  v,
+                  g,
+                  b = [],
+                  w = e.length,
+                  x = 0,
+                  E = d,
+                  A = p;
+                for ((r = e.lastIndexOf(m)) < 0 && (r = 0), n = 0; n < r; ++n) e.charCodeAt(n) >= 128 && error("not-basic"), b.push(e.charCodeAt(n));
+                for (o = r > 0 ? r + 1 : 0; o < w; ) {
                   for (
-                    i = v, a = 1, u = c;
-                    o >= y && error("invalid-input"),
-                      ((l = (d = e.charCodeAt(o++)) - 48 < 10 ? d - 22 : d - 65 < 26 ? d - 65 : d - 97 < 26 ? d - 97 : c) >= c || l > p((s - v) / a)) &&
+                    i = x, a = 1, h = c;
+                    o >= w && error("invalid-input"),
+                      ((f = (g = e.charCodeAt(o++)) - 48 < 10 ? g - 22 : g - 65 < 26 ? g - 65 : g - 97 < 26 ? g - 97 : c) >= c || f > _((s - x) / a)) &&
                         error("overflow"),
-                      (v += l * a),
-                      !(l < (h = u <= b ? 1 : u >= b + 26 ? 26 : u - b));
-                    u += c
+                      (x += f * a),
+                      !(f < (y = h <= A ? u : h >= A + l ? l : h - A));
+                    h += c
                   )
-                    a > p(s / (f = c - h)) && error("overflow"), (a *= f);
-                  (b = adapt(v - i, (t = m.length + 1), 0 == i)), p(v / t) > s - g && error("overflow"), (g += p(v / t)), (v %= t), m.splice(v++, 0, g);
+                    a > _(s / (v = c - y)) && error("overflow"), (a *= v);
+                  (A = adapt(x - i, (t = b.length + 1), 0 == i)), _(x / t) > s - E && error("overflow"), (E += _(x / t)), (x %= t), b.splice(x++, 0, E);
                 }
-                return ucs2encode(m);
+                return ucs2encode(b);
               }
               function encode(e) {
                 var t,
@@ -7065,28 +7254,28 @@
                   o,
                   i,
                   a,
-                  u,
-                  l,
                   h,
                   f,
-                  m,
                   y,
                   v,
                   g,
                   b,
-                  w = [];
-                for (y = (e = ucs2decode(e)).length, t = 128, r = 0, i = 72, a = 0; a < y; ++a) (m = e[a]) < 128 && w.push(d(m));
-                for (n = o = w.length, o && w.push("-"); n < y; ) {
-                  for (u = s, a = 0; a < y; ++a) (m = e[a]) >= t && m < u && (u = m);
-                  for (u - t > p((s - r) / (v = n + 1)) && error("overflow"), r += (u - t) * v, t = u, a = 0; a < y; ++a)
-                    if (((m = e[a]) < t && ++r > s && error("overflow"), m == t)) {
-                      for (l = r, h = c; !(l < (f = h <= i ? 1 : h >= i + 26 ? 26 : h - i)); h += c)
-                        (b = l - f), (g = c - f), w.push(d(digitToBasic(f + (b % g), 0))), (l = p(b / g));
-                      w.push(d(digitToBasic(l, 0))), (i = adapt(r, v, n == o)), (r = 0), ++n;
+                  w,
+                  E,
+                  A,
+                  S = [];
+                for (b = (e = ucs2decode(e)).length, t = d, r = 0, i = p, a = 0; a < b; ++a) (g = e[a]) < 128 && S.push(x(g));
+                for (n = o = S.length, o && S.push(m); n < b; ) {
+                  for (h = s, a = 0; a < b; ++a) (g = e[a]) >= t && g < h && (h = g);
+                  for (h - t > _((s - r) / (w = n + 1)) && error("overflow"), r += (h - t) * w, t = h, a = 0; a < b; ++a)
+                    if (((g = e[a]) < t && ++r > s && error("overflow"), g == t)) {
+                      for (f = r, y = c; !(f < (v = y <= i ? u : y >= i + l ? l : y - i)); y += c)
+                        (A = f - v), (E = c - v), S.push(x(digitToBasic(v + (A % E), 0))), (f = _(A / E));
+                      S.push(x(digitToBasic(f, 0))), (i = adapt(r, w, n == o)), (r = 0), ++n;
                     }
                   ++r, ++t;
                 }
-                return w.join("");
+                return S.join("");
               }
               (a = {
                 version: "1.3.2",
@@ -7095,12 +7284,12 @@
                 encode,
                 toASCII: function toASCII(e) {
                   return mapDomain(e, function (e) {
-                    return l.test(e) ? "xn--" + encode(e) : e;
+                    return v.test(e) ? "xn--" + encode(e) : e;
                   });
                 },
                 toUnicode: function toUnicode(e) {
                   return mapDomain(e, function (e) {
-                    return u.test(e) ? decode(e.slice(4).toLowerCase()) : e;
+                    return y.test(e) ? decode(e.slice(4).toLowerCase()) : e;
                   });
                 },
               }),
@@ -7201,14 +7390,14 @@
               -1 === P && (P = b.length), (this.host = b.slice(0, P)), (b = b.slice(P)), this.parseHost(), (this.hostname = this.hostname || "");
               var O = "[" === this.hostname[0] && "]" === this.hostname[this.hostname.length - 1];
               if (!O)
-                for (var j = this.hostname.split(/\./), C = ((k = 0), j.length); k < C; k++) {
-                  var F = j[k];
-                  if (F && !F.match(f)) {
-                    for (var T = "", I = 0, L = F.length; I < L; I++) F.charCodeAt(I) > 127 ? (T += "x") : (T += F[I]);
-                    if (!T.match(f)) {
+                for (var j = this.hostname.split(/\./), T = ((k = 0), j.length); k < T; k++) {
+                  var C = j[k];
+                  if (C && !C.match(f)) {
+                    for (var F = "", I = 0, L = C.length; I < L; I++) C.charCodeAt(I) > 127 ? (F += "x") : (F += C[I]);
+                    if (!F.match(f)) {
                       var N = j.slice(0, k),
                         M = j.slice(k + 1),
-                        G = F.match(p);
+                        G = C.match(p);
                       G && (N.push(G[1]), M.unshift(G[2])), M.length && (b = "/" + M.join(".") + b), (this.hostname = N.join("."));
                       break;
                     }
@@ -7223,7 +7412,7 @@
                 O && ((this.hostname = this.hostname.substr(1, this.hostname.length - 2)), "/" !== b[0] && (b = "/" + b));
             }
             if (!d[x])
-              for (k = 0, C = u.length; k < C; k++) {
+              for (k = 0, T = u.length; k < T; k++) {
                 var D = u[k];
                 if (-1 !== b.indexOf(D)) {
                   var q = encodeURIComponent(D);
@@ -7402,6 +7591,63 @@
             isNullOrUndefined: function (e) {
               return null == e;
             },
+          };
+        },
+        5327: (e) => {
+          for (var t = [], r = 0; r < 256; ++r) t[r] = (r + 256).toString(16).substr(1);
+          e.exports = function bytesToUuid(e, r) {
+            var n = r || 0,
+              o = t;
+            return [
+              o[e[n++]],
+              o[e[n++]],
+              o[e[n++]],
+              o[e[n++]],
+              "-",
+              o[e[n++]],
+              o[e[n++]],
+              "-",
+              o[e[n++]],
+              o[e[n++]],
+              "-",
+              o[e[n++]],
+              o[e[n++]],
+              "-",
+              o[e[n++]],
+              o[e[n++]],
+              o[e[n++]],
+              o[e[n++]],
+              o[e[n++]],
+              o[e[n++]],
+            ].join("");
+          };
+        },
+        5217: (e) => {
+          var t =
+            ("undefined" != typeof crypto && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+            ("undefined" != typeof msCrypto && "function" == typeof window.msCrypto.getRandomValues && msCrypto.getRandomValues.bind(msCrypto));
+          if (t) {
+            var r = new Uint8Array(16);
+            e.exports = function whatwgRNG() {
+              return t(r), r;
+            };
+          } else {
+            var n = new Array(16);
+            e.exports = function mathRNG() {
+              for (var e, t = 0; t < 16; t++) 0 == (3 & t) && (e = 4294967296 * Math.random()), (n[t] = (e >>> ((3 & t) << 3)) & 255);
+              return n;
+            };
+          }
+        },
+        1171: (e, t, r) => {
+          var n = r(5217),
+            o = r(5327);
+          e.exports = function v4(e, t, r) {
+            var i = (t && r) || 0;
+            "string" == typeof e && ((t = "binary" === e ? new Array(16) : null), (e = null));
+            var a = (e = e || {}).random || (e.rng || n)();
+            if (((a[6] = (15 & a[6]) | 64), (a[8] = (63 & a[8]) | 128), t)) for (var s = 0; s < 16; ++s) t[i + s] = a[s];
+            return t || o(a);
           };
         },
         12: (t) => {
@@ -7900,7 +8146,7 @@
           for (let e = 0; e < S.length; ++e) "constructor" !== S[e] && Object.defineProperty(EventTarget.prototype, S[e], { enumerable: !0 });
           void 0 !== o && void 0 !== o.EventTarget && Object.setPrototypeOf(EventTarget.prototype, o.EventTarget.prototype);
         },
-        8593: (e) => {
+        9521: (e) => {
           "use strict";
           e.exports = JSON.parse(
             '{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}'
@@ -7936,7 +8182,7 @@
           Object.defineProperty(e, "__esModule", { value: !0 });
       }),
       (__webpack_require__.nmd = (e) => ((e.paths = []), e.children || (e.children = []), e)),
-      __webpack_require__(6091)
+      __webpack_require__(5421)
     );
   })()
 );
