@@ -1,11 +1,6 @@
-import { IService } from "@aptero/axolotis-player";
 declare const window;
 
-export class Properties implements IService {
-  getType(): string {
-    return Properties.name;
-  }
-
+export class Properties {
   getGlobalProperties<T>(): T {
     if (typeof window !== "undefined") {
       return window.APP_PROPS || {};

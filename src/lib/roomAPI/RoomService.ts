@@ -1,32 +1,17 @@
 import axios from "axios";
-import { COOKIE_STORE_SERVICE, NAME_SERVICE, PHX_AUTH_SERVICE, PROPERTIES_SERVICE, STORE_SERVICE } from "@root/index";
-import { PropertiesFormat, PROPERTY_KEY } from "@root/roomAPI/PropertiesFormat";
-import { IService, IServices, Service } from "@aptero/axolotis-player";
-import { createHubChannelParams } from "./hub-utils";
+import {PropertiesFormat, PROPERTY_KEY} from "@root/roomAPI/PropertiesFormat";
+import {createHubChannelParams} from "./hub-utils";
 
-import { Properties } from "@root/properties/Properties";
-import { NameGenerationService } from "@root/nameGeneration/NameGenerationService";
-import { Store } from "@root/store/Store";
-import { PhoenixAuthService } from "@root/phoenixAuth/PhoenixAuthService";
-import { CookieStore } from "@root/store/CookieStore";
-import { config } from "@root/phoenixAuth/phoenix-utils";
+import {Properties} from "@root/properties/Properties";
+import {NameGenerationService} from "@root/nameGeneration/NameGenerationService";
+import {Store} from "@root/store/Store";
+import {PhoenixAuthService} from "@root/phoenixAuth/PhoenixAuthService";
+import {CookieStore} from "@root/store/CookieStore";
+import {config} from "@root/phoenixAuth/phoenix-utils";
 
 declare const window;
 
-export class RoomServiceFactory implements Service<RoomService> {
-  async createService(services: IServices): Promise<RoomService> {
-    return new RoomService(
-      await services.getService<PhoenixAuthService>(PHX_AUTH_SERVICE),
-      await services.getService<Store>(STORE_SERVICE),
-      await services.getService<Properties>(PROPERTIES_SERVICE),
-      await services.getService<NameGenerationService>(NAME_SERVICE),
-      await services.getService<CookieStore>(COOKIE_STORE_SERVICE)
-    );
-  }
-}
-
-export class RoomService implements IService {
-  public static dependencies: string[] = [PHX_AUTH_SERVICE, STORE_SERVICE, PROPERTIES_SERVICE, NAME_SERVICE, COOKIE_STORE_SERVICE];
+export class RoomService {
 
   constructor(
     private phoenixAuthService: PhoenixAuthService,

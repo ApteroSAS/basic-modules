@@ -1,6 +1,5 @@
-import { IService } from "@aptero/axolotis-player";
 
-export class CookieStore implements IService {
+export class CookieStore {
   getType(): string {
     return CookieStore.name;
   }

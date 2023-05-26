@@ -1,11 +1,10 @@
-import { Validator } from "jsonschema";
+import {Validator} from "jsonschema";
 import merge from "deepmerge";
+import {EventTarget} from "event-target-shim";
 
 const LOCAL_STORE_KEY = "___hubs_store";
 const STORE_STATE_CACHE_KEY = Symbol();
 const validator = new Validator();
-import { EventTarget } from "event-target-shim";
-import { IService } from "@aptero/axolotis-player";
 
 //TODO SCHEMA add function to update schema by component
 export const SCHEMA = {
@@ -197,7 +196,7 @@ export const SCHEMA = {
   additionalProperties: false,
 };
 
-export class Store extends EventTarget implements IService {
+export class Store extends EventTarget {
   constructor() {
     super();
 
