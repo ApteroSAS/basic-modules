@@ -1,5 +1,5 @@
 import { Socket } from "phoenix";
-import { PropertiesFormat } from "@root/phoenixAuth/PropertiesFormat";
+import { PropertiesFormat } from "./PropertiesFormat";
 export declare function config(): PropertiesFormat;
 export declare function hasReticulumServer(): boolean;
 export declare function isLocalClient(): boolean;

@@ -1,9 +1,9 @@
 import { IService, IServices, Service } from "@aptero/axolotis-player";
-import { Properties } from "@root/properties/Properties";
-import { NameGenerationService } from "@root/nameGeneration/NameGenerationService";
-import { Store } from "@root/store/Store";
-import { PhoenixAuthService } from "@root/phoenixAuth/PhoenixAuthService";
-import { CookieStore } from "@root/store/CookieStore";
+import { Properties } from "../properties/Properties";
+import { NameGenerationService } from "../nameGeneration/NameGenerationService";
+import { Store } from "../store/Store";
+import { PhoenixAuthService } from "../phoenixAuth/PhoenixAuthService";
+import { CookieStore } from "../store/CookieStore";
 export declare class RoomServiceFactory implements Service<RoomService> {
     createService(services: IServices): Promise<RoomService>;
 }

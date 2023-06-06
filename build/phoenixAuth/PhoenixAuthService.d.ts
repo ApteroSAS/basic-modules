@@ -1,7 +1,7 @@
 import { AdminRole } from "./AdminRole";
 import AuthChannel from "./auth-channel";
 import { IService, IServices, Service } from "@aptero/axolotis-player";
-import { AuthInterface } from "@root/common/AuthInterface";
+import { AuthInterface } from "../common/AuthInterface";
 import { MsToNativeLoginBridge } from "./MsToNativeLoginBridge";
 export declare class PhoenixAuthServiceFactory implements Service<PhoenixAuthService> {
     createService(services: IServices): Promise<PhoenixAuthService>;
