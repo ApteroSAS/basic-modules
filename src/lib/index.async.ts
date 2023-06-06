@@ -30,16 +30,19 @@ export const BasicModule = () => {
         }).inSingletonScope();
         bind(PHX_AUTH_SERVICE).toDynamicValue(async (context) => {
             let module = await import("@root/phoenixAuth/PhoenixAuthService");
-            return new module.PhoenixAuthService(context.container.get(PROPERTIES_SERVICE),context.container.get(STORE_SERVICE));
+            return new module.PhoenixAuthService(
+                await context.container.getAsync(PROPERTIES_SERVICE),
+                await context.container.getAsync(STORE_SERVICE)
+            );
         }).inSingletonScope();
         bind(ROOM_SERVICE).toDynamicValue(async (context) => {
             let module = await import("@root/roomAPI/RoomService");
             return new module.RoomService(
-                context.container.get(PHX_AUTH_SERVICE),
-                context.container.get(STORE_SERVICE),
-                context.container.get(PROPERTIES_SERVICE),
-                context.container.get(NAME_SERVICE),
-                context.container.get(COOKIE_STORE_SERVICE)
+                await context.container.getAsync(PHX_AUTH_SERVICE),
+                await context.container.getAsync(STORE_SERVICE),
+                await context.container.getAsync(PROPERTIES_SERVICE),
+                await context.container.getAsync(NAME_SERVICE),
+                await context.container.getAsync(COOKIE_STORE_SERVICE)
             );
         }).inSingletonScope();
     });

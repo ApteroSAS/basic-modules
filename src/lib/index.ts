@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import {ContainerModule, interfaces} from "inversify";
 import {
     COOKIE_STORE_SERVICE,
@@ -40,6 +41,14 @@ export const BasicModule = () => {
         bind(PHX_AUTH_SERVICE).toDynamicValue((context) => {
             return new PhoenixAuthService(context.container.get(PROPERTIES_SERVICE),context.container.get(STORE_SERVICE));
         }).inSingletonScope();
-        bind(ROOM_SERVICE).to(RoomService).inSingletonScope();
+        bind(ROOM_SERVICE).toDynamicValue((context) => {
+            return new RoomService(
+                context.container.get(PHX_AUTH_SERVICE),
+                context.container.get(STORE_SERVICE),
+                context.container.get(PROPERTIES_SERVICE),
+                context.container.get(NAME_SERVICE),
+                context.container.get(COOKIE_STORE_SERVICE)
+            );
+        }).inSingletonScope();
     });
 }
