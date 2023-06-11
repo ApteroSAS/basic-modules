@@ -1,7 +1,7 @@
 import {ContainerModule, interfaces} from "inversify";
 import {
     COOKIE_STORE_SERVICE,
-    NAME_SERVICE,
+    NAME_SERVICE, NATIVE_LOGIN_BRIDGE_SERVICE,
     PHX_AUTH_SERVICE,
     PROPERTIES_SERVICE,
     ROOM_SERVICE,
@@ -32,6 +32,7 @@ export const BasicModule = () => {
             let module = await import("@root/phoenixAuth/PhoenixAuthService");
             return new module.PhoenixAuthService(
                 await context.container.getAsync(PROPERTIES_SERVICE),
+                await context.container.getAsync(NATIVE_LOGIN_BRIDGE_SERVICE),
                 await context.container.getAsync(STORE_SERVICE)
             );
         }).inSingletonScope();

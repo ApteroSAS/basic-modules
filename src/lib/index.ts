@@ -2,7 +2,7 @@ import "reflect-metadata";
 import {ContainerModule, interfaces} from "inversify";
 import {
     COOKIE_STORE_SERVICE,
-    NAME_SERVICE,
+    NAME_SERVICE, NATIVE_LOGIN_BRIDGE_SERVICE,
     PHX_AUTH_SERVICE,
     PROPERTIES_SERVICE,
     ROOM_SERVICE,
@@ -14,11 +14,12 @@ import {CookieStore} from "@root/store/CookieStore";
 import {Store} from "@root/store/Store";
 import {PhoenixAuthService} from "@root/phoenixAuth/PhoenixAuthService";
 import {RoomService} from "@root/roomAPI/RoomService";
+import {NativeLoginBridge} from "@root/phoenixAuth/NativeLoginBridge";
 
 export * from "./properties/Properties";
 export * from "./nameGeneration/NameGenerationService";
 export * from "./phoenixAuth/PhoenixAuthService";
-export * from "./phoenixAuth/MsToNativeLoginBridge";
+export * from "./phoenixAuth/NativeLoginBridge";
 export * from "./common/AuthInterface";
 export * from "./roomAPI/RoomService";
 export * from "./store/CookieStore";
@@ -38,8 +39,14 @@ export const BasicModule = () => {
         bind(STORE_SERVICE).toDynamicValue(() => {
             return new Store();
         }).inSingletonScope();
+        bind(NATIVE_LOGIN_BRIDGE_SERVICE).toDynamicValue(() => {
+            return new NativeLoginBridge();
+        }).inSingletonScope();
         bind(PHX_AUTH_SERVICE).toDynamicValue((context) => {
-            return new PhoenixAuthService(context.container.get(PROPERTIES_SERVICE),context.container.get(STORE_SERVICE));
+            return new PhoenixAuthService(
+                context.container.get(PROPERTIES_SERVICE),
+                context.container.get(NATIVE_LOGIN_BRIDGE_SERVICE),
+                context.container.get(STORE_SERVICE));
         }).inSingletonScope();
         bind(ROOM_SERVICE).toDynamicValue((context) => {
             return new RoomService(

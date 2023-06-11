@@ -5,3 +5,4 @@ export const COOKIE_STORE_SERVICE = Symbol.for("@aptero/axolotis-module-storage/
 export const PHX_AUTH_SERVICE = Symbol.for("@aptero/axolotis-module-phx-auth/PhoenixAuthService");
 export const NAME_SERVICE = Symbol.for("@aptero/axolotis-module-name/NameService");
 export const ROOM_SERVICE = Symbol.for("@aptero/axolotis-module-room/RoomService");
+export const NATIVE_LOGIN_BRIDGE_SERVICE = Symbol.for("@aptero/axolotis-module-room/NativeLoginBridge");

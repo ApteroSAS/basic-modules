@@ -4,7 +4,7 @@ import { connectToReticulum } from "./phoenix-utils";
 declare const window;
 
 //TODO here we will need an interface Auth
-export class MsToNativeLoginBridge {
+export class NativeLoginBridge {
   isLogged() {
     try {
       return !!window.APP.store.state.credentials.token;

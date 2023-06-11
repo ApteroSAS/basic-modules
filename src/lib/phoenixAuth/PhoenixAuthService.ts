@@ -10,7 +10,7 @@ import {
 } from "./phoenix-utils";
 import AuthChannel from "./auth-channel";
 import {AuthInterface} from "@root/common/AuthInterface";
-import {MsToNativeLoginBridge} from "./MsToNativeLoginBridge";
+import {NativeLoginBridge} from "./NativeLoginBridge";
 import {Properties} from "@root/properties/Properties";
 import {PropertiesFormat} from "@root/phoenixAuth/PropertiesFormat";
 import {Store} from "@root/store/Store";
@@ -18,11 +18,11 @@ import {Store} from "@root/store/Store";
 
 export class PhoenixAuthService {
   adminRole = new AdminRole();
-  nativeBridge = new MsToNativeLoginBridge();
   private ret: any;
 
   constructor(
       properties: Properties,
+      private nativeBridge: NativeLoginBridge,
       store:Store
   ) {
     setConfig( () => {
