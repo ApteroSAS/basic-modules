@@ -15,7 +15,7 @@ export declare class PhoenixAuthService implements IService {
     getGlobalReticulumChannel(ret: any): any;
     registerAuth(auth: AuthInterface): void;
     getAdmin(): AdminRole;
-    connectToReticulum(debug?: boolean, params?: any, socketClass?: any): Promise<import("phoenix").Socket>;
+    connectToReticulum(debug?: boolean, params?: any, socketClass?: any): Promise<any>;
     createAuthChannel(store: any): AuthChannel;
     getType(): string;
     createAndRedirectToNewHub(name: any, sceneId: any, replace: any): Promise<void>;

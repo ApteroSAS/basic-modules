@@ -1,4 +1,3 @@
-import { Socket } from "phoenix";
 import { PropertiesFormat } from "./PropertiesFormat";
 export declare function config(): PropertiesFormat;
 export declare function hasReticulumServer(): boolean;
@@ -8,7 +7,7 @@ export declare function getReticulumFetchUrl(path: any, absolute?: boolean, host
 export declare function getReticulumMeta(): Promise<any>;
 export declare function getDirectReticulumFetchUrl(path: any, absolute?: boolean): any;
 export declare function invalidateReticulumMeta(): Promise<void>;
-export declare function connectToReticulum(debug?: boolean, params?: any, socketClass?: typeof Socket): Promise<Socket>;
+export declare function connectToReticulum(debug?: boolean, params?: any, socketClass?: any): Promise<any>;
 export declare function getLandingPageForPhoto(photoUrl: any): any;
 export declare function fetchReticulumAuthenticated(url: any, method: string, payload: any): Promise<any>;
 export declare function createAndRedirectToNewHub(name: any, sceneId: any, replace: any): Promise<void>;
