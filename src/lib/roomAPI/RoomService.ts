@@ -49,13 +49,13 @@ export class RoomService {
   async getLinkFromCode(code: string) {
     const url = "https://" + config().RETICULUM_SERVER + "/link/" + code;
     const res = await fetch(url);
-    console.log(res);
-    console.log(res.headers.get("location"));
+    const urlRoom = res.headers.get("location") || res.url
+    console.log(urlRoom);
     if (res.status >= 400) {
       console.error(res);
       throw new Error("wrong status");
     } else {
-      return res.headers.get("location");
+      return urlRoom;
     }
   }
 
