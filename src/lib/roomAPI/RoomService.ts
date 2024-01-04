@@ -64,7 +64,7 @@ export class RoomService {
       let conf = this.properties.get<PropertiesFormat>(PROPERTY_KEY);
       origin = conf.ROOM_TOKEN_SERVICE || window.location.origin;
     }
-    let res = await axios.get(origin + "/service/room/" + "room/" + roomSID + "/embed/token");
+    let res = await axios.get(origin + "/service/dbapi/" + "room/" + roomSID + "/embed/token");
     return res.data;
   }
 
