@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import {ContainerModule, interfaces} from "inversify";
 import {
-    COOKIE_STORE_SERVICE,
+    COOKIE_STORE_SERVICE, HttpEventServiceName,
     NAME_SERVICE, NATIVE_LOGIN_BRIDGE_SERVICE,
     PHX_AUTH_SERVICE,
     PROPERTIES_SERVICE,
@@ -15,6 +15,7 @@ import {Store} from "@root/store/Store";
 import {PhoenixAuthService} from "@root/phoenixAuth/PhoenixAuthService";
 import {RoomService} from "@root/roomAPI/RoomService";
 import {NativeLoginBridge} from "@root/phoenixAuth/NativeLoginBridge";
+import {HttpEventService} from "@root/telemetry/HttpEventService";
 
 export * from "./properties/Properties";
 export * from "./nameGeneration/NameGenerationService";
@@ -24,9 +25,12 @@ export * from "./common/AuthInterface";
 export * from "./roomAPI/RoomService";
 export * from "./store/CookieStore";
 export * from "./store/Store";
+export * from "./telemetry/HttpEventService";
 export * from "./Identifier";
 export const BasicModule = () => {
     return new ContainerModule((bind: interfaces.Bind) => {
+        bind(HttpEventServiceName).to(HttpEventService).inSingletonScope();
+
         bind(PROPERTIES_SERVICE).toDynamicValue(() => {
             return new Properties();
         }).inSingletonScope();
