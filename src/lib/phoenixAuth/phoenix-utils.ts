@@ -1,15 +1,22 @@
-import { Socket } from "phoenix";
+import {Socket} from "phoenix";
 
-import { sleep } from "@root/phoenixAuth/async-utils";
-import { generateHubName } from "@root/nameGeneration/name-generation";
-import { PROPERTIES_SERVICE, STORE_SERVICE } from "@root/index";
-import { PropertiesFormat } from "@root/phoenixAuth/PropertiesFormat";
-import { getService, getServiceSync } from "@aptero/axolotis-player";
-import { Store } from "@root/store/Store";
-import { Properties } from "@root/properties/Properties";
+import {sleep} from "@root/phoenixAuth/async-utils";
+import {generateHubName} from "@root/nameGeneration/name-generation";
+import {PropertiesFormat} from "@root/phoenixAuth/PropertiesFormat";
+import {Store} from "@root/store/Store";
 
-export function config() {
+/*export function config() {
   return getServiceSync<Properties>(PROPERTIES_SERVICE).getGlobalProperties<PropertiesFormat>();
+}*/
+export let config:()=>PropertiesFormat = null;
+export let getStore:()=>Store = null;
+
+export function setConfig(configGetter:()=>PropertiesFormat){
+    config = configGetter;
+}
+
+export function setStore(storeGetter:()=>Store){
+    getStore = storeGetter;
 }
 
 export function hasReticulumServer() {
@@ -163,7 +170,7 @@ export function getLandingPageForPhoto(photoUrl) {
 }
 
 export function fetchReticulumAuthenticated(url, method = "GET", payload) {
-  const { token } = getServiceSync<Store>(STORE_SERVICE).state.credentials;
+  const { token } = getStore().state.credentials;
   const retUrl = getReticulumFetchUrl(url);
   const params: any = {
     headers: { "content-type": "application/json" },
@@ -202,7 +209,7 @@ export async function createAndRedirectToNewHub(name, sceneId, replace) {
   }
 
   const headers: any = { "content-type": "application/json" };
-  const store = await getService<Store>(STORE_SERVICE);
+  const store = getStore();
   if (store.state && store.state.credentials.token) {
     headers.authorization = `bearer ${store.state.credentials.token}`;
   }

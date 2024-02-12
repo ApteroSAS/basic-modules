@@ -3,14 +3,15 @@
       "noImplicitAny": false,
       "outDir": "build/",
       "module": "esnext",
-      "target": "ES5",
+      "target": "es6",
+      "experimentalDecorators": true,//needed for inversify
+      "emitDecoratorMetadata": true,//needed for inversify
       "allowJs": true,
       "sourceMap": true,
       "declaration": true,
       "esModuleInterop":true,
       "skipLibCheck": true,
       "emitDeclarationOnly": true,
-      "suppressImplicitAnyIndexErrors": true,
       "lib": ["es2018", "dom"],
       "moduleResolution": "node",
       "baseUrl": "./",

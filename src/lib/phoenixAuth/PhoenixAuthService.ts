@@ -1,21 +1,37 @@
-import { AdminRole } from "./AdminRole";
-import { connectToReticulum, createAndRedirectToNewHub, fetchReticulumAuthenticated, getReticulumFetchUrl, isLocalClient } from "./phoenix-utils";
+import {AdminRole} from "./AdminRole";
+import {
+    connectToReticulum,
+    createAndRedirectToNewHub,
+    fetchReticulumAuthenticated,
+    getReticulumFetchUrl,
+    isLocalClient,
+    setConfig,
+    setStore
+} from "./phoenix-utils";
 import AuthChannel from "./auth-channel";
-import { IService, IServices, Service } from "@aptero/axolotis-player";
-import { AuthInterface } from "@root/common/AuthInterface";
-import { MsToNativeLoginBridge } from "./MsToNativeLoginBridge";
+import {AuthInterface} from "@root/common/AuthInterface";
+import {NativeLoginBridge} from "./NativeLoginBridge";
+import {Properties} from "@root/properties/Properties";
+import {PropertiesFormat} from "@root/phoenixAuth/PropertiesFormat";
+import {Store} from "@root/store/Store";
 
-export class PhoenixAuthServiceFactory implements Service<PhoenixAuthService> {
-  async createService(services: IServices): Promise<PhoenixAuthService> {
-    console.log("PhoenixAuthServiceFactory");
-    return new PhoenixAuthService();
-  }
-}
 
-export class PhoenixAuthService implements IService {
+export class PhoenixAuthService {
   adminRole = new AdminRole();
-  nativeBridge = new MsToNativeLoginBridge();
   private ret: any;
+
+  constructor(
+      properties: Properties,
+      private nativeBridge: NativeLoginBridge,
+      store:Store
+  ) {
+    setConfig( () => {
+      return properties.getGlobalProperties<PropertiesFormat>();
+    });
+    setStore( () => {
+      return store;
+    });
+  }
 
   getNativeInterface() {
     return this.nativeBridge;

@@ -1,10 +1,10 @@
-import uuid from "uuid/v4";
+import { v4 as uuid } from 'uuid';
 import AuthChannel from "./auth-channel";
 import { connectToReticulum } from "./phoenix-utils";
 declare const window;
 
 //TODO here we will need an interface Auth
-export class MsToNativeLoginBridge {
+export class NativeLoginBridge {
   isLogged() {
     try {
       return !!window.APP.store.state.credentials.token;
