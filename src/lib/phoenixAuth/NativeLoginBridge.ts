@@ -19,7 +19,7 @@ export class NativeLoginBridge {
         phoneNumber: null,
         displayName: "Teams Guest",
         email: null,
-        jobTitle: null,
+        jobTitleName: null,
         companyName: null,
         microsoftUserprofilePicture: null,
         microsoftUser: null,
@@ -41,7 +41,7 @@ export class NativeLoginBridge {
         email: user.email,
         displayName: user.displayName,
         phoneNumber: user.mobilePhone,
-        jobTitle: user.jobTitle,
+        jobTitleName: user.jobTitle,
         companyName: this.organization,
         microsoftUserprofilePicture: this.profilePicture,
         microsoftUser: user.id

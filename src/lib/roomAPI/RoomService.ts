@@ -9,7 +9,7 @@ import {PhoenixAuthService} from "@root/phoenixAuth/PhoenixAuthService";
 import {CookieStore} from "@root/store/CookieStore";
 import {config} from "@root/phoenixAuth/phoenix-utils";
 
-declare const window;
+declare const window: any;
 
 export class RoomService {
 

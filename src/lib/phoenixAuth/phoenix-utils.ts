@@ -154,11 +154,11 @@ export async function connectToReticulum(debug = false, params = null, socketCla
     // fetching a new healthy node to connect to.
     invalidateReticulumMeta();
 
-    const endPointPath = new URL(socket.endPoint).pathname;
+    const endPointPath = new URL((socket as any).endPoint).pathname;
     const newSocketUrl = await getNewSocketUrl();
     const newEndPoint = `${newSocketUrl}${endPointPath}`;
     console.log(`Socket error, changed endpoint to ${newEndPoint}`);
-    socket.endPoint = newEndPoint;
+    (socket as any).endPoint = newEndPoint;
   });
 
   return socket;
