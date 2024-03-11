@@ -4,7 +4,7 @@
   "description": "Axolotis - Basic module",
   "type": "module",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -18,16 +18,13 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
-    },
-    "./index.async": {
-      "import": "./dist/index.async.js",
-      "require": "./dist/index.async.cjs"
     }
   },
   "scripts": {
-    "build": "tsup",
+    "clean": "rimraf dist",
+    "build": "yarn clean && rollup -c",
     "ci": "yarn run coverage",
     "coverage": "jest --silent --ci --runInBand --reporters=default --reporters=jest-junit --coverage --collectCoverageFrom='src/lib/**/*.ts'",
     "test": "jest"
@@ -42,6 +39,11 @@
   ],
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/jest": "^28.1.6",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
@@ -54,10 +56,16 @@
     "jest-junit": "^14.0.0",
     "nyc": "^15.1.0",
     "prettier": "^2.7.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.0",
+    "rollup-plugin-visualizer": "^5.12.0",
     "start-server-and-test": "^1.14.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@swc/core": "^1.4.2",
+    "axios": "^1.6.7",
     "deepmerge": "^4.2.2",
     "event-target-shim": "^6.0.2",
     "eventemitter3": "^4.0.7",
@@ -66,7 +74,6 @@
     "phoenix": "github:gfodor/phoenix-js#f4cebf1534dd7c503fe797ef396709c4d3ea8d69",
     "process": "^0.11.10",
     "reflect-metadata": "^0.1.13",
-    "tsup": "^6.7.0",
     "tsutils": "^3.21.0",
     "uuid": "^9.0.0"
   }

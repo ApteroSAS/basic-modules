@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "noImplicitAny": false,
-      "outDir": "build/",
+      "outDir": "/",
       "module": "esnext",
       "target": "es6",
       "experimentalDecorators": true,//needed for inversify
@@ -26,9 +26,6 @@
         }
       ]
     },
-    "include": [
-      "src/lib",
-      "../../src/app.ts"
-    ],
+    "include": ["src/lib"],
     "exclude": ["src/lib/**/tests","src-async/**","node_modules/**"]
 }
