@@ -24,8 +24,8 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn clean && rollup -c",
-    "ci": "yarn run coverage",
+    "build": "npm run clean && rollup -c",
+    "ci": "npm run coverage",
     "coverage": "jest --silent --ci --runInBand --reporters=default --reporters=jest-junit --coverage --collectCoverageFrom='src/lib/**/*.ts'",
     "test": "jest"
   },
