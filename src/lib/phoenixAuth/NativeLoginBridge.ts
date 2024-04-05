@@ -1,6 +1,7 @@
-import { v4 as uuid } from 'uuid';
+import {v4 as uuid} from 'uuid';
 import AuthChannel from "./auth-channel";
-import { connectToReticulum } from "./phoenix-utils";
+import {connectToReticulum} from "./phoenix-utils";
+
 declare const window;
 
 //TODO here we will need an interface Auth

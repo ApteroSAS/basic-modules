@@ -1,8 +1,10 @@
 import "reflect-metadata";
 import {ContainerModule, interfaces} from "inversify";
 import {
-    COOKIE_STORE_SERVICE, HttpEventServiceName,
-    NAME_SERVICE, NATIVE_LOGIN_BRIDGE_SERVICE,
+    COOKIE_STORE_SERVICE,
+    HttpEventServiceName,
+    NAME_SERVICE,
+    NATIVE_LOGIN_BRIDGE_SERVICE,
     PHX_AUTH_SERVICE,
     PROPERTIES_SERVICE,
     ROOM_SERVICE,

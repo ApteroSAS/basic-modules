@@ -1,7 +1,8 @@
 import {ContainerModule, interfaces} from "inversify";
 import {
     COOKIE_STORE_SERVICE,
-    NAME_SERVICE, NATIVE_LOGIN_BRIDGE_SERVICE,
+    NAME_SERVICE,
+    NATIVE_LOGIN_BRIDGE_SERVICE,
     PHX_AUTH_SERVICE,
     PROPERTIES_SERVICE,
     ROOM_SERVICE,

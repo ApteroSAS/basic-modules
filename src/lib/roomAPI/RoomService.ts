@@ -59,7 +59,7 @@ export class RoomService {
     }
   }
 
-  async getEmbedToken(roomSID, origin) {
+  async getEmbedToken(roomSID:string, origin:string) {
     if (window.location.origin.startsWith("https://localhost")) {
       let conf = this.properties.get<PropertiesFormat>(PROPERTY_KEY);
       origin = conf.ROOM_TOKEN_SERVICE || window.location.origin;
