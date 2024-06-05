@@ -13,7 +13,7 @@ export class HttpEventService implements EventInterface{
     constructor(
         @inject(PROPERTIES_SERVICE) properties: Properties,
     ) {
-        this.serviceURL = properties.get<PropertiesFormat>(PROPERTY_KEY).SERVICE_URL;
+        this.serviceURL = properties.get<PropertiesFormat>(PROPERTY_KEY)?.SERVICE_URL;
     }
 
     trackEvent(event: string, data?: Record<string, string|number>): void {
