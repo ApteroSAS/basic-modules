@@ -18,14 +18,14 @@ export class NativeLoginBridge {
     window.APP.store.update({
       profile: {
         phoneNumber: null,
-        displayName: "Teams Guest",
+        displayName: "Guest",
         email: null,
         jobTitleName: null,
         companyName: null,
         microsoftUserprofilePicture: null,
         microsoftUser: null,
       },
-      activity: { hasChangedName: false, hasChangedPicture: false },
+      activity: {hasChangedName: false, hasChangedPicture: false},
     });
   }
 
@@ -34,32 +34,38 @@ export class NativeLoginBridge {
       await window.APP.hubChannel.signOut(window.APP.hubChannel);
       console.log("Native signOut");
     }
-    window.APP.store.update({ credentials: { token: null, email: null } });
+    window.APP.store.update({credentials: {token: null, email: null}});
     await this.clearProfile();
   }
 
-  /*{
-        email: user.email,
-        displayName: user.displayName,
-        phoneNumber: user.mobilePhone,
-        jobTitleName: user.jobTitle,
-        companyName: this.organization,
-        microsoftUserprofilePicture: this.profilePicture,
-        microsoftUser: user.id
-      }*/
-  async setProfile(profile) {
+  async setProfile(profile: {
+    email?: string,
+    jobTitle?: string,
+    displayName?: string,
+    phoneNumber?: string,
+    jobTitleName?: string,
+    companyName?: string,
+    microsoftUserprofilePicture?: string,
+    microsoftUser?: string
+  }): Promise<void> {
     window.APP.store.update({
       profile: profile,
-      activity: { hasChangedName: true, hasChangedPicture: true },
+      activity: {
+        hasChangedNameOrPronouns: true,
+        hasChangedName: true,
+        hasAcceptedProfile: true,
+        hasChangedPicture: true
+      },
     });
     await new Promise((resolve) => {
       setTimeout(resolve, 0);
     }); //await store.update()
   }
-  async setCredential(email, token) {
+
+  async setCredential(email: string, token: string) {
     window.APP.store.update({
-      credentials: { email, token },
-      activity: { hasChangedName: false, hasChangedPicture: false },
+      credentials: {email, token},
+      activity: {hasChangedName: false, hasChangedPicture: false},
     });
     await new Promise((resolve) => {
       setTimeout(resolve, 0);
@@ -86,7 +92,8 @@ export class NativeLoginBridge {
     return window.APP.store.state.profile || {};
   }
 
-  async nativeLogin(email, accessToken) {
+  async nativeLogin(email: string, accessToken: string) {
+    console.log("NativeLoginBridge.nativeLogin", email, accessToken);
     if (window.APP.store.state.credentials.token) {
       return;
     }
@@ -102,29 +109,29 @@ export class NativeLoginBridge {
         reject();
       });
       channel
-        .join()
-        .receive("ok", () => {
-          channel.on("auth_token_resp", async ({ auth_token: auth_token, auth_payload: auth_payload }) => {
-            channel.on("auth_credentials", async ({ credentials: token, payload: payload }) => {
-              await this.setCredential(payload.email, token);
-              resolve(true);
-            });
-            channel.push("auth_verified", {
-              token: auth_token,
-              payload: auth_payload,
-            });
+      .join()
+      .receive("ok", () => {
+        channel.on("auth_token_resp", async ({auth_token: auth_token, auth_payload: auth_payload}) => {
+          channel.on("auth_credentials", async ({credentials: token, payload: payload}) => {
+            await this.setCredential(payload.email, token);
+            resolve(true);
           });
-          //TODO security ensure we always send acces token
-          if (!accessToken || !email) {
-            reject(new Error());
-          }
-          channel.push("auth_token_request", {
-            email,
-            authtoken: accessToken,
-            origin: "hubs",
+          channel.push("auth_verified", {
+            token: auth_token,
+            payload: auth_payload,
           });
-        })
-        .receive("error", reject);
+        });
+        //TODO security ensure we always send acces token
+        if (!accessToken || !email) {
+          reject(new Error());
+        }
+        channel.push("auth_token_request", {
+          email,
+          authtoken: accessToken,
+          origin: "hubs",
+        });
+      })
+      .receive("error", reject);
     });
   }
 }
